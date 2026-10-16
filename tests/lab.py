@@ -205,7 +205,7 @@ def main():
     checks, processes, servers = [], [], []
     def check(name, passed, detail=None):
         checks.append({'test': name, 'passed': bool(passed), 'detail': detail})
-    with tempfile.TemporaryDirectory(prefix='dns-policy-lab-') as td:
+    with tempfile.TemporaryDirectory(prefix='dns-policy-lab-', delete=not bool(os.environ.get('DNS_LAB_RETAIN'))) as td:
         d = Path(td)
         try:
             counts = Counter()
@@ -492,6 +492,9 @@ def main():
             if not all(c['passed'] for c in checks):
                 raise SystemExit(1)
         finally:
+            if not args.output.exists():
+                args.output.parent.mkdir(parents=True, exist_ok=True)
+                args.output.write_text(json.dumps({'scope':'incomplete localhost fixture execution; not acceptance','checks':checks,'completed':False,'fixture':str(d),'logs':{p.name:p.read_text()[-2000:] for p in d.glob('*.log')}},indent=2)+'\n')
             for p, log in processes:
                 p.terminate()
                 try:

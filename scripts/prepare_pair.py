@@ -15,7 +15,7 @@ import shutil
 import tarfile
 import yaml
 
-ROOT=Path(__file__).resolve().parents[1]
+ROOT=Path(os.environ.get('DNS_PROJECT_ROOT',Path(__file__).resolve().parents[1])).resolve()
 BASE='/opt/dns-evaluation/20261016-rc1'
 OLD='/opt/dns-pilot/20261016-rc1'
 LANES=('d1','g1','g2','g3')
