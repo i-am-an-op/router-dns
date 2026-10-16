@@ -29,6 +29,8 @@ func run() error {
 	store := flag.String("store", "/opt/dns-core", "offline generation store")
 	key := flag.String("key", "/etc/dns-core/review.pub", "review public key")
 	local := flag.Bool("offline", false, "verification and staging only; no runtime operations")
+	hostRoot := flag.String("host-root", "/", "captured host root; offline only")
+	arch := flag.String("architecture", "", "target architecture; offline only")
 	flag.Parse()
 	a := flag.Args()
 	if len(a) == 0 {
@@ -92,7 +94,10 @@ func run() error {
 	if e != nil || len(k) != ed25519.PublicKeySize {
 		return errors.New("invalid review key")
 	}
-	m := &control.Manager{Store: *store, Key: k, Runner: control.ExecRunner{}}
+	if !*local && (*hostRoot != "/" || *arch != "") {
+		return errors.New("host/architecture overrides require offline mode")
+	}
+	m := &control.Manager{Store: *store, Key: k, HostRoot: *hostRoot, Architecture: *arch, Runner: control.ExecRunner{}}
 	if !*local {
 		if os.Geteuid() != 0 {
 			return errors.New("runtime operations require root")
