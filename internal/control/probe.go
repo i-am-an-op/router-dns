@@ -1,6 +1,7 @@
 package control
 
 import (
+	"context"
 	"crypto/rand"
 	"encoding/binary"
 	"errors"
@@ -12,7 +13,8 @@ import (
 
 // DNSProbe is a bounded readiness check, not a full validating resolver or an
 // acceptance/performance test. The identical workload suite tests correctness.
-func DNSProbe(p Probe) error {
+func DNSProbe(p Probe) error { return DNSProbeContext(context.Background(), p) }
+func DNSProbeContext(ctx context.Context, p Probe) error {
 	if p.Network != "udp" && p.Network != "tcp" {
 		return errors.New("invalid DNS probe network")
 	}
@@ -37,12 +39,18 @@ func DNSProbe(p Probe) error {
 	// EDNS0 with DO; validators decide AD. No CD bypass.
 	q[11] = 1
 	q = append(q, 0, 0, 41, 4, 208, 0, 0, 128, 0, 0, 0)
-	c, e := net.DialTimeout(p.Network, p.Address, time.Second)
+	c, e := (&net.Dialer{Timeout: time.Second}).DialContext(ctx, p.Network, p.Address)
 	if e != nil {
 		return errors.New("probe connect failed")
 	}
 	defer c.Close()
-	c.SetDeadline(time.Now().Add(2 * time.Second))
+	deadline := time.Now().Add(2 * time.Second)
+	if d, ok := ctx.Deadline(); ok && d.Before(deadline) {
+		deadline = d
+	}
+	c.SetDeadline(deadline)
+	done := context.AfterFunc(ctx, func() { c.Close() })
+	defer done()
 	var r []byte
 	if p.Network == "tcp" {
 		wire := append([]byte{byte(len(q) >> 8), byte(len(q))}, q...)
@@ -72,4 +80,28 @@ func DNSProbe(p Probe) error {
 		return errors.New("probe response mismatch")
 	}
 	return nil
+}
+
+// WaitProbes bounds the ENTIRE readiness set, including slow endpoints.
+func WaitProbes(ctx context.Context, probes []Probe) error {
+	if len(probes) == 0 || len(probes) > 64 {
+		return errors.New("invalid readiness set size")
+	}
+	for {
+		success := true
+		for _, p := range probes {
+			if err := DNSProbeContext(ctx, p); err != nil {
+				success = false
+				break
+			}
+		}
+		if success {
+			return nil
+		}
+		select {
+		case <-ctx.Done():
+			return errors.New("readiness deadline exceeded")
+		case <-time.After(time.Second):
+		}
+	}
 }

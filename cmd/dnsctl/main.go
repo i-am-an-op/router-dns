@@ -11,6 +11,7 @@ import (
 	"github.com/i-am-an-op/router-dns/internal/control"
 	"os"
 	"path/filepath"
+	"strconv"
 	"strings"
 	"syscall"
 	"time"
@@ -36,6 +37,19 @@ func run() error {
 	if a[0] == "version" {
 		fmt.Println(version)
 		return nil
+	}
+	if a[0] == "wait-probe" && len(a) == 3 {
+		seconds, e := strconv.Atoi(a[2])
+		if e != nil || seconds < 1 || seconds > 120 {
+			return errors.New("invalid readiness deadline")
+		}
+		var probes []control.Probe
+		if e = control.ReadJSON(a[1], &probes); e != nil {
+			return e
+		}
+		ctx, cancel := context.WithTimeout(context.Background(), time.Duration(seconds)*time.Second)
+		defer cancel()
+		return control.WaitProbes(ctx, probes)
 	}
 	if a[0] == "probe" && len(a) == 2 {
 		var probes []control.Probe
@@ -144,9 +158,7 @@ func run() error {
 					identity = m.Protected(v)
 				}
 				if identity == nil {
-					ctx, cancel := context.WithTimeout(context.Background(), 150*time.Second)
-					_ = (control.ExecRunner{}).Run(ctx, filepath.Join(*store, "generations", v.ID), v, *store, "repair-dns")
-					cancel()
+					_ = m.RepairDNS()
 					repairs++
 					failures = 0
 				}
@@ -170,18 +182,16 @@ func run() error {
 		defer cancel()
 		return (control.ExecRunner{}).Run(ctx, filepath.Join(*store, "generations", v.ID), v, *store, "protect")
 	case "repair-dns":
-		v, e := m.Active()
-		if e != nil {
-			return e
-		}
-		ctx, cancel := context.WithTimeout(context.Background(), 150*time.Second)
-		defer cancel()
-		return (control.ExecRunner{}).Run(ctx, filepath.Join(*store, "generations", v.ID), v, *store, "repair-dns")
+		return m.RepairDNS()
 	case "runtime":
-		if len(a) != 2 {
+		if len(a) < 2 || len(a) > 3 {
 			return errors.New("runtime operation required")
 		}
-		return m.Runtime(a[1])
+		id := ""
+		if len(a) == 3 {
+			id = a[2]
+		}
+		return m.Runtime(a[1], id)
 	case "guard":
 		if len(a) < 2 {
 			return errors.New("guard operation required")

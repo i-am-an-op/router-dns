@@ -18,7 +18,7 @@ def main():
  shutil.copyfile(HERE/'runtime/pilot.sh',o/'pilot.sh');(o/'pilot.sh').chmod(0o755)
  # Native state uses a bind at BASE/state, exactly the path presented in Compose.
  # The bounded test operator prepares this mount before start and removes it after stop.
- instances={};env={'SSL_CERT_FILE':BASE+'/root/etc/ssl/certs/ca-certificates.crt','SSL_CERT_DIR':BASE+'/empty-certs'}
+ instances={};env={'SSL_CERT_FILE':BASE+'/root/etc/ssl/certs/ca-certificates.crt','SSL_CERT_DIR':BASE+'/empty-certs','SKIP_SYSTEM_IPV6_CHECK':'1'}
  def instance(name,command):instances[name]={'command':command,'user':'nobody','group':'nogroup','env':env,'limits':{'nofile':'2048'},'term_timeout':10,'stdout':True,'stderr':True,'no_new_privs':True}
  instance('transport',[BASE+'/bin/mihomo','-d',BASE+'/state/mihomo','-f',BASE+'/config/mihomo.yaml'])
  for lane in ('g1','g2','g3','d1'):instance(lane,[BASE+'/root/lib/ld-musl-aarch64.so.1','--library-path',BASE+'/root/usr/lib:'+BASE+'/root/lib',BASE+'/root/usr/sbin/unbound','-d','-c',BASE+'/config/unbound-'+lane+'.conf'])

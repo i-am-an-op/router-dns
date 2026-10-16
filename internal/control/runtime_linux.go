@@ -73,7 +73,14 @@ func (m *Manager) Mount(v Manifest) error {
 				return e
 			}
 		}
-		if e = syscall.Mount("", x.Target, "", syscall.MS_BIND|syscall.MS_REMOUNT|syscall.MS_RDONLY, ""); e != nil {
+		var fs syscall.Statfs_t
+		if e = syscall.Statfs(x.Target, &fs); e != nil {
+			return e
+		}
+		// A less privileged mount namespace locks inherited restrictions.
+		// Preserve those flags when adding read-only, rather than clearing them.
+		inherited := uintptr(fs.Flags) & (syscall.MS_NOSUID | syscall.MS_NODEV | syscall.MS_NOEXEC | syscall.MS_NOATIME | syscall.MS_NODIRATIME | syscall.MS_RELATIME)
+		if e = syscall.Mount("", x.Target, "", inherited|syscall.MS_BIND|syscall.MS_REMOUNT|syscall.MS_RDONLY, ""); e != nil {
 			return e
 		}
 	}
@@ -88,8 +95,20 @@ func (m *Manager) Unmount(v Manifest) error {
 	}
 	return nil
 }
-func (m *Manager) Runtime(op string) error {
-	v, e := m.Active()
+func (m *Manager) Runtime(op, id string) error {
+	if e := m.init(); e != nil {
+		return e
+	}
+	var v Manifest
+	var e error
+	if id == "" {
+		v, e = m.Active()
+	} else {
+		if !identifier.MatchString(id) {
+			return errors.New("invalid runtime generation")
+		}
+		v, e = m.verify(m.gen(id), op != "unmount")
+	}
 	if e != nil {
 		return e
 	}

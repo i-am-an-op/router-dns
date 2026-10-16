@@ -9,6 +9,7 @@ import (
 	"os"
 	"path/filepath"
 	"strings"
+	"syscall"
 	"time"
 )
 
@@ -29,15 +30,18 @@ type Backup struct {
 	Path    string `json:"path"`
 	Present bool   `json:"present"`
 	Mode    uint32 `json:"mode"`
+	UID     int    `json:"uid"`
+	GID     int    `json:"gid"`
 	SHA256  string `json:"sha256"`
 }
 type PackageJournal struct {
-	ID         string   `json:"id"`
-	Phase      string   `json:"phase"`
-	Entries    []Backup `json:"entries"`
-	Before     []Pin    `json:"before"`
-	After      []Pin    `json:"after"`
-	Generation string   `json:"generation"`
+	ID             string   `json:"id"`
+	Phase          string   `json:"phase"`
+	Entries        []Backup `json:"entries"`
+	Before         []Pin    `json:"before"`
+	After          []Pin    `json:"after"`
+	Generation     string   `json:"generation"`
+	NextGeneration string   `json:"next_generation"`
 }
 
 func (m *Manager) packagePlan(dir string) (PackagePlan, error) {
@@ -60,19 +64,38 @@ func (m *Manager) packagePlan(dir string) (PackagePlan, error) {
 	if p.Schema != 1 || !identifier.MatchString(p.ID) || len(p.Before) == 0 || len(p.After) == 0 || len(p.WriteSet) == 0 {
 		return p, errors.New("incomplete package plan")
 	}
-	seen := map[string]bool{}
+	seen := map[string]bool{"package.json": true, "package.sig": true}
 	for _, f := range p.Files {
-		if !relative(f.Path) || seen[f.Path] || f.Mode&0022 != 0 {
+		if !relative(f.Path) || seen[f.Path] || f.Mode&0022 != 0 || f.Mode&^0755 != 0 || !digest.MatchString(f.SHA256) {
 			return p, errors.New("unsafe package file")
 		}
 		seen[f.Path] = true
 		if e = noLinks(dir, f.Path); e != nil {
 			return p, e
 		}
+		info, e := regular(filepath.Join(dir, f.Path))
+		if e != nil || uint32(info.Mode().Perm()) != f.Mode {
+			return p, errors.New("package payload mode differs")
+		}
 		b, e := os.ReadFile(filepath.Join(dir, f.Path))
 		if e != nil || Hash(b) != f.SHA256 {
 			return p, errors.New("package payload identity differs")
 		}
+	}
+	if e = filepath.WalkDir(dir, func(path string, d os.DirEntry, e error) error {
+		if e != nil {
+			return e
+		}
+		if d.IsDir() {
+			return nil
+		}
+		rel, _ := filepath.Rel(dir, path)
+		if !seen[rel] {
+			return errors.New("unmanifested package payload")
+		}
+		return nil
+	}); e != nil {
+		return p, e
 	}
 	if !seen[p.Adapter] {
 		return p, errors.New("unverified package adapter")
@@ -109,9 +132,13 @@ func (m *Manager) PackageApply(dir string) error {
 			return e
 		}
 		backup := filepath.Join(m.Store, "package-backups", p.ID)
-		if e = os.MkdirAll(backup, 0700); e != nil {
+		if e = os.MkdirAll(filepath.Dir(backup), 0700); e != nil {
 			return e
 		}
+		if e = os.Mkdir(backup, 0700); e != nil {
+			return errors.New("package transaction ID already used")
+		}
+
 		state, e := m.State()
 		if e != nil {
 			return e
@@ -136,6 +163,9 @@ func (m *Manager) PackageApply(dir string) error {
 				}
 				entry.Present = true
 				entry.Mode = uint32(s.Mode().Perm())
+				owner := s.Sys().(*syscall.Stat_t)
+				entry.UID = int(owner.Uid)
+				entry.GID = int(owner.Gid)
 				entry.SHA256 = Hash(b)
 				if e = Atomic(filepath.Join(backup, strings.TrimPrefix(path, "/")), b, 0600); e != nil {
 					return e
@@ -229,6 +259,11 @@ func (m *Manager) PackageCommit() error {
 		if e := m.Check(); e != nil {
 			return e
 		}
+		j.NextGeneration = state.Current
+		j.Phase = "committed"
+		if e := put(filepath.Join(m.Store, "package-history", j.ID+".json"), j); e != nil {
+			return e
+		}
 		if e := os.Remove(filepath.Join(m.Store, "package-journal.json")); e != nil {
 			return e
 		}
@@ -270,6 +305,9 @@ func (m *Manager) packageRecover() error {
 		}
 		ctx, cancel := context.WithTimeout(context.Background(), 150*time.Second)
 		defer cancel()
+		if err = m.active(old.ID); err != nil {
+			return err
+		}
 		for _, op := range []string{"stop", "unmount"} {
 			if err = m.Runner.Run(ctx, m.gen(old.ID), old, m.Store, op); err != nil {
 				return err
@@ -282,6 +320,25 @@ func (m *Manager) packageRecover() error {
 			b, _ := os.ReadFile(filepath.Join(root, x.Path))
 			if e = Atomic(target, b, os.FileMode(x.Mode)); e != nil {
 				return e
+			}
+			st, e := os.Stat(target)
+			if e != nil {
+				return e
+			}
+			owner := st.Sys().(*syscall.Stat_t)
+			if int(owner.Uid) != x.UID || int(owner.Gid) != x.GID {
+				if e = os.Chown(target, x.UID, x.GID); e != nil {
+					return e
+				}
+				f, e := os.Open(target)
+				if e != nil {
+					return e
+				}
+				e = f.Sync()
+				f.Close()
+				if e != nil {
+					return e
+				}
 			}
 		} else {
 			if e = os.Remove(target); e != nil && !os.IsNotExist(e) {
@@ -311,6 +368,19 @@ func (m *Manager) packageRecover() error {
 		if err = put(filepath.Join(m.Store, "state.json"), State{Current: old.ID}); err != nil {
 			return err
 		}
+		var promotion Journal
+		e := ReadJSON(filepath.Join(m.Store, "journal.json"), &promotion)
+		if e == nil {
+			if promotion.Old != old.ID {
+				return errors.New("unrelated generation transaction pending")
+			}
+			if err = m.finish(); err != nil {
+				return err
+			}
+		} else if !os.IsNotExist(e) {
+			return e
+		}
+
 	}
 	if e = os.Remove(filepath.Join(m.Store, "package-journal.json")); e != nil {
 		return e
@@ -338,4 +408,35 @@ func (m *Manager) packageBridge(pin Pin, actual string) bool {
 		}
 	}
 	return before && after
+}
+
+func (m *Manager) packageRollbackTo(target, current string) error {
+	entries, e := os.ReadDir(filepath.Join(m.Store, "package-history"))
+	if e != nil {
+		return errors.New("no package rollback history")
+	}
+	for _, entry := range entries {
+		var j PackageJournal
+		if !entry.Type().IsRegular() {
+			continue
+		}
+		if ReadJSON(filepath.Join(m.Store, "package-history", entry.Name()), &j) != nil {
+			continue
+		}
+		if j.Generation != target || j.NextGeneration != current || j.Phase != "committed" {
+			continue
+		}
+		if e = m.pins(j.After); e != nil {
+			return e
+		}
+		if _, e = m.verify(m.gen(target), false); e != nil {
+			return e
+		}
+		j.Phase = "applied-awaiting-integration"
+		if e = put(filepath.Join(m.Store, "package-journal.json"), j); e != nil {
+			return e
+		}
+		return m.packageRecover()
+	}
+	return errors.New("no matching accepted package rollback")
 }

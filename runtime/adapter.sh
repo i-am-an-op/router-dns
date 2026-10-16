@@ -11,6 +11,7 @@ compose() {
       --project-directory "$BASE" -f "$G/config/compose.yaml" "$@"
 }
 stack_start() {
+    "$G/runtime/state-prepare.sh"
     if [ "$DNS_MODE" = compose ]; then
         compose up -d --no-build --pull never --wait --wait-timeout 60
     else
@@ -18,14 +19,18 @@ stack_start() {
     fi
 }
 stack_stop() {
-    if [ "$DNS_MODE" = compose ]; then compose stop --timeout 10
-    else ubus call service delete '{"name":"dns-evaluation"}' >/dev/null; fi
+    "$G/runtime/stop-all-stack.sh"
 }
+
 case "${1:-}" in
  preflight)
     # No network, process stop, config mutation or DNS-dependent artifact lookup.
     test "$("$G/bin/clash_meta" -dns-managed-capabilities)" = '{"schema":1,"dns_disable_cache":true,"managed_frontend":true,"mutation_guard":1}'
     MIHOMO_MANAGED_DNS=1 "$G/bin/clash_meta" -t -d /etc/openclash -f "$G/config/frontend.yaml" >/dev/null 2>&1
+    for lane in d1 g1 g2 g3; do
+        "$G/stack/root/lib/ld-musl-aarch64.so.1" --library-path "$G/stack/root/usr/lib:$G/stack/root/lib" \
+          "$G/stack/root/usr/sbin/unbound-checkconf" "$G/stack/config/unbound-$lane.conf" >/dev/null
+    done
     if [ "$DNS_MODE" = compose ]; then
         docker --host unix:///var/run/dns-evaluation-docker.sock info >/dev/null
         compose config --quiet
@@ -36,8 +41,8 @@ case "${1:-}" in
     fi
     ;;
  protect) "$G/runtime/protect.sh" ;;
- mount) "$CTL" --store "$S" runtime mount ;;
- unmount) "$CTL" --store "$S" runtime unmount ;;
+ mount) "$CTL" --store "$S" runtime mount "${G##*/}" ;;
+ unmount) "$CTL" --store "$S" runtime unmount "${G##*/}" ;;
  start)
     # Frontend is allowed to start before external resolver readiness: its
     # numeric shared transport must not wait on DNS that depends on it.

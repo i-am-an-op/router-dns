@@ -1,0 +1,7 @@
+{
+  "openclash_tag": "e553e82e01c697aefbe1555261a503f425e00ccd",
+  "installed_init": "captured retained local init, sha256 df9ce3f7967837d7a9d03e418b16683404ce079bf5c537dc4a1e6d837bc3ddd4",
+  "dockerd_package": "29.6.1-r1 from verified OpenWrt APK indexes",
+  "dockerd_post_install_sha256": "f8a189b0db696e72d90e3f233de3addd0d4c6da31471d50b78fea5c0acb75339",
+  "contains_configuration_or_credentials": false
+}

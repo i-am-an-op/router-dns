@@ -7,11 +7,13 @@ import (
 	"encoding/base64"
 	"encoding/json"
 	"errors"
+	"net"
 	"os"
 	"os/exec"
 	"path/filepath"
 	"strings"
 	"testing"
+	"time"
 )
 
 type recorder struct {
@@ -367,5 +369,208 @@ func TestPackageBridgeIsExactAndTemporary(t *testing.T) {
 	os.WriteFile(filepath.Join(m.HostRoot, "package-db"), []byte("other update"), 0600)
 	if _, e := m.verify(m.gen("one"), true); e == nil {
 		t.Fatal("bridge accepted unrelated change")
+	}
+}
+func TestKernelReadOnlyMountAndMissingTarget(t *testing.T) {
+	if os.Getenv("DNS_KERNEL_TEST") != "1" {
+		t.Skip("requires explicitly isolated workstation mount namespace")
+	}
+	mapping, _ := os.ReadFile("/proc/self/uid_map")
+	if !strings.Contains(string(mapping), "1000") {
+		t.Fatal("refuse real host root")
+	}
+	m, k, _ := setup(t)
+	d := generation(t, m, k, "mounted")
+	var v Manifest
+	ReadJSON(filepath.Join(d, "manifest.json"), &v)
+	target := filepath.Join(t.TempDir(), "exposed-core")
+	v.Mounts = []Mount{{Source: "bin/core", Target: target}}
+	sign(t, d, v, k)
+	if e := m.Stage(d); e != nil {
+		t.Fatal(e)
+	}
+	defer m.Unmount(v)
+	if e := m.Mount(v); e != nil {
+		t.Fatal(e)
+	}
+	if e := m.Protected(v); e != nil {
+		t.Fatal(e)
+	}
+	if e := os.WriteFile(target, []byte("stock replacement"), 0600); e == nil {
+		t.Fatal("read-only target overwritten")
+	}
+	replacement := filepath.Join(filepath.Dir(target), "replacement")
+	os.WriteFile(replacement, []byte("stock"), 0600)
+	if e := os.Rename(replacement, target); e == nil {
+		t.Fatal("mount replaced by rename")
+	}
+	if e := m.Unmount(v); e != nil {
+		t.Fatal(e)
+	}
+	b, e := os.ReadFile(target)
+	if e != nil || len(b) != 0 {
+		t.Fatal("underlying recovery placeholder changed")
+	}
+}
+
+func packageFixture(t *testing.T, m *Manager, k ed25519.PrivateKey) string {
+	t.Helper()
+	d := t.TempDir()
+	b := []byte("fixture package adapter")
+	Atomic(filepath.Join(d, "adapter"), b, 0700)
+	p := PackagePlan{Schema: 1, ID: "package-one", Before: []Pin{{Path: "/package-db", SHA256: Hash([]byte("installed 0.48.002"))}}, After: []Pin{{Path: "/package-db", SHA256: Hash([]byte("updated"))}}, WriteSet: []string{"/package-db", "/new-file"}, Adapter: "adapter", Files: []File{{Path: "adapter", SHA256: Hash(b), Mode: 0700}}}
+	b = MarshalPackage(p)
+	Atomic(filepath.Join(d, "package.json"), b, 0600)
+	Atomic(filepath.Join(d, "package.sig"), []byte(base64.StdEncoding.EncodeToString(ed25519.Sign(k, b))), 0600)
+	return d
+}
+
+type packageRunner struct {
+	recorder
+	host string
+}
+
+func (r *packageRunner) Run(ctx context.Context, dir string, v Manifest, store, op string) error {
+	if op == "package-apply" {
+		if e := Atomic(filepath.Join(r.host, "package-db"), []byte("updated"), 0600); e != nil {
+			return e
+		}
+		if e := Atomic(filepath.Join(r.host, "new-file"), []byte("new"), 0644); e != nil {
+			return e
+		}
+	}
+	return r.recorder.Run(ctx, dir, v, store, op)
+}
+func TestPackagePromotionCommitAndWholeRollback(t *testing.T) {
+	m, k, _ := setup(t)
+	m.Runner = &packageRunner{host: m.HostRoot}
+	accept(t, m, k, "one")
+	if e := m.PackageApply(packageFixture(t, m, k)); e != nil {
+		t.Fatal(e)
+	}
+	if e := m.PackageCommit(); e == nil {
+		t.Fatal("committed without compatible generation")
+	}
+	d := generation(t, m, k, "two")
+	var v Manifest
+	ReadJSON(filepath.Join(d, "manifest.json"), &v)
+	v.HostPins[0].SHA256 = Hash([]byte("updated"))
+	sign(t, d, v, k)
+	if e := m.Stage(d); e != nil {
+		t.Fatal(e)
+	}
+	if e := m.Promote("two"); e != nil {
+		t.Fatal(e)
+	}
+	if e := m.PackageCommit(); e != nil {
+		t.Fatal(e)
+	}
+	if e := m.Rollback(); e != nil {
+		t.Fatal(e)
+	}
+	b, _ := os.ReadFile(filepath.Join(m.HostRoot, "package-db"))
+	s, _ := m.State()
+	if string(b) != "installed 0.48.002" || s.Current != "one" {
+		t.Fatal("whole package rollback failed", s)
+	}
+	if _, e := os.Stat(filepath.Join(m.HostRoot, "new-file")); !os.IsNotExist(e) {
+		t.Fatal("package residue")
+	}
+}
+func TestCorruptPackageBackupChangesNothing(t *testing.T) {
+	m, k, _ := setup(t)
+	m.init()
+	m.Fault = func(p string) error { return ErrInterrupted }
+	if e := m.PackageApply(packageFixture(t, m, k)); !errors.Is(e, ErrInterrupted) {
+		t.Fatal(e)
+	}
+	m.Fault = nil
+	Atomic(filepath.Join(m.HostRoot, "package-db"), []byte("partly installed"), 0600)
+	Atomic(filepath.Join(m.Store, "package-backups/package-one/package-db"), []byte("corrupt"), 0600)
+	if e := m.PackageRecover(); e == nil {
+		t.Fatal("corrupt backup accepted")
+	}
+	b, _ := os.ReadFile(filepath.Join(m.HostRoot, "package-db"))
+	if string(b) != "partly installed" {
+		t.Fatal("modified before validating all backups")
+	}
+	if _, e := os.Stat(filepath.Join(m.Store, "package-journal.json")); e != nil {
+		t.Fatal("lost recovery record")
+	}
+}
+func TestRecoveryUsesVerifiedOldWhenCandidateCorrupt(t *testing.T) {
+	m, k, _ := setup(t)
+	accept(t, m, k, "one")
+	m.Stage(generation(t, m, k, "two"))
+	m.Fault = func(p string) error {
+		if p == "started" {
+			return ErrInterrupted
+		}
+		return nil
+	}
+	m.Promote("two")
+	m.Fault = nil
+	Atomic(filepath.Join(m.gen("two"), "bin/core"), []byte("corrupt"), 0600)
+	if e := m.Recover(); e != nil {
+		t.Fatal(e)
+	}
+	s, _ := m.State()
+	if s.Current != "one" {
+		t.Fatal(s)
+	}
+}
+func TestConcurrentTransactionRefused(t *testing.T) {
+	m, _, _ := setup(t)
+	e := m.locked(func() error {
+		if e := m.locked(func() error { t.Fatal("entered second transaction"); return nil }); e == nil {
+			t.Fatal("second lock succeeded")
+		}
+		return nil
+	})
+	if e != nil {
+		t.Fatal(e)
+	}
+}
+func TestFreshManagerRuntimeInitialization(t *testing.T) {
+	m, k, _ := setup(t)
+	accept(t, m, k, "one")
+	m.Architecture = ""
+	if _, e := m.Active(); e != nil {
+		t.Fatal(e)
+	}
+}
+func TestReadinessGlobalDeadline(t *testing.T) {
+	listener, e := net.ListenPacket("udp", "127.0.0.1:0")
+	if e != nil {
+		t.Fatal(e)
+	}
+	defer listener.Close()
+	ctx, cancel := context.WithTimeout(context.Background(), 80*time.Millisecond)
+	defer cancel()
+	start := time.Now()
+	if e := WaitProbes(ctx, []Probe{{Address: listener.LocalAddr().String(), Network: "udp", Name: "example.org", Type: 1}}); e == nil {
+		t.Fatal("blackhole accepted")
+	}
+	if time.Since(start) > time.Second {
+		t.Fatal("global readiness deadline exceeded")
+	}
+}
+
+func TestAdapterTimeoutKillsChildren(t *testing.T) {
+	d := t.TempDir()
+	adapter := filepath.Join(d, "hook")
+	sentinel := filepath.Join(d, "escaped")
+	script := "#!/bin/sh\n(sleep 0.4; touch '" + sentinel + "') &\nwait\n"
+	if e := Atomic(adapter, []byte(script), 0700); e != nil {
+		t.Fatal(e)
+	}
+	ctx, cancel := context.WithTimeout(context.Background(), 100*time.Millisecond)
+	defer cancel()
+	if e := (ExecRunner{}).Run(ctx, d, Manifest{Adapter: "hook"}, d, "test"); e == nil {
+		t.Fatal("timeout not enforced")
+	}
+	time.Sleep(450 * time.Millisecond)
+	if _, e := os.Stat(sentinel); !os.IsNotExist(e) {
+		t.Fatal("hook child survived cancellation")
 	}
 }

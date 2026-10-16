@@ -14,5 +14,5 @@ test "$#" -gt 0
 # unmounted its overlays after journaling a complete rollback set.
 # --no-network plus retained package/index/key content removes DNS dependency.
 # No --allow-untrusted. Package identity must authenticate against retained indexes.
-apk --network=no --repositories-file "$G/repositories.list" --keys-dir "$G/keys" \
+exec apk --network=no --repositories-file "$G/repositories.list" --keys-dir "$G/keys" \
     add --scripts=no --commit-hooks=no "$@"

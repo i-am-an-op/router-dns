@@ -14,8 +14,11 @@ import subprocess
 
 
 def verify(policy, artifact, bundle, trusted_root):
-    if policy['repository'] != 'i-am-an-op/mihomo':
+    repositories={'i-am-an-op/mihomo':(1421581663,'downstream-release.yml','dns-maintained'),'i-am-an-op/router-dns':(1422214651,'draft.yml','main')}
+    if policy['repository'] not in repositories:
         raise ValueError('unexpected repository')
+    repo_id,workflow,branch=repositories[policy['repository']]
+    if int(policy['repository_id']) != repo_id: raise ValueError('unexpected repository ID')
     if not re.fullmatch(r'[0-9a-f]{40}', policy['source_commit']):
         raise ValueError('invalid source commit')
     data=artifact.read_bytes()
@@ -26,9 +29,9 @@ def verify(policy, artifact, bundle, trusted_root):
         raise ValueError('ELF architecture mismatch')
     command=['gh','attestation','verify',str(artifact),'--repo',policy['repository'],
         '--bundle',str(bundle),'--custom-trusted-root',str(trusted_root),
-        '--signer-workflow',policy['repository']+'/.github/workflows/downstream-release.yml',
+        '--signer-workflow',policy['repository']+'/.github/workflows/'+workflow,
         '--signer-digest',policy['source_commit'],'--source-digest',policy['source_commit'],
-        '--source-ref','refs/heads/dns-maintained','--deny-self-hosted-runners',
+        '--source-ref','refs/heads/'+branch,'--deny-self-hosted-runners',
         '--cert-oidc-issuer','https://token.actions.githubusercontent.com',
         '--predicate-type','https://slsa.dev/provenance/v1','--format','json']
     p=subprocess.run(command,capture_output=True,text=True,timeout=90)

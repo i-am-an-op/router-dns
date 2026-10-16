@@ -27,8 +27,10 @@ case "${1:-}" in
     verify
     # One candidate owns the fixed loopback ports at a time. Fail if occupied.
     test ! -e /var/run/dns-evaluation-mode
-    for p in 6053 6054 6060 6061 6063 6064 6065 18531 18532 18533; do
-        ! ss -lnut | awk '{print $5}' | grep -Eq "[:.]$p$"
+    for p in 6053 6054 6060 6061 6063 6064 6065 6183 6184 6185 17874 17890; do
+        hex=$(printf '%04X' "$p")
+        # /proc avoids assuming an ss package; both TCP and UDP, v4 and v6.
+        ! awk -v suffix=":$hex" '$2 ~ (suffix "$") {found=1} END {exit !found}' /proc/net/tcp /proc/net/tcp6 /proc/net/udp /proc/net/udp6
     done
     if [ "$MODE" = native ]; then
         mkdir -p "$BASE/state"
@@ -41,11 +43,7 @@ case "${1:-}" in
     else
         ubus call service set "$(cat native-services.json)" >/dev/null || { "$0" stop "$MODE"; exit 78; }
     fi
-    count=0
-    until check; do
-        count=$((count+1)); if [ "$count" -ge 20 ]; then "$0" stop "$MODE"; exit 78; fi
-        sleep 1
-    done
+    bin/dnsctl wait-probe readiness.json 60 || { "$0" stop "$MODE"; exit 78; }
     ;;
  check) verify; check ;;
  stop)

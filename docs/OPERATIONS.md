@@ -89,3 +89,45 @@ passes the same tests without the patch. Do not equate a frozen binary with
 continued security maintenance. NIST [SSDF 1.1](https://csrc.nist.gov/pubs/sp/800/218/final)
 PO.2/PO.3/PO.4, PS.1–PS.3, PW.4/PW.7/PW.8 and RV.1–RV.3 guide ownership,
 provenance, testing and vulnerability response; this project claims no certification.
+
+## Implemented off-router boundaries
+
+Package rollback retains the original regular files, UID/GID/modes and APK
+installed/world databases. A package history record links its old and new DNS
+generations, allowing whole-generation rollback to restore the matching package.
+Unenumerated files and symlink migrations are refused. The generic adapter does
+not pretend an arbitrary future package has a known write set: extract and review
+that exact signed package before making its signed plan. APK runs with script and
+commit hooks disabled, and hook timeout kills the entire child process group.
+
+Production DNS stack state is initialized only when absent and remains outside
+the immutable generations. Both methods use numeric UID/GID 65534 for added
+processes; OpenClash keeps its existing root:GID65534 identity. Configurations in
+the root-only store are exposed through protected bind targets beneath group-only
+traversable directories. Compose additionally restricts each service's bind set.
+Native procd and Compose restart policies are bounded; the common controller
+handles unhealthy-but-running services. Repair is serialized against updates.
+
+A concrete unsigned generation can be prepared with `frontend_profile.py`,
+`prepare_generation.py` and `assemble_bootstrap.py`. Shared and separate transport
+are explicit arguments; shared mode starts the frontend before dependent DNS and
+removes the duplicate transport service. The bootstrap tree is not activated and
+will lack an accepted public review key unless one is supplied. Initial conversion
+from unmanaged OpenClash also requires an authenticated complete baseline backup,
+boot-link transfer and the separately reviewed firewall/client cutover. A failed
+initial promotion has no accepted older generation; it retains DNS protection and
+requires restoration of that reviewed baseline. Do not claim this is zero downtime.
+
+The managed frontend blocks config reload/patch, restart, core/geo upgrade,
+rule-disable changes and rule-provider API replacement before handler execution.
+It preserves reads and existing proxy selection. Proxy-provider refresh and some
+cache/UI operations remain available. The profile renderer disables geodata auto
+update; provider URLs/files and their update behavior still require application
+routing review. This is not a guarantee that every mutable Mihomo feature is blocked.
+
+Security automation is enabled and manually exercised, but 37 open Dependabot
+alerts were observed in the inherited separate Mihomo `test/go.mod` module. They
+are not a finding of a clean repository, nor evidence that all affect the shipped
+root-module binary. The production scanner runs on both architectures. Legacy
+interop-module advisory disposition is a human review item and must remain visible.
+No external notification has been sent or configured as an accepted operation.
