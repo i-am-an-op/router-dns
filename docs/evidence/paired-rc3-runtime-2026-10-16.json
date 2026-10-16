@@ -1,0 +1,693 @@
+{
+  "scope": "actual isolated workstation native vs Compose; synthetic loopback workload, not router or Internet acceptance",
+  "versions": {
+    "coredns": "1.14.7 official AMD64",
+    "unbound": "OpenWrt 1.26.1-r2 ARM64 through identical QEMU/library closure",
+    "mihomo": "v1.19.32-dns.1-rc.3+0af636b44ce2",
+    "mihomo_sha256": "229ac57751c73ac6837826497b88cc5be84e843050c5513313289fa4980350f6",
+    "engine": "29.9.0",
+    "compose": "5.6.0",
+    "rootlesskit": "3.3.0"
+  },
+  "uid_gid": 65534,
+  "backend_process_count": 9,
+  "modes": {
+    "native": {
+      "passed": 46,
+      "total": 46,
+      "checks": [
+        {
+          "test": "domestic selection",
+          "passed": true,
+          "detail": null
+        },
+        {
+          "test": "dispatcher preserves requested DO upstream",
+          "passed": true,
+          "detail": null
+        },
+        {
+          "test": "default international selection",
+          "passed": true,
+          "detail": null
+        },
+        {
+          "test": "international exception wins",
+          "passed": true,
+          "detail": null
+        },
+        {
+          "test": "SERVFAIL advances to tier 2",
+          "passed": true,
+          "detail": null
+        },
+        {
+          "test": "REFUSED advances to tier 3",
+          "passed": true,
+          "detail": null
+        },
+        {
+          "test": "domestic failures advance to global",
+          "passed": true,
+          "detail": null
+        },
+        {
+          "test": "nx.example terminal negative",
+          "passed": true,
+          "detail": null
+        },
+        {
+          "test": "nodata.example terminal negative",
+          "passed": true,
+          "detail": null
+        },
+        {
+          "test": "dispatcher positive cache policy",
+          "passed": true,
+          "detail": null
+        },
+        {
+          "test": "dispatcher negative cache policy",
+          "passed": true,
+          "detail": null
+        },
+        {
+          "test": "final SERVFAIL cached",
+          "passed": true,
+          "detail": null
+        },
+        {
+          "test": "A/CAA failure-cache keys distinct",
+          "passed": true,
+          "detail": null
+        },
+        {
+          "test": "local names never reach upstream",
+          "passed": true,
+          "detail": null
+        },
+        {
+          "test": "UDP truncation and complete TCP response",
+          "passed": true,
+          "detail": null
+        },
+        {
+          "test": "total timeout bounded and fail-closed",
+          "passed": true,
+          "detail": 1.504
+        },
+        {
+          "test": "timeout failure cached",
+          "passed": true,
+          "detail": null
+        },
+        {
+          "test": "Unbound validates signed positive with AD",
+          "passed": true,
+          "detail": null
+        },
+        {
+          "test": "Unbound authenticates signed NXDOMAIN",
+          "passed": true,
+          "detail": null
+        },
+        {
+          "test": "Unbound authenticates signed NODATA",
+          "passed": true,
+          "detail": null
+        },
+        {
+          "test": "Unbound rejects bogus; CD=0",
+          "passed": true,
+          "detail": null
+        },
+        {
+          "test": "Unbound honors CD for bogus, clears AD",
+          "passed": true,
+          "detail": null
+        },
+        {
+          "test": "Unbound rejects expired; CD=0",
+          "passed": true,
+          "detail": null
+        },
+        {
+          "test": "Unbound honors CD for expired, clears AD",
+          "passed": true,
+          "detail": null
+        },
+        {
+          "test": "Unbound rejects recent; CD=0",
+          "passed": true,
+          "detail": null
+        },
+        {
+          "test": "Unbound honors CD for recent, clears AD",
+          "passed": true,
+          "detail": null
+        },
+        {
+          "test": "Unbound nx cache hit",
+          "passed": true,
+          "detail": null
+        },
+        {
+          "test": "Unbound nx SOA minimum bounds TTL",
+          "passed": true,
+          "detail": null
+        },
+        {
+          "test": "Unbound nx cache expiry",
+          "passed": true,
+          "detail": null
+        },
+        {
+          "test": "Unbound nodata cache hit",
+          "passed": true,
+          "detail": null
+        },
+        {
+          "test": "Unbound nodata SOA minimum bounds TTL",
+          "passed": true,
+          "detail": null
+        },
+        {
+          "test": "Unbound nodata cache expiry",
+          "passed": true,
+          "detail": null
+        },
+        {
+          "test": "TLS authenticated endpoint accepted",
+          "passed": true,
+          "detail": null
+        },
+        {
+          "test": "domestic validator accepts authenticated signed answer after CD retry",
+          "passed": true,
+          "detail": {
+            "rcode": 0,
+            "ad": true,
+            "wire_counts": {
+              "(<RdataType.A: 1>, False)": 1,
+              "(<RdataType.NULL: 10>, False)": 1,
+              "(<RdataType.NULL: 10>, True)": 2,
+              "(<RdataType.A: 1>, True)": 1
+            },
+            "validator_log": "[1792165901] unbound[312:0] notice: init module 0: validator\n[1792165901] unbound[312:0] notice: init module 1: iterator\n[1792165901] unbound[312:0] info: start of service (unbound 1.26.1).\n[1792165903] unbound[312:0] info: generate keytag query _ta-6c91.signed.example. NULL IN\n"
+          }
+        },
+        {
+          "test": "domestic DNSKEY proof uses global path and preserves signatures",
+          "passed": true,
+          "detail": null
+        },
+        {
+          "test": "domestic proof separation never accepts bogus signed answer",
+          "passed": true,
+          "detail": null
+        },
+        {
+          "test": "actual validation failure advances to independently valid TLS lane",
+          "passed": true,
+          "detail": null
+        },
+        {
+          "test": "TLS wrong certificate name fails closed",
+          "passed": true,
+          "detail": null
+        },
+        {
+          "test": "SERVFAIL cache expires and retries become possible",
+          "passed": true,
+          "detail": null
+        },
+        {
+          "test": "deployed Mihomo revision synthesizes IPv4 Fake-IP",
+          "passed": true,
+          "detail": null
+        },
+        {
+          "test": "deployed Mihomo revision synthesizes IPv6 Fake-IP",
+          "passed": true,
+          "detail": null
+        },
+        {
+          "test": "Fake-IP presentation synthesizes A even for a nonexistent name",
+          "passed": true,
+          "detail": null
+        },
+        {
+          "test": "Fake-IP presentation suppresses HTTPS records at this revision",
+          "passed": true,
+          "detail": null
+        },
+        {
+          "test": "Mihomo separates CD=1 raw data from CD=0 validated answer",
+          "passed": true,
+          "detail": null
+        },
+        {
+          "test": "Mihomo does not serve expired negative cache entry",
+          "passed": true,
+          "detail": null
+        },
+        {
+          "test": "Mihomo fixed TCP listener carries end-to-end authenticated DoT",
+          "passed": true,
+          "detail": null
+        }
+      ],
+      "workloads": {
+        "udp": {
+          "scope": "bounded client workload; no service mutation; not proof of response correctness",
+          "requests": 2000,
+          "concurrency": 8,
+          "seed": 1,
+          "tcp": false,
+          "address": "127.0.0.1",
+          "port": 16654,
+          "corpus_sha256": "7d2eebeefd0797b2800bc569088230e6d5b35fb250f181aaff4e689b339e209c",
+          "elapsed_seconds": 0.9517135550049716,
+          "completed_per_second": 2101.4726431941513,
+          "transport_errors": 0,
+          "latency_ms": {
+            "p50": 3.1822239980101585,
+            "p95": 8.645439003885258,
+            "p99": 13.5889790035435
+          },
+          "rcode_counts": {
+            "0": 1472,
+            "3": 528
+          }
+        },
+        "tcp": {
+          "scope": "bounded client workload; no service mutation; not proof of response correctness",
+          "requests": 2000,
+          "concurrency": 8,
+          "seed": 1,
+          "tcp": true,
+          "address": "127.0.0.1",
+          "port": 16654,
+          "corpus_sha256": "7d2eebeefd0797b2800bc569088230e6d5b35fb250f181aaff4e689b339e209c",
+          "elapsed_seconds": 2.278629802996875,
+          "completed_per_second": 877.7204605020007,
+          "transport_errors": 0,
+          "latency_ms": {
+            "p50": 7.236894001835026,
+            "p95": 21.868153002287727,
+            "p99": 29.394893994322047
+          },
+          "rcode_counts": {
+            "0": 1472,
+            "3": 528
+          }
+        }
+      },
+      "resources": {
+        "idle": {
+          "dns": {
+            "pss_mib_median": 259.1435546875,
+            "pss_mib_peak": 259.1435546875,
+            "cpu_seconds": 0.01,
+            "interval_seconds": 4.580467815001612,
+            "cpu_percent_one_core": 0.21831831166346666
+          },
+          "engine": {
+            "pss_mib_median": 127.7890625,
+            "pss_mib_peak": 127.7890625,
+            "cpu_seconds": 0.0,
+            "interval_seconds": 4.580467815001612,
+            "cpu_percent_one_core": 0.0
+          }
+        },
+        "load": {
+          "dns": {
+            "pss_mib_median": 261.7333984375,
+            "pss_mib_peak": 263.8740234375,
+            "cpu_seconds": 0.43,
+            "interval_seconds": 3.030222916000639,
+            "cpu_percent_one_core": 14.190375161162214
+          },
+          "engine": {
+            "pss_mib_median": 127.7890625,
+            "pss_mib_peak": 127.7890625,
+            "cpu_seconds": 0.0,
+            "interval_seconds": 3.030222916000639,
+            "cpu_percent_one_core": 0.0
+          }
+        }
+      }
+    },
+    "compose": {
+      "passed": 46,
+      "total": 46,
+      "checks": [
+        {
+          "test": "domestic selection",
+          "passed": true,
+          "detail": null
+        },
+        {
+          "test": "dispatcher preserves requested DO upstream",
+          "passed": true,
+          "detail": null
+        },
+        {
+          "test": "default international selection",
+          "passed": true,
+          "detail": null
+        },
+        {
+          "test": "international exception wins",
+          "passed": true,
+          "detail": null
+        },
+        {
+          "test": "SERVFAIL advances to tier 2",
+          "passed": true,
+          "detail": null
+        },
+        {
+          "test": "REFUSED advances to tier 3",
+          "passed": true,
+          "detail": null
+        },
+        {
+          "test": "domestic failures advance to global",
+          "passed": true,
+          "detail": null
+        },
+        {
+          "test": "nx.example terminal negative",
+          "passed": true,
+          "detail": null
+        },
+        {
+          "test": "nodata.example terminal negative",
+          "passed": true,
+          "detail": null
+        },
+        {
+          "test": "dispatcher positive cache policy",
+          "passed": true,
+          "detail": null
+        },
+        {
+          "test": "dispatcher negative cache policy",
+          "passed": true,
+          "detail": null
+        },
+        {
+          "test": "final SERVFAIL cached",
+          "passed": true,
+          "detail": null
+        },
+        {
+          "test": "A/CAA failure-cache keys distinct",
+          "passed": true,
+          "detail": null
+        },
+        {
+          "test": "local names never reach upstream",
+          "passed": true,
+          "detail": null
+        },
+        {
+          "test": "UDP truncation and complete TCP response",
+          "passed": true,
+          "detail": null
+        },
+        {
+          "test": "total timeout bounded and fail-closed",
+          "passed": true,
+          "detail": 1.503
+        },
+        {
+          "test": "timeout failure cached",
+          "passed": true,
+          "detail": null
+        },
+        {
+          "test": "Unbound validates signed positive with AD",
+          "passed": true,
+          "detail": null
+        },
+        {
+          "test": "Unbound authenticates signed NXDOMAIN",
+          "passed": true,
+          "detail": null
+        },
+        {
+          "test": "Unbound authenticates signed NODATA",
+          "passed": true,
+          "detail": null
+        },
+        {
+          "test": "Unbound rejects bogus; CD=0",
+          "passed": true,
+          "detail": null
+        },
+        {
+          "test": "Unbound honors CD for bogus, clears AD",
+          "passed": true,
+          "detail": null
+        },
+        {
+          "test": "Unbound rejects expired; CD=0",
+          "passed": true,
+          "detail": null
+        },
+        {
+          "test": "Unbound honors CD for expired, clears AD",
+          "passed": true,
+          "detail": null
+        },
+        {
+          "test": "Unbound rejects recent; CD=0",
+          "passed": true,
+          "detail": null
+        },
+        {
+          "test": "Unbound honors CD for recent, clears AD",
+          "passed": true,
+          "detail": null
+        },
+        {
+          "test": "Unbound nx cache hit",
+          "passed": true,
+          "detail": null
+        },
+        {
+          "test": "Unbound nx SOA minimum bounds TTL",
+          "passed": true,
+          "detail": null
+        },
+        {
+          "test": "Unbound nx cache expiry",
+          "passed": true,
+          "detail": null
+        },
+        {
+          "test": "Unbound nodata cache hit",
+          "passed": true,
+          "detail": null
+        },
+        {
+          "test": "Unbound nodata SOA minimum bounds TTL",
+          "passed": true,
+          "detail": null
+        },
+        {
+          "test": "Unbound nodata cache expiry",
+          "passed": true,
+          "detail": null
+        },
+        {
+          "test": "TLS authenticated endpoint accepted",
+          "passed": true,
+          "detail": null
+        },
+        {
+          "test": "domestic validator accepts authenticated signed answer after CD retry",
+          "passed": true,
+          "detail": {
+            "rcode": 0,
+            "ad": true,
+            "wire_counts": {
+              "(<RdataType.A: 1>, False)": 1,
+              "(<RdataType.NULL: 10>, False)": 1,
+              "(<RdataType.NULL: 10>, True)": 2,
+              "(<RdataType.A: 1>, True)": 1
+            },
+            "validator_log": "[1792165941] unbound[1:0] notice: init module 0: validator\n[1792165941] unbound[1:0] notice: init module 1: iterator\n[1792165941] unbound[1:0] info: start of service (unbound 1.26.1).\n[1792165943] unbound[1:0] info: generate keytag query _ta-71c3.signed.example. NULL IN\n"
+          }
+        },
+        {
+          "test": "domestic DNSKEY proof uses global path and preserves signatures",
+          "passed": true,
+          "detail": null
+        },
+        {
+          "test": "domestic proof separation never accepts bogus signed answer",
+          "passed": true,
+          "detail": null
+        },
+        {
+          "test": "actual validation failure advances to independently valid TLS lane",
+          "passed": true,
+          "detail": null
+        },
+        {
+          "test": "TLS wrong certificate name fails closed",
+          "passed": true,
+          "detail": null
+        },
+        {
+          "test": "SERVFAIL cache expires and retries become possible",
+          "passed": true,
+          "detail": null
+        },
+        {
+          "test": "deployed Mihomo revision synthesizes IPv4 Fake-IP",
+          "passed": true,
+          "detail": null
+        },
+        {
+          "test": "deployed Mihomo revision synthesizes IPv6 Fake-IP",
+          "passed": true,
+          "detail": null
+        },
+        {
+          "test": "Fake-IP presentation synthesizes A even for a nonexistent name",
+          "passed": true,
+          "detail": null
+        },
+        {
+          "test": "Fake-IP presentation suppresses HTTPS records at this revision",
+          "passed": true,
+          "detail": null
+        },
+        {
+          "test": "Mihomo separates CD=1 raw data from CD=0 validated answer",
+          "passed": true,
+          "detail": null
+        },
+        {
+          "test": "Mihomo does not serve expired negative cache entry",
+          "passed": true,
+          "detail": null
+        },
+        {
+          "test": "Mihomo fixed TCP listener carries end-to-end authenticated DoT",
+          "passed": true,
+          "detail": null
+        }
+      ],
+      "workloads": {
+        "udp": {
+          "scope": "bounded client workload; no service mutation; not proof of response correctness",
+          "requests": 2000,
+          "concurrency": 8,
+          "seed": 1,
+          "tcp": false,
+          "address": "127.0.0.1",
+          "port": 16654,
+          "corpus_sha256": "7d2eebeefd0797b2800bc569088230e6d5b35fb250f181aaff4e689b339e209c",
+          "elapsed_seconds": 3.4491116060016793,
+          "completed_per_second": 579.8594619321304,
+          "transport_errors": 0,
+          "latency_ms": {
+            "p50": 11.151760998473037,
+            "p95": 34.18620400043437,
+            "p99": 48.463758001162205
+          },
+          "rcode_counts": {
+            "0": 1472,
+            "3": 528
+          }
+        },
+        "tcp": {
+          "scope": "bounded client workload; no service mutation; not proof of response correctness",
+          "requests": 2000,
+          "concurrency": 8,
+          "seed": 1,
+          "tcp": true,
+          "address": "127.0.0.1",
+          "port": 16654,
+          "corpus_sha256": "7d2eebeefd0797b2800bc569088230e6d5b35fb250f181aaff4e689b339e209c",
+          "elapsed_seconds": 3.6014435649994994,
+          "completed_per_second": 555.3328724728408,
+          "transport_errors": 0,
+          "latency_ms": {
+            "p50": 12.390130999847315,
+            "p95": 30.70255600323435,
+            "p99": 41.205319997970946
+          },
+          "rcode_counts": {
+            "0": 1472,
+            "3": 528
+          }
+        }
+      },
+      "resources": {
+        "idle": {
+          "dns": {
+            "pss_mib_median": 412.05078125,
+            "pss_mib_peak": 412.05078125,
+            "cpu_seconds": 0.02,
+            "interval_seconds": 4.599800366995623,
+            "cpu_percent_one_core": 0.4348014784185748
+          },
+          "engine": {
+            "pss_mib_median": 210.44921875,
+            "pss_mib_peak": 210.572265625,
+            "cpu_seconds": 0.01,
+            "interval_seconds": 4.599800366995623,
+            "cpu_percent_one_core": 0.2174007392092874
+          }
+        },
+        "load": {
+          "dns": {
+            "pss_mib_median": 414.62890625,
+            "pss_mib_peak": 416.625,
+            "cpu_seconds": 0.99,
+            "interval_seconds": 7.137140287006332,
+            "cpu_percent_one_core": 13.871101872585648
+          },
+          "engine": {
+            "pss_mib_median": 209.974609375,
+            "pss_mib_peak": 210.326171875,
+            "cpu_seconds": 0.0,
+            "interval_seconds": 7.137140287006332,
+            "cpu_percent_one_core": 0.0
+          }
+        }
+      }
+    }
+  },
+  "limitations": [
+    "single native-then-Compose run, no repeated/randomized performance trial",
+    "ARM validator emulation; AMD64 Go processes",
+    "rootless user namespace, host network, vfs; router proposal is rootful host network with different Engine/Compose/runtime versions",
+    "PSS/RSS exclude kernel/page-cache/storage allocations; vfs copies inhibit executable-page sharing",
+    "Engine was present in both runs; native DNS cost excludes its idle processes",
+    "benchmark names include a deliberately bogus primary answer recovered by the independent validating secondary; expected final RCODES 0 and 3",
+    "startup includes the fixture wrapper/Compose CLI, not a production six-service deployment",
+    "No router runtime installed or pilot executed"
+  ],
+  "raw_files": {
+    ".work/paired-runtime-rc3/native-load-resources.json": "1b3a31a129b0b45f3e8ab4ff19f1d6f406ef4fe1f699d0c69bf0015ab5b2af35",
+    ".work/paired-runtime-rc3/native-udp-warm-benchmark.json": "bf5d128150a0fb63a3b0571b4e55ebe2725fdc8f390824de9e3cd897936f3388",
+    ".work/paired-runtime-rc3/native-tcp-warm-benchmark.json": "bc043e7f9e0ecc32781d637795c3a86a43e092099c6ec298e03a467600a29d5a",
+    ".work/paired-runtime-rc3/native-idle-resources.json": "be7153b5c3e368845ea79d0d7554871874c2c311f0e147da8e5bb04fd15d85af",
+    ".work/paired-runtime-rc3/compose-tcp-warm-benchmark.json": "a4515bfba6f98134888d50696c6000dc00bb0eb144e13dd2723d09f92d2d429a",
+    ".work/paired-runtime-rc3/compose-idle-resources.json": "bcb7e12d5a43f21c497f7d415e1b6eb2a508be608c2ff44fad36184a68733702",
+    ".work/paired-runtime-rc3/native.json": "041911a48c82d6c6c4d0ca428bb926de8f496256aacb02a734296374bf4b938c",
+    ".work/paired-runtime-rc3/compose-load-resources.json": "3c6d95e67c636c191d871f4ed12d138a7791fbb7790d3f4de34a808a5c1e28bb",
+    ".work/paired-runtime-rc3/compose-udp-warm-benchmark.json": "931226d8f2ab0db58a83d1634de12a801cb42d8e670fb63a79b683fb93b4afdb",
+    ".work/paired-runtime-rc3/compose.json": "6f2f007ecf8e99bdd8e08000197e805fb6adf2958a2b368b53909b5c045bfb76"
+  },
+  "source_commit": "0af636b44ce2fc433675abf89a8347738a9d27e8",
+  "artifact_identity_status": "Both architectures of the independently built exact-source binaries are byte-identical to the attested GitHub draft assets; comparison recorded separately",
+  "independent_byte_comparison": "rc3-independent-build-comparison-2026-10-16.json"
+}

@@ -1,0 +1,21 @@
+{
+  "image_id": "sha256:8ee55a989c0ac15ee8058695289e82834ac45d99b77ee94b54f114cb4cefeea3",
+  "architecture": "arm64",
+  "archive_sha256": "89a8926fbf9728622067d6e9bb66f4f51b9461523982d37e918400f7ceeeafc9",
+  "archive_bytes": 68190720,
+  "exact_payload_files": 20,
+  "unexpected_files": 0,
+  "entrypoint_and_loader_modes_verified": true,
+  "dockerfile_sha256": "54cec49d9cba4813edf7357eed26e54d5de732919438d0e2b0ef345c85e22831",
+  "builder": "Existing workstation Docker 29.9.0 integrated BuildKit; COPY-only scratch build, linux/arm64, offline isolated namespaces",
+  "image_built": true,
+  "payload_verified": true,
+  "workload_executed": false,
+  "provenance_limit": "Local build/manifest evidence, not a published or independently attested release. License inventory and image advisory triage remain release gates.",
+  "historical_builder_limit": "An earlier legacy-builder attempt produced amd64 intermediate metadata for arm64; current build uses the successful BuildKit path. Historical failure logs remain retained.",
+  "current_build_failures": {
+    "first_attempt": "Private namespace socket default group unmapped; retained .work/image-build-rc3.stderr",
+    "second_attempt": "Image layer GID50 unmapped; retained .work/paired-images-rc3-failed-map/coredns-load.log",
+    "correction": "Explicit private socket GID0 plus unshare --map-auto --map-root-user; .work/image-build-rc3c logs; successful COPY-only build"
+  }
+}

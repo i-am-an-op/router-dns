@@ -35,9 +35,12 @@ not the rootful router candidate versions (Engine 29.6.1-r1/Compose 5.1.4-r1).
 
 The scripts retain explicit `.work`/`.private` payload paths from the maintained
 DNS workspace. They do not download binaries or supply household credentials.
-Use `prepare_container_lab.py` after populating verified payload paths, normalize
-runtime file/parent permissions, make `component-{coredns,unbound,mihomo}` links
-to the wrapper, and invoke `paired_runtime_run.sh` through `rootlesskit_probe.sh`.
+Use `prepare_container_lab.py --output NEW_DIR --pilot VERIFIED_PILOT
+--coredns VERIFIED_HOST_BINARY --mihomo VERIFIED_HOST_BINARY` with explicit
+verified paths. It normalizes runtime directory/library/loader permissions. Make
+`component-{coredns,unbound,mihomo}` links to the wrapper, and invoke
+`paired_runtime_run.sh` through `rootlesskit_probe.sh`. `DNS_PAIR_PYTHON` selects
+the pinned venv interpreter and `DNS_PAIR_WRAPPERS` selects those links.
 `DNS_LAB_ROOT` must be a fresh short `/tmp` path. `DNS_PAIR_OUTPUT` keeps every run;
 `DNS_PAIR_BENCH=1` adds the common 2,000 UDP + 2,000 TCP workload and process samples.
 The probe refuses real host root and never uses the host Docker socket.
@@ -47,3 +50,47 @@ wrapper PID is a CLI process. `resource_sampler.py` samples actual backend,
 daemon and shim processes. PSS/page sharing differs with vfs image copies;
 reported workstation measurements are not ARM memory or latency predictions.
 Keep failed runs. A fixture correction must not be described as a resolver fix.
+
+`generation_stage.py --candidates DIR --controller HOST_BINARY
+--native-baseline DIR --compose-baseline DIR --output FILE` verifies real private
+generation copies with ephemeral test signatures. Each baseline directory must
+contain `package-database.txt` and `world.txt`. It covers valid staging, offline
+runtime refusal, architecture/DB mismatches, corrupt payload and absent core.
+Production proposals remain unsigned. This needs the pinned Python dependencies
+and a compatible released host controller; it never contacts a router.
+
+`current_artifact_negatives.py --policy FILE --artifact FILE --bundle FILE
+--trusted-root FILE --output FILE` uses the actual offline attestation verifier
+and `gh`, with authentic and deliberately corrupted/mismatched inputs. It never
+executes the supplied binary. Independently review the expected policy/root;
+an artifact's accompanying checksum is not an independent trust source.
+
+`nts_seed_probe.py --seeds FILE --ca FILE --output FILE` is an opt-in external
+network probe. The seed JSON maps original certificate names to numeric
+addresses under `seeds`. It performs strict TLS1.3/ALPN/NTS-KE without changing
+time, sending NTP or retaining cookies. It depends on current workstation time
+and its application routing; success is not cold/direct router reachability.
+It records every endpoint failure instead of silently deleting failed samples.
+
+The current sanitized observations and exact candidate identities are in
+[`docs/CANDIDATE-STATUS.md`](../docs/CANDIDATE-STATUS.md). These opt-in tests need
+the documented private inputs and are not automatically claimed as hosted CI.
+
+`python3 scripts/image_archive_test.py` runs 14 synthetic positive/rejection
+cases without Docker. `scripts/verify_image_archive.py --archive FILE
+--expected-sha256 REVIEWED_DIGEST --output FILE` checks the independently pinned
+archive digest, outer member types/paths, metadata size, OCI child descriptors,
+blob digests and Docker config/uncompressed-layer identities before import.
+The reviewed format refuses subject annotations. It does not authenticate a
+publisher or establish safety of arbitrary images/layer contents. Obtain the
+expected digest through the separately reviewed provenance/payload inventory.
+
+`tests/container_daemon_probe.sh` is the disposable user/mount/network/PID
+namespace builder fixture; it refuses host root. Use `unshare --user --map-auto
+--map-root-user --mount --net --pid --fork --mount-proc` so subordinate image
+ownership IDs are mapped; the private socket group is explicitly0. `tests/build_images_isolated.sh`
+requires its private socket and explicit `DNS_IMAGE_PAIR`/`DNS_IMAGE_OUTPUT`,
+validates the pinned offline CoreDNS archive before loading, and only performs
+COPY-only scratch construction. `tests/verify_aux_image.py` checks the produced
+ARM image against the exact 20-file reviewed context, identity and file modes.
+Neither command is a router installation or a published image release.

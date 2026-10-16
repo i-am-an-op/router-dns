@@ -1,0 +1,12 @@
+{
+  "scope": "actual APK 3.0.5 usermode extraction into copied installed DB on workstation; scripts and commit hooks disabled; not router installation",
+  "before_root": ".private/core-lifecycle-updated-baseline-20261016",
+  "after_root": "/home/user/Documents/Projects/CodexProjects/dns/.private/runtime-postinstall-model-20261016",
+  "pins": {
+    "lib/apk/db/installed": "dd366e8515e0bd7efd2f82faf63a1f13e3ab93e1c5a08f39590e30b4c6829451",
+    "etc/apk/world": "bfef6e89d7f8b6383d9ae9569f28f89a2faa7faae75721ab73287e9f7cb1789f"
+  },
+  "additions": 44,
+  "upgrades_or_removals": 0,
+  "router_operations": false
+}

@@ -1,0 +1,24 @@
+{
+  "source_commit": "fe8ba6744e5c87a6c6a7f5185833a2525ed01174",
+  "ci_run": "https://github.com/i-am-an-op/router-dns/actions/runs/38922499325",
+  "architectures": [
+    {
+      "arch": "amd64",
+      "passed_including_subtests": 48,
+      "top_level": 23,
+      "failures": 0,
+      "raw_sha256": "14ca7bd48d24313a8ee100012c29f35ecc760285cf1302f0c6b1d2ac7f391228",
+      "raw_path": ".work/integration-final-ci/integration-amd64/test-results.json"
+    },
+    {
+      "arch": "arm64",
+      "passed_including_subtests": 48,
+      "top_level": 23,
+      "failures": 0,
+      "raw_sha256": "d8810b099c8a7e4b125534c8aad1b4a54443f86999b3e9ef9f761ec949c8b8b0",
+      "raw_path": ".work/integration-final-ci/integration-arm64/test-results.json"
+    }
+  ],
+  "service_semantics": "pinned installed procd58eb263 source shows asynchronous stop; fixtures and real local /proc exit checks, not real router procd execution",
+  "router_operations": false
+}

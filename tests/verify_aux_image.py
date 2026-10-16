@@ -7,9 +7,8 @@ import json
 from pathlib import Path
 import tarfile
 
-ROOT=Path(__file__).resolve().parents[1]
-pair=Path(os.environ.get('DNS_IMAGE_PAIR',str(ROOT/'.private/mt6000-deployment-pair-20261016-r2')))
-output=Path(os.environ.get('DNS_IMAGE_OUTPUT',str(ROOT/'.work/paired-images')))
+pair=Path(os.environ['DNS_IMAGE_PAIR'])
+output=Path(os.environ['DNS_IMAGE_OUTPUT'])
 archive=output/'aux-offline.tar'
 expected=json.loads((pair/'payload-sha256.json').read_text())
 inspect=json.loads((output/'aux-inspect.json').read_text())[0]
@@ -42,7 +41,7 @@ record={'image_id':image_id,'architecture':config['architecture'],
  'builder':'Existing workstation Docker 29.9.0 integrated BuildKit; COPY-only scratch build, linux/arm64, offline isolated namespaces',
  'image_built':True,'payload_verified':True,'workload_executed':False,
  'provenance_limit':'Local build/manifest evidence, not a published or independently attested release. License inventory and image advisory triage remain release gates.',
- 'initial_build_failure':'Deprecated legacy builder produced amd64 intermediate metadata during arm64 build; normal BuildKit path succeeded without source/binary changes'}
+ 'historical_builder_limit':'An earlier legacy-builder attempt produced amd64 intermediate metadata for arm64; current build uses the successful BuildKit path. Historical failure logs remain retained.'}
 (output/'verification.json').write_text(json.dumps(record,indent=2)+'\n')
 (pair/'image-identities.json').write_text(json.dumps({'auxiliary':image_id,'coredns':'sha256:5d3b3e589fcf57f626c7967bff5171924cf9c55068911247a1f7bd2458e726c3'},indent=2)+'\n')
 manifest=json.loads((pair/'manifest.json').read_text());manifest['image_build_executed']=True;manifest['image_identities']=json.loads((pair/'image-identities.json').read_text());(pair/'manifest.json').write_text(json.dumps(manifest,indent=2)+'\n')

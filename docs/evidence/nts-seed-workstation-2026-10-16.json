@@ -1,0 +1,83 @@
+{
+  "scope": "off-router workstation direct numeric TCP4460 using candidate OpenWrt CA, current workstation time, original hostname TLS identity and NTS-KE negotiation; no NTP exchange/time adjustment/cookie retention/router action",
+  "rfc": "RFC8915 sections3,4.1.1,4.1.2,4.1.5,4.1.6",
+  "ca_sha256": "5a88c31547f4676417351019576c7e8eaf8f724ff21105a9ee586ffa83866c88",
+  "results": [
+    {
+      "hostname": "nts.netnod.se",
+      "seed_address": "194.58.205.197",
+      "pass": false,
+      "failure_type": "SSLEOFError",
+      "error": "[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1082)",
+      "elapsed_seconds": 3.185
+    },
+    {
+      "hostname": "ptbtime1.ptb.de",
+      "seed_address": "192.53.103.108",
+      "pass": true,
+      "tls": "TLSv1.3",
+      "certificate_sha256": "244656b8f4d6e058c1a34f636d801fc7a92eff126dc98d7adb50cffaeed4d791",
+      "authenticated_hostname": true,
+      "ntp_protocol": 0,
+      "aead": 15,
+      "cookie_count": 8,
+      "cookies_retained": false,
+      "elapsed_seconds": 1.342
+    },
+    {
+      "hostname": "time.dfm.dk",
+      "seed_address": "130.226.165.77",
+      "pass": true,
+      "tls": "TLSv1.3",
+      "certificate_sha256": "b461682642d51173251e82968c1f1499b3298fee9c531ceb05fd9c7f783c7151",
+      "authenticated_hostname": true,
+      "ntp_protocol": 0,
+      "aead": 15,
+      "cookie_count": 8,
+      "cookies_retained": false,
+      "elapsed_seconds": 1.138
+    },
+    {
+      "hostname": "time.cifelli.xyz",
+      "seed_address": "50.116.42.84",
+      "pass": true,
+      "tls": "TLSv1.3",
+      "certificate_sha256": "d8de7db3cbfd9a881ec30c141ab8ed29065bf06d481c770bfe6182bbf78829fd",
+      "authenticated_hostname": true,
+      "ntp_protocol": 0,
+      "aead": 15,
+      "cookie_count": 8,
+      "cookies_retained": false,
+      "elapsed_seconds": 0.857
+    },
+    {
+      "hostname": "time.cloudflare.com",
+      "seed_address": "162.159.200.1",
+      "pass": true,
+      "tls": "TLSv1.3",
+      "certificate_sha256": "563333c6fbbfcfb8b1dbb1878f5571ab9ade3d253c60311490c693d8ca99da8f",
+      "authenticated_hostname": true,
+      "ntp_protocol": 0,
+      "aead": 15,
+      "cookie_count": 8,
+      "cookies_retained": false,
+      "elapsed_seconds": 0.158
+    },
+    {
+      "hostname": "time.cloudflare.com",
+      "seed_address": "162.159.200.123",
+      "pass": true,
+      "tls": "TLSv1.3",
+      "certificate_sha256": "563333c6fbbfcfb8b1dbb1878f5571ab9ade3d253c60311490c693d8ca99da8f",
+      "authenticated_hostname": true,
+      "ntp_protocol": 0,
+      "aead": 15,
+      "cookie_count": 8,
+      "cookies_retained": false,
+      "elapsed_seconds": 0.23
+    }
+  ],
+  "passed": 5,
+  "total": 6,
+  "limitation": "Workstation socket uses numeric destination and original TLS identity; underlying router/application routing was not controlled. Not proof of direct ISP reachability, NTP exchange or cold router bootstrap."
+}

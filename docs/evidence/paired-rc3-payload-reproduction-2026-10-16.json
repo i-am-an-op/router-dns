@@ -1,0 +1,17 @@
+{
+  "tool": "integration/tests/prepare_container_lab.py",
+  "source_payloads": "explicit CLI inputs from attested rc.3/official CoreDNS/frozen official ARM package closure",
+  "file_count": 48,
+  "payload_hashes_equal": true,
+  "all_archive_member_modes_ownership_types_sizes_equal": true,
+  "archive_sha256": [
+    "35c28db0875eff45b38a7e28a26a3345fdde5e1eaff7d2412ac2300934f63610",
+    "35c28db0875eff45b38a7e28a26a3345fdde5e1eaff7d2412ac2300934f63610"
+  ],
+  "scope": "Reproduced the already exercised fixture payload; not a new benchmark or router run",
+  "initial_attempt": {
+    "equal_file_bytes": true,
+    "mode_mismatch": ".work/payload-reproduction-first-mode-diff.json",
+    "correction": "Normalize workstation shared libraries to0644 and executable loaders/musl-libc to0755, matching actual tested payload"
+  }
+}

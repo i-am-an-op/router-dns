@@ -1,0 +1,25 @@
+{
+  "checked_utc": "2026-10-16T16:08:06.723475+00:00",
+  "source_commit": "0af636b44ce2fc433675abf89a8347738a9d27e8",
+  "build_contexts": [
+    "local workstation Go1.26.9 CGO_ENABLED=0 with_gvisor",
+    "GitHub hosted native architecture Go1.26.9 CGO_ENABLED=0 with_gvisor"
+  ],
+  "artifacts": [
+    {
+      "architecture": "arm64",
+      "sha256": "375b52c27eb6b5cf1aa9bf2f3a77a3f39d045fae5197a64f8fd37dab69684eaf",
+      "workstation_path": ".work/sources/mihomo-bootstrap/dist/mihomo-linux-arm64",
+      "github_draft_path": ".work/release-rc3/mihomo-linux-arm64",
+      "equal": true
+    },
+    {
+      "architecture": "amd64",
+      "sha256": "229ac57751c73ac6837826497b88cc5be84e843050c5513313289fa4980350f6",
+      "workstation_path": ".work/sources/mihomo-bootstrap/dist/mihomo-linux-amd64",
+      "github_draft_path": ".work/release-rc3/mihomo-linux-amd64",
+      "equal": true
+    }
+  ],
+  "limit": "Byte equality across these two build environments; not a universal reproducibility or supply-chain certification claim"
+}

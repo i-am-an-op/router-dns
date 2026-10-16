@@ -1,0 +1,373 @@
+{
+  "date": "2026-10-16",
+  "scope": "official publisher API/source and candidate configuration review; not exploit tests or accepted security exception",
+  "versions": {
+    "docker": "29.6.1-r1",
+    "containerd": "2.2.5-r1",
+    "runc": "1.3.6-r1"
+  },
+  "candidate_restrictions": [
+    "only exact authenticated offline image archives",
+    "no registry login/pull/build on router",
+    "no Swarm/overlay/CRI checkpoint use",
+    "root-only API socket never mounted into DNS containers",
+    "effective target daemon/plugin state remains untested"
+  ],
+  "recommendation": "Prefer tested patched runtime before production, or explicit review of narrow applicability; deployment choice remains undecided",
+  "sources": [
+    {
+      "component": "moby",
+      "count": 26,
+      "raw_path": ".work/runtime-upstream-advisories/moby.json",
+      "raw_sha256": "140dd0f283d9687654381f4cc6dd58279ed6f9171dc072798a38280c0934232f",
+      "advisories": [
+        {
+          "id": "GHSA-7cfq-22r6-qp73",
+          "url": "https://github.com/moby/moby/security/advisories/GHSA-7cfq-22r6-qp73",
+          "published": "2026-10-01T21:19:06Z",
+          "vulnerabilities": [
+            {
+              "package": {
+                "ecosystem": "go",
+                "name": "github.com/moby/moby/v2"
+              },
+              "vulnerable_version_range": "< v2.0.0-beta.25",
+              "patched_versions": "v2.0.0-beta.25",
+              "vulnerable_functions": []
+            },
+            {
+              "package": {
+                "ecosystem": "",
+                "name": "Docker Engine"
+              },
+              "vulnerable_version_range": "< 29.8.2",
+              "patched_versions": "29.8.2",
+              "vulnerable_functions": []
+            }
+          ]
+        },
+        {
+          "id": "GHSA-6m9p-4h64-m6vh",
+          "url": "https://github.com/moby/moby/security/advisories/GHSA-6m9p-4h64-m6vh",
+          "published": "2026-10-01T21:18:22Z",
+          "vulnerabilities": [
+            {
+              "package": {
+                "ecosystem": "go",
+                "name": "github.com/moby/moby/v2/daemon/libnetwork/drivers/overlay"
+              },
+              "vulnerable_version_range": "<= v2.0.0-beta.24",
+              "patched_versions": "v2.0.0-beta.25",
+              "vulnerable_functions": []
+            },
+            {
+              "package": {
+                "ecosystem": "go",
+                "name": "github.com/docker/docker/libnetwork/drivers/overlay"
+              },
+              "vulnerable_version_range": "<= v25.0.18, > v26.0.0",
+              "patched_versions": "v25.0.19",
+              "vulnerable_functions": []
+            },
+            {
+              "package": {
+                "ecosystem": "",
+                "name": "Docker Engine"
+              },
+              "vulnerable_version_range": "<= 25.0.18, 26.0.0 - 29.8.1",
+              "patched_versions": "29.8.2",
+              "vulnerable_functions": []
+            }
+          ]
+        },
+        {
+          "id": "GHSA-rg2x-37c3-w2rh",
+          "url": "https://github.com/moby/moby/security/advisories/GHSA-rg2x-37c3-w2rh",
+          "published": "2026-05-18T17:17:56Z",
+          "vulnerabilities": [
+            {
+              "package": {
+                "ecosystem": "",
+                "name": "Docker Engine"
+              },
+              "vulnerable_version_range": "< 29.5.1",
+              "patched_versions": "29.5.1",
+              "vulnerable_functions": []
+            },
+            {
+              "package": {
+                "ecosystem": "go",
+                "name": "github.com/docker/docker/daemon"
+              },
+              "vulnerable_version_range": "<= v28.5.2",
+              "patched_versions": "None",
+              "vulnerable_functions": []
+            },
+            {
+              "package": {
+                "ecosystem": "go",
+                "name": "github.com/moby/moby/v2/daemon"
+              },
+              "vulnerable_version_range": "< v2.0.0-beta.14",
+              "patched_versions": "v2.0.0-beta.14",
+              "vulnerable_functions": []
+            }
+          ]
+        },
+        {
+          "id": "GHSA-vp62-88p7-qqf5",
+          "url": "https://github.com/moby/moby/security/advisories/GHSA-vp62-88p7-qqf5",
+          "published": "2026-05-18T17:17:27Z",
+          "vulnerabilities": [
+            {
+              "package": {
+                "ecosystem": "",
+                "name": "Docker Engine"
+              },
+              "vulnerable_version_range": "< 29.5.1",
+              "patched_versions": "29.5.1",
+              "vulnerable_functions": []
+            },
+            {
+              "package": {
+                "ecosystem": "go",
+                "name": "github.com/docker/docker/daemon"
+              },
+              "vulnerable_version_range": "<= v28.5.2",
+              "patched_versions": "None",
+              "vulnerable_functions": []
+            },
+            {
+              "package": {
+                "ecosystem": "go",
+                "name": "github.com/moby/moby/v2/daemon"
+              },
+              "vulnerable_version_range": "< v2.0.0-beta.14",
+              "patched_versions": "v2.0.0-beta.14",
+              "vulnerable_functions": []
+            }
+          ]
+        },
+        {
+          "id": "GHSA-x86f-5xw2-fm2r",
+          "url": "https://github.com/moby/moby/security/advisories/GHSA-x86f-5xw2-fm2r",
+          "published": "2026-05-18T17:16:52Z",
+          "vulnerabilities": [
+            {
+              "package": {
+                "ecosystem": "go",
+                "name": "github.com/moby/moby/v2/daemon"
+              },
+              "vulnerable_version_range": "< v2.0.0-beta.14",
+              "patched_versions": "v2.0.0-beta.14",
+              "vulnerable_functions": []
+            },
+            {
+              "package": {
+                "ecosystem": "go",
+                "name": "github.com/docker/docker/daemon"
+              },
+              "vulnerable_version_range": "<= v28.5.2",
+              "patched_versions": "none",
+              "vulnerable_functions": []
+            },
+            {
+              "package": {
+                "ecosystem": "",
+                "name": "Docker Engine"
+              },
+              "vulnerable_version_range": "< 29.5.1",
+              "patched_versions": "29.5.1",
+              "vulnerable_functions": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "component": "containerd",
+      "count": 33,
+      "raw_path": ".work/runtime-upstream-advisories/containerd.json",
+      "raw_sha256": "45a2442e1e71476efd7a91d1df6eba575d57b8284a22c88b6d43b75efb0ee332",
+      "advisories": [
+        {
+          "id": "GHSA-8647-2jxj-p2rc",
+          "url": "https://github.com/containerd/containerd/security/advisories/GHSA-8647-2jxj-p2rc",
+          "published": "2026-10-13T22:53:58Z",
+          "vulnerabilities": [
+            {
+              "package": {
+                "ecosystem": "go",
+                "name": "github.com/containerd/containerd/v2"
+              },
+              "vulnerable_version_range": ">= 2.2.0, < 2.2.10, >= 2.3.0, < 2.3.7, >= 2.4.0, < 2.4.2",
+              "patched_versions": "2.2.10, 2.3.7, 2.4.2",
+              "vulnerable_functions": []
+            }
+          ]
+        },
+        {
+          "id": "GHSA-vwhp-8p66-mq4f",
+          "url": "https://github.com/containerd/containerd/security/advisories/GHSA-vwhp-8p66-mq4f",
+          "published": "2026-10-13T22:52:05Z",
+          "vulnerabilities": [
+            {
+              "package": {
+                "ecosystem": "go",
+                "name": "github.com/containerd/containerd/v2"
+              },
+              "vulnerable_version_range": ">= 2.2.0, < 2.2.10, >= 2.3.0, < 2.3.7, >= 2.4.0, < 2.4.2",
+              "patched_versions": "2.2.10, 2.3.7, 2.4.2",
+              "vulnerable_functions": []
+            }
+          ]
+        },
+        {
+          "id": "GHSA-5p7c-hggf-c748",
+          "url": "https://github.com/containerd/containerd/security/advisories/GHSA-5p7c-hggf-c748",
+          "published": "2026-10-13T22:48:30Z",
+          "vulnerabilities": [
+            {
+              "package": {
+                "ecosystem": "go",
+                "name": "github.com/containerd/containerd/v2"
+              },
+              "vulnerable_version_range": ">= 2.2.0, < 2.2.10, >= 2.3.0, < 2.3.7",
+              "patched_versions": "2.2.10, 2.3.7",
+              "vulnerable_functions": []
+            }
+          ]
+        },
+        {
+          "id": "GHSA-p7v4-vr35-mj6f",
+          "url": "https://github.com/containerd/containerd/security/advisories/GHSA-p7v4-vr35-mj6f",
+          "published": "2026-09-01T20:49:11Z",
+          "vulnerabilities": [
+            {
+              "package": {
+                "ecosystem": "go",
+                "name": "github.com/containerd/containerd/v2"
+              },
+              "vulnerable_version_range": ">= 2.1.0 < 2.2.7,  >= 2.3.0 < 2.3.4",
+              "patched_versions": ">= 2.2.7, >= 2.3.4",
+              "vulnerable_functions": []
+            }
+          ]
+        },
+        {
+          "id": "GHSA-33vj-92qq-66hc",
+          "url": "https://github.com/containerd/containerd/security/advisories/GHSA-33vj-92qq-66hc",
+          "published": "2026-06-18T23:23:46Z",
+          "vulnerabilities": [
+            {
+              "package": {
+                "ecosystem": "go",
+                "name": "github.com/containerd/containerd/v2"
+              },
+              "vulnerable_version_range": ">= 2.1.0, < 2.1.9, >= 2.2.0, < 2.2.5, >= 2.3.0, < 2.3.2",
+              "patched_versions": "2.3.2, 2.2.5, 2.1.9",
+              "vulnerable_functions": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "component": "runc",
+      "count": 13,
+      "raw_path": ".work/runtime-upstream-advisories/runc.json",
+      "raw_sha256": "3d39986f9ef9ae89d6aea8f2cebf5b7377886ef01fd950de17f981eab2e3775e",
+      "advisories": [
+        {
+          "id": "GHSA-xjvp-4fhw-gc47",
+          "url": "https://github.com/opencontainers/runc/security/advisories/GHSA-xjvp-4fhw-gc47",
+          "published": "2026-06-13T17:30:41Z",
+          "vulnerabilities": [
+            {
+              "package": {
+                "ecosystem": "go",
+                "name": "github.com/opencontainers/runc"
+              },
+              "vulnerable_version_range": "<=1.3.5,<=1.4.2,<=1.5.0-rc.2",
+              "patched_versions": "1.3.6,1.4.3,1.5.0-rc.3",
+              "vulnerable_functions": []
+            }
+          ]
+        },
+        {
+          "id": "GHSA-qw9x-cqr3-wc7r",
+          "url": "https://github.com/opencontainers/runc/security/advisories/GHSA-qw9x-cqr3-wc7r",
+          "published": "2025-11-05T09:24:46Z",
+          "vulnerabilities": [
+            {
+              "package": {
+                "ecosystem": "go",
+                "name": "github.com/opencontainers/runc"
+              },
+              "vulnerable_version_range": ">=v1.0.0-rc3, <=1.2.7, <=1.3.2, <=1.4.0-rc.2",
+              "patched_versions": "1.2.8, 1.3.3, 1.4.0-rc.3",
+              "vulnerable_functions": []
+            }
+          ]
+        },
+        {
+          "id": "GHSA-cgrx-mc8f-2prm",
+          "url": "https://github.com/opencontainers/runc/security/advisories/GHSA-cgrx-mc8f-2prm",
+          "published": "2025-11-05T09:24:41Z",
+          "vulnerabilities": [
+            {
+              "package": {
+                "ecosystem": "go",
+                "name": "github.com/opencontainers/runc"
+              },
+              "vulnerable_version_range": "<=1.2.7, <=1.3.2, <=1.4.0-rc.2",
+              "patched_versions": "1.2.8, 1.3.3, 1.4.0-rc.3",
+              "vulnerable_functions": []
+            },
+            {
+              "package": {
+                "ecosystem": "go",
+                "name": "github.com/opencontainers/selinux"
+              },
+              "vulnerable_version_range": "<=1.12.0",
+              "patched_versions": "1.13.0",
+              "vulnerable_functions": []
+            }
+          ]
+        },
+        {
+          "id": "GHSA-9493-h29p-rfm2",
+          "url": "https://github.com/opencontainers/runc/security/advisories/GHSA-9493-h29p-rfm2",
+          "published": "2025-11-05T09:24:30Z",
+          "vulnerabilities": [
+            {
+              "package": {
+                "ecosystem": "go",
+                "name": "github.com/opencontainers/runc"
+              },
+              "vulnerable_version_range": "<=1.2.7, <=1.3.2, <=1.4.0-rc.2",
+              "patched_versions": "1.2.8, 1.3.3, 1.4.0-rc.3",
+              "vulnerable_functions": []
+            }
+          ]
+        },
+        {
+          "id": "GHSA-jfvp-7x6p-h2pv",
+          "url": "https://github.com/opencontainers/runc/security/advisories/GHSA-jfvp-7x6p-h2pv",
+          "published": "2024-09-03T03:36:00Z",
+          "vulnerabilities": [
+            {
+              "package": {
+                "ecosystem": "go",
+                "name": "github.com/opencontainers/runc"
+              },
+              "vulnerable_version_range": "<=1.1.13, <=1.2.0-rc.2",
+              "patched_versions": "1.1.14, 1.2.0-rc.3",
+              "vulnerable_functions": []
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

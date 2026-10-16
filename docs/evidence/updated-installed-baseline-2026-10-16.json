@@ -1,0 +1,50 @@
+{
+  "capture": "2026-10-16 after user-reported update",
+  "openclash": "0.48.002",
+  "openclash_source": "e553e82e01c697aefbe1555261a503f425e00ccd",
+  "mihomo": "alpha-gbc76c13",
+  "mihomo_source": "bc76c1398c6e70089367a30169d0df7c7f77c42d",
+  "go": "1.26.9",
+  "architecture": "arm64",
+  "with_gvisor": true,
+  "core_sha256": "9cb3180fe12147a5d70b46c40686f692cc8e9a4d88848c8da2dcbaf5908a7eb8",
+  "installed_init_is_modified": true,
+  "file_pins": {
+    "etc/init.d/openclash": "df9ce3f7967837d7a9d03e418b16683404ce079bf5c537dc4a1e6d837bc3ddd4",
+    "usr/share/openclash/openclash_core.sh": "66d7130b23947a23d255ed2d57f2da0bb3feabbae1fd88af4f81d3de746e6189",
+    "usr/share/openclash/openclash_update.sh": "391f14bd749062975a98a10fb7aea3b843cad3544a7b52313ed9d846463dca6c",
+    "usr/lib/lua/luci/model/cbi/openclash/config.lua": "0bcc20431e7a50dfa4c7a1a9eb3381690a212a57b55432c89aff03fadc888be2",
+    "usr/lib/lua/luci/controller/openclash.lua": "5eeeacd451a5604064a4dd4c7cf4d006b2f83fcc15b65e10d8db1bb3bc47a341",
+    "usr/share/openclash/openclash.sh": "64214ab550a69345323fc91a924ed99f9e35c4a658c72dcb862ae1ed17867082"
+  },
+  "package_database_sha256": "16792c0233ceb9b7d6288081991e4989626121a948efe6709dc2882b09528fab",
+  "world_sha256": "9aa6391abc7b3e7b9f312429c8328af2369a47fe82a5fe03809ac14ecbde014d",
+  "global_ipv6": true,
+  "dns_safe_fields": {
+    "enable": true,
+    "listen": "0.0.0.0:7874",
+    "ipv6": false,
+    "enhanced-mode": "fake-ip",
+    "fake-ip-range": "198.18.0.1/15",
+    "fake-ip-range6": null,
+    "respect-rules": false,
+    "disable-cache": null
+  },
+  "safe_uci": {
+    "enable_custom_dns": 0,
+    "enable_respect_rules": 0,
+    "append_wan_dns": 0,
+    "append_default_dns": 0,
+    "enable_redirect_dns": 2,
+    "dns_port": 7874,
+    "en_mode": "fake-ip-tun",
+    "ipv6_enable": 1,
+    "ipv6_mode": 2,
+    "china_ip_route": 0,
+    "china_ip6_route": 0,
+    "custom_name_policy": 1
+  },
+  "router_mutations": false,
+  "raw_private": ".private/core-lifecycle-updated-baseline-20261016",
+  "limitations": "source archive capture returned nonzero because some optional paths were absent; required installed files were captured/hashed separately and exact fixture checks passed; DNS answer observations from October15 are not fresh post-update probes"
+}

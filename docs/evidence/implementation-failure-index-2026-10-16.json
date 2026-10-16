@@ -1,0 +1,109 @@
+{
+  "scope": "failure/evidence index; distinguishes product/integration defects, fixture/environment limits and platform state; no router actions",
+  "items": [
+    {
+      "case": "Managed CI missing PyYAML",
+      "record": "research/evidence/managed-ci-failure-2026-10-16.json",
+      "record_present": true,
+      "record_sha256": "1e0ce7836dfe6ad7dc2e20e91f2821d3b4e7b9a9c2c5fbb8163917946bbd8ba9",
+      "correction_or_limit": "Fixture dependency removed; corrected native architecture CI passes"
+    },
+    {
+      "case": "Integration ARM architecture fixture",
+      "record": "research/evidence/integration-ci-failure-2026-10-16.json",
+      "record_present": true,
+      "record_sha256": "732ebebefa43596376c0bc8804eaef9aa1a933a8eaa1b99d1caf4b1a1a5aaba9",
+      "correction_or_limit": "Fixture now uses actual architecture/ELF identity; both CI architectures pass"
+    },
+    {
+      "case": "Read-only mount locked flags",
+      "record": "research/evidence/integration-mount-protection-2026-10-16.json",
+      "record_present": true,
+      "record_sha256": "9fdf284b731113f9869050b04fec834dd0724738ada0ab541a09667c14413b55",
+      "correction_or_limit": "Preserve inherited locked mount flags; actual isolated mount retest passes"
+    },
+    {
+      "case": "First real private preflight environment",
+      "record": "research/evidence/current-profile-parsing-2026-10-16.json",
+      "record_present": true,
+      "record_sha256": "a095dca1b1cbde51f96d4c513ad1c1137d96f380f3ef5332cffd6b5e92fa1a19",
+      "correction_or_limit": "SAFE_PATHS correction and documented isolated hosts:lan fixture adjustment; second attempt original raw logs were reused, not claimed retained"
+    },
+    {
+      "case": "Old unbounded/pre-mount pilot control",
+      "record": ".work/pilot-lifecycle-old-control.txt",
+      "record_present": true,
+      "record_sha256": "25ca77fa64250555b71e1e71d654685a342ada6cfc0109386acf76f687cb5174",
+      "correction_or_limit": "Old implementation fails new regression suite; ten corrected shell fixture cases pass"
+    },
+    {
+      "case": "Initial Compose cgroup denial",
+      "record": "research/evidence/compose-workstation-runtime-2026-10-16.json",
+      "record_present": true,
+      "record_sha256": "0ac0a79cd320dea0d66eb2d643295e076401351a4025ba7c00bb8e7e597013f7",
+      "correction_or_limit": "Later actual RootlessKit workloads pass; initial failure is not router evidence"
+    },
+    {
+      "case": "New workload equivalence and raw records",
+      "record": "research/evidence/paired-rc2-runtime-2026-10-16.json",
+      "record_present": true,
+      "record_sha256": "37cfdb1910cb068c9c7e8c5452c1af977918d8296c4b102d664456d42da044d3",
+      "correction_or_limit": "Retains exact successful versions/raw hashes; prior loader/environment attempts retained under .work"
+    },
+    {
+      "case": "Official copied core initial startup",
+      "record": "research/evidence/updated-core-initial-test-failure.json",
+      "record_present": true,
+      "record_sha256": "5d1bf3afa712de5ae0f43bdfa282973006d22b06f35bfd763156c99c078c04ae",
+      "correction_or_limit": "Emulation/startup controls distinguished from eventual 44/46 semantic result"
+    },
+    {
+      "case": "NTS seed TLS EOF",
+      "record": "research/evidence/nts-seed-workstation-2026-10-16.json",
+      "record_present": true,
+      "record_sha256": "8203c3fa60fc297a2579c71b438689e244d74af34feb89bc54ff74237a48f4c5",
+      "correction_or_limit": "Failed seed excluded; five endpoints authenticate, not cold-router evidence"
+    },
+    {
+      "case": "Obsolete workflow cancellation refused",
+      "record": "research/evidence/obsolete-workflow-cancellation-2026-10-16.json",
+      "record_present": true,
+      "record_sha256": "66fe004a7990a19aaa76616466fd2d9968fcd362a7f2a29bb24ce967e9cb2548",
+      "correction_or_limit": "HTTP409 retained and independent checker remains unhealthy"
+    },
+    {
+      "case": "Installed alpha compatibility backport fixture",
+      "record": "research/evidence/current-alpha-compatibility-2026-10-16.json",
+      "correction_or_limit": "Initial Go import-cycle fixed with minimal interface adapter; old-source negative controls retained; exact-source CI and both release architectures pass",
+      "record_present": true,
+      "record_sha256": "308110ee105b513c6fec8ede4b7fb5253dc20f07f15b0ca97662dde4805895ae"
+    },
+    {
+      "case": "Image rebuild socket GID mapping",
+      "record": ".work/image-build-rc3.stderr",
+      "correction_or_limit": "Private namespace daemon explicitly uses mapped group0; no resolver/router behavior tested by this failure",
+      "record_present": true,
+      "record_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "case": "Image rebuild layer ownership mapping",
+      "record": ".work/paired-images-rc3-failed-map/coredns-load.log",
+      "correction_or_limit": "Map subordinate IDs with unshare --map-auto --map-root-user; successful run .work/image-build-rc3c.stdout; current image whitelist and structure pass",
+      "record_present": true,
+      "record_sha256": "e336cada33dfcc9b153ce3e03c9effd5bf5178feb75e414823b0195f6aeb667f"
+    },
+    {
+      "case": "Explicit-input payload reproduction mode control",
+      "record": ".work/payload-reproduction-first-mode-diff.json",
+      "record_present": true,
+      "record_sha256": "3fe63c4565e76d8d13e57cc0487f03eba161aaa690f6a06f1f432da387bc4910",
+      "correction_or_limit": "Bytes were equal; normalize loader/shared-library modes. Repeated assembly reproduces the exact previously tested tar SHA256."
+    }
+  ],
+  "additional_fixture_failure": {
+    "case": "maintenance fixture socket denied by sandbox",
+    "original_output_retained": "tool transcript, not a standalone original log",
+    "correction": "rerun inside isolated loopback namespace, 5/5 pass",
+    "successful_rerun": ".work/maintenance-isolated-final.txt"
+  }
+}

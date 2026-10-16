@@ -1,0 +1,44 @@
+{
+  "installed_alpha_source": "bc76c1398c6e70089367a30169d0df7c7f77c42d",
+  "stable_base": "88dcbf7f1614a67c3b36b848ee3592dfa92ada36",
+  "changes": [
+    "bc76c1398c6e70089367a30169d0df7c7f77c42d chore: update mieru version (#3304)",
+    "e4dd968de9e10ecc6770acfafd306edeb578eb52 fix: keep fake-ip allocation state when cloning the pool on reload (#3283)",
+    "80101933c007185c7a72efb3a377482b2bb70246 fix: bound doh dials so ones the query gave up on cannot pile up (#3274)",
+    "1354e52e6f72b94c1e684788f1a9c3e0a731e544 fix: unpassed loadbalance test",
+    "9f053c49075de076d83d3e5918241e410f7e9adf chore: lazy init wireguard device and stack"
+  ],
+  "changed_files": [
+    "adapter/outbound/wireguard.go",
+    "adapter/outboundgroup/loadbalance_test.go",
+    "component/fakeip/pool.go",
+    "component/fakeip/pool_test.go",
+    "dns/doh.go",
+    "go.mod",
+    "go.sum"
+  ],
+  "backported": [
+    "80101933c007185c7a72efb3a377482b2bb70246",
+    "e4dd968de9e10ecc6770acfafd306edeb578eb52"
+  ],
+  "not_imported": "WireGuard lazy initialization, loadbalance test-only correction and mieru version; reviewed current profiles have only anytls and ss adapters. This is not full alpha parity.",
+  "bootstrap_doh_present": true,
+  "review_pr": "https://github.com/i-am-an-op/mihomo/pull/6",
+  "local_test_commit": "18c7419102f3ee9126234ba0a24500238cd5b212",
+  "actual_no_network_http_cancellation_test": true,
+  "results": {
+    ".work/bootstrap-backport-test.txt": "ce4a827a7f74298e79e771ffd54abec13cc596c2f4c8dc301871cd7543d12e3b",
+    ".work/bootstrap-backport-test-r2.txt": "2eb2cee1f570a87ca76d9aa89bc559bdbde8c90ca023319d54652429a8fcfd3e",
+    ".work/bootstrap-backport-old-control.txt": "167054598497747d6c8721ca14c67b63b1b98735a3a618ce12a5024373321efe"
+  },
+  "failed_attempt": "First test used outbound.Base and caused a Go import cycle; replaced with a minimal interface adapter. Failed output retained.",
+  "old_source_control": "Earlier candidate source fails bounded TLS handshake and upstream Fake-IP allocation-state regression; corrected source passes race tests.",
+  "router_action": false,
+  "merged_commit": "0af636b44ce2fc433675abf89a8347738a9d27e8",
+  "pr_ci": "https://github.com/i-am-an-op/mihomo/actions/runs/38925449631",
+  "pr_ci_result": "success",
+  "exact_merged_source_ci": "https://github.com/i-am-an-op/mihomo/actions/runs/38926980110",
+  "exact_merged_source_ci_result": "success",
+  "draft_workflow": "https://github.com/i-am-an-op/mihomo/actions/runs/38928935357",
+  "draft_workflow_result": "success"
+}

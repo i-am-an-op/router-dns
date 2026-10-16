@@ -1,0 +1,44 @@
+{
+  "scope": "actual offline cryptographic verifier, real candidate and altered bytes/policies; no binary execution, router or service action",
+  "artifact_sha256": "8ce4ecef6e9d858ddfde08857e0e6bce01bbf5ccbf2c5051dfb0db34a29236b4",
+  "source_commit": "fe8ba6744e5c87a6c6a7f5185833a2525ed01174",
+  "cases": [
+    {
+      "case": "authentic exact-source candidate",
+      "passed": true,
+      "accepted": true
+    },
+    {
+      "case": "corrupted bytes unchanged policy",
+      "passed": true,
+      "accepted": false
+    },
+    {
+      "case": "corrupted bytes with matching untrusted checksum",
+      "passed": true,
+      "accepted": false
+    },
+    {
+      "case": "wrong source revision",
+      "passed": true,
+      "accepted": false
+    },
+    {
+      "case": "wrong repository ID",
+      "passed": true,
+      "accepted": false
+    },
+    {
+      "case": "wrong ELF architecture",
+      "passed": true,
+      "accepted": false
+    },
+    {
+      "case": "invalid attestation bundle",
+      "passed": true,
+      "accepted": false
+    }
+  ],
+  "passed": 7,
+  "total": 7
+}

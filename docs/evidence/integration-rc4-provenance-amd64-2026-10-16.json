@@ -1,0 +1,14 @@
+{
+  "verified_utc": "2026-10-16T15:21:10.936176+00:00",
+  "artifact_sha256": "07df4c1b391b7c701b214e5ce7c7f79a5c2220d2ec8094340a41d564ab081a9c",
+  "architecture": "amd64",
+  "source_commit": "fe8ba6744e5c87a6c6a7f5185833a2525ed01174",
+  "repository_id": 1422214651,
+  "bundle_sha256": "58db89a7c66064a440f0530c816db6b810360195e2dde13be47b175b9fde4b68",
+  "trusted_root_sha256": "65ca537f6ed8a47fd0e560c421baa1f6c1efb8b25fc200d8c5c02c0e92eb2b9c",
+  "policy_sha256": "7e48290de64ca8675347ec0cf124bac7e8ab093dbb23d2f40504938d71b2843d",
+  "verification_result_sha256": "3ee3632745922e8c80070b1f920727069f1ba7074cf2c08621e6b494267276c3",
+  "cryptographic_verification": true,
+  "binary_executed": false,
+  "deployment_approved": false
+}

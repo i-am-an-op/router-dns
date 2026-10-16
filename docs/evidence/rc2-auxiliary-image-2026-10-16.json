@@ -1,0 +1,16 @@
+{
+  "image_id": "sha256:cc288218eee735317ba95ece7109e03c9db08bb3fd838f85564b92e5c08f4630",
+  "architecture": "arm64",
+  "archive_sha256": "e1ca47a3357bab0c66b138d66ca764c9843a474ea9692ad7f3309d1023cf694f",
+  "archive_bytes": 68190720,
+  "exact_payload_files": 20,
+  "unexpected_files": 0,
+  "entrypoint_and_loader_modes_verified": true,
+  "dockerfile_sha256": "a83968ffffa8d480d91de78e28defa28ed03c4ad6288711361e06cfecd07a36b",
+  "builder": "Existing workstation Docker 29.9.0 integrated BuildKit; COPY-only scratch build, linux/arm64, offline isolated namespaces",
+  "image_built": true,
+  "payload_verified": true,
+  "workload_executed": false,
+  "provenance_limit": "Local build/manifest evidence, not a published or independently attested release. License inventory and image advisory triage remain release gates.",
+  "initial_build_failure": "Deprecated legacy builder produced amd64 intermediate metadata during arm64 build; normal BuildKit path succeeded without source/binary changes"
+}

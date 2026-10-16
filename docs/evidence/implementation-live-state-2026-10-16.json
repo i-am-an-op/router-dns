@@ -1,0 +1,27 @@
+{
+  "checked_utc": "2026-10-16T14:27:19.636010+00:00",
+  "baseline": "user-updated OpenClash/core snapshot, not previous old baseline",
+  "routers": [
+    {
+      "router": "MT5000",
+      "compared_configurations": 84,
+      "configuration_unchanged": false,
+      "capture_sha256": "8793f218f0e2a39b328e18f80c8117843b414d69aa5ed92d837ce3c3a25970ab",
+      "changed_configuration_paths": [
+        "/etc/config/gl_led"
+      ],
+      "dns_network_firewall_unchanged": true,
+      "cause_of_led_change": "not established; no agent write"
+    },
+    {
+      "router": "MT6000",
+      "compared_configurations": 17,
+      "configuration_unchanged": true,
+      "capture_sha256": "8b5db3607c52180db22156b0c6655d01fb87cb92dd6b5b9e9c1e7f2bf85b6ce8",
+      "core_init_package_unchanged_from_user_update": true,
+      "active_pid_unchanged": true
+    }
+  ],
+  "router_mutations": false,
+  "router_installs_uploads_starts": false
+}
