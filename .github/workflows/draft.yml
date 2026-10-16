@@ -1,0 +1,63 @@
+name: Attested integration draft
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  prepare:
+    if: github.repository == 'i-am-an-op/router-dns' && github.ref == 'refs/heads/main'
+    runs-on: ubuntu-24.04
+    permissions:
+      contents: write
+      actions: read
+    outputs:
+      version: ${{ steps.release.outputs.version }}
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803
+        with:
+          persist-credentials: false
+      - name: Require exact-source passing CI
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh run list --workflow ci.yml --commit "$GITHUB_SHA" --json headSha,conclusion > ci.json
+          python3 -c 'import json,os; assert any(x["headSha"]==os.environ["GITHUB_SHA"] and x["conclusion"]=="success" for x in json.load(open("ci.json")))'
+      - id: release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          VERSION=$(python3 -c 'import json,re;v=json.load(open("release.json"))["version"];assert re.fullmatch(r"v[0-9]+\.[0-9]+\.[0-9]+-rc\.[0-9]+",v);print(v)')
+          gh release create "$VERSION" --target "$GITHUB_SHA" --draft --prerelease --title "$VERSION" --notes-file docs/RELEASE.md
+          echo "version=$VERSION" >> "$GITHUB_OUTPUT"
+  build:
+    needs: prepare
+    strategy:
+      matrix:
+        include:
+          - {arch: amd64, runner: ubuntu-24.04}
+          - {arch: arm64, runner: ubuntu-24.04-arm}
+    runs-on: ${{ matrix.runner }}
+    permissions:
+      contents: write
+      id-token: write
+      attestations: write
+    env:
+      GOTOOLCHAIN: local
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803
+        with:
+          persist-credentials: false
+      - uses: actions/setup-go@924ae3a1cded613372ab5595356fb5720e22ba16
+        with:
+          go-version: '1.26.9'
+          cache: false
+      - run: go mod download && go mod verify
+      - run: go test -race -count=1 ./...
+      - run: python3 scripts/build.py
+      - uses: actions/attest-build-provenance@977bb373ede98d70efdf65b84cb5f73e068dcc2a
+        with:
+          subject-path: dist/*
+      - env:
+          GH_TOKEN: ${{ github.token }}
+          TAG: ${{ needs.prepare.outputs.version }}
+        run: gh release upload "$TAG" dist/*

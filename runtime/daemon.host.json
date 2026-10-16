@@ -1,0 +1,16 @@
+{
+  "data-root": "/overlay/dns-evaluation-docker",
+  "exec-root": "/var/run/dns-evaluation-docker",
+  "pidfile": "/var/run/dns-evaluation-docker.pid",
+  "hosts": ["unix:///var/run/dns-evaluation-docker.sock"],
+  "group": "root",
+  "bridge": "none",
+  "iptables": false,
+  "ip6tables": false,
+  "ip-forward": false,
+  "ip-masq": false,
+  "userland-proxy": false,
+  "live-restore": false,
+  "log-driver": "local",
+  "log-opts": {"max-size": "1m", "max-file": "2"}
+}
