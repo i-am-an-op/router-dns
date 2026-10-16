@@ -161,3 +161,15 @@ covered by the off-router composed suite and post-mount readiness; syntax-only
 preflight must not be described as full validator acceptance. This distinction
 follows Unbound 1.26.1 `smallapp/unbound-checkconf.c:checkconf`, whose option-print
 path returns before `morechecks` and module initialization.
+
+The paired pilot uses that same syntax/state separation: it checks each mode's
+seed file before start, then validates the mounted resolver through queries.
+Controller rc.3 also supplies an independent, volatile procd pilot watchdog.
+It allows the initial 60-second readiness interval, stops after three subsequent
+failed bounded checks, and begins cleanup at the 900-second monotonic deadline.
+Cleanup time is additional (Compose stop timeout 10 seconds; procd stop behavior
+must be measured). It survives a lost initiating shell; no rc.d link is enabled.
+An ordinary start error cleans only the owned mode's stack, marker and state bind.
+If stopping a service fails, ownership evidence is retained for operator recovery.
+The shell fixture executes these decisions with explicit OS/service stubs;
+it does not prove procd supervision, real mounts, wall-time duration or router cleanup.
