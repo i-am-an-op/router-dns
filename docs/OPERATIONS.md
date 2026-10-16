@@ -131,3 +131,11 @@ are not a finding of a clean repository, nor evidence that all affect the shippe
 root-module binary. The production scanner runs on both architectures. Legacy
 interop-module advisory disposition is a human review item and must remain visible.
 No external notification has been sent or configured as an accepted operation.
+
+Compose bootstrap additionally prepares `dns-evaluation-engine.init` and the
+explicit `daemon.host.json`: root-only Unix socket, no default bridge, iptables,
+ip6tables, IP-forward or masquerade management. Stock Docker/containerd boot links
+are recorded for removal after backup; no package hook is assumed harmless. The
+rootful Engine still starts containerd and may exercise cgroups/storage helpers;
+actual router before/after firewall, sysctl, mount and resource observations are
+mandatory. This launcher is a proposal, not proof that host networking is compatible.
