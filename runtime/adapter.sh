@@ -51,7 +51,7 @@ case "${1:-}" in
     ;;
  stop)
     stack_stop
-    /etc/init.d/openclash stop
+    "$CTL" stop-service openclash
     ;;
  health)
     "$CTL" --store "$S" runtime protected

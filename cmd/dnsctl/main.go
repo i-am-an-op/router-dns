@@ -40,6 +40,14 @@ func run() error {
 		fmt.Println(version)
 		return nil
 	}
+	if a[0] == "stop-service" && len(a) == 2 {
+		if *local || *hostRoot != "/" || *arch != "" || os.Geteuid() != 0 {
+			return errors.New("owned-service stop requires native root runtime")
+		}
+		ctx, cancel := context.WithTimeout(context.Background(), 25*time.Second)
+		defer cancel()
+		return control.StopService(ctx, a[1], "/proc", nil)
+	}
 	if a[0] == "wait-probe" && len(a) == 3 {
 		seconds, e := strconv.Atoi(a[2])
 		if e != nil || seconds < 1 || seconds > 120 {

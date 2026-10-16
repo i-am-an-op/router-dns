@@ -30,7 +30,7 @@ stop() {
     test "$(cat /var/run/dns-evaluation-mode)" = "$MODE" || return 78
     if [ -f /var/run/dns-evaluation-start-attempted ]; then
         if [ "$MODE" = compose ]; then compose down --timeout 10 || return 78
-        else ubus call service delete '{"name":"dns-evaluation"}' >/dev/null || return 78; fi
+        else bin/dnsctl stop-service dns-evaluation || return 78; fi
     fi
     if [ "$MODE" = native ] && [ "$BASE/state-native" -ef "$BASE/state" ]; then umount "$BASE/state" || return 78; fi
     rm -f /var/run/dns-evaluation-start-attempted

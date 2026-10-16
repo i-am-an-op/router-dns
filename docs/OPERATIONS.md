@@ -173,3 +173,19 @@ An ordinary start error cleans only the owned mode's stack, marker and state bin
 If stopping a service fails, ownership evidence is retained for operator recovery.
 The shell fixture executes these decisions with explicit OS/service stubs;
 it does not prove procd supervision, real mounts, wall-time duration or router cleanup.
+
+Pinned procd `58eb263d5abe03f8c1280bdfa65a3b052614215d` returns from
+`service delete` after requesting asynchronous termination (`service/service.c`,
+`service/instance.c:instance_stop`). Controller rc.4 therefore captures each owned
+instance's PID/start-time from `/proc`, requests the normal stop, waits for those
+process lifetimes to exit, and rejects a still-running/respawned instance before
+unmounting or changing generations. OpenClash uses its normal stop hooks to retain
+selection backup and firewall/protected-DNS cleanup. The independent helper has a
+25-second deadline and cancels helper children together. It does not kill an
+unrelated reused PID. This is shared by production and native pilot cleanup;
+Compose's stop API separately waits for its owned containers.
+
+Actual local `/proc` exit observation plus missing/reused/zombie/stuck/respawn and
+stop-error fixtures pass. These establish the controller behavior; actual OpenWrt
+service-manager timing and cleanup remain target acceptance. If quiescence fails,
+retain ownership/journal evidence and refuse the mount switch.
