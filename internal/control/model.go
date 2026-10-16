@@ -311,7 +311,7 @@ func (m *Manager) verify(dir string, host bool) (Manifest, error) {
 		}
 		if host {
 			b, e := os.ReadFile(filepath.Join(m.HostRoot, p.Path))
-			if e != nil || Hash(b) != p.SHA256 {
+			if e != nil || (Hash(b) != p.SHA256 && !m.packageBridge(p, Hash(b))) {
 				return v, errors.New("installed compatibility pin differs")
 			}
 		}

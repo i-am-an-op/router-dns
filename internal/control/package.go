@@ -32,9 +32,12 @@ type Backup struct {
 	SHA256  string `json:"sha256"`
 }
 type PackageJournal struct {
-	ID      string   `json:"id"`
-	Phase   string   `json:"phase"`
-	Entries []Backup `json:"entries"`
+	ID         string   `json:"id"`
+	Phase      string   `json:"phase"`
+	Entries    []Backup `json:"entries"`
+	Before     []Pin    `json:"before"`
+	After      []Pin    `json:"after"`
+	Generation string   `json:"generation"`
 }
 
 func (m *Manager) packagePlan(dir string) (PackagePlan, error) {
@@ -109,7 +112,11 @@ func (m *Manager) PackageApply(dir string) error {
 		if e = os.MkdirAll(backup, 0700); e != nil {
 			return e
 		}
-		j := PackageJournal{ID: p.ID, Phase: "prepared"}
+		state, e := m.State()
+		if e != nil {
+			return e
+		}
+		j := PackageJournal{ID: p.ID, Phase: "prepared", Before: p.Before, After: p.After, Generation: state.Current}
 		seen := map[string]bool{}
 		for _, path := range p.WriteSet {
 			if seen[path] {
@@ -154,6 +161,17 @@ func (m *Manager) PackageApply(dir string) error {
 				return e
 			}
 		}
+		if state.Current != "" {
+			old, err := m.verify(m.gen(state.Current), true)
+			if err != nil {
+				return err
+			}
+			for _, op := range []string{"preflight", "protect", "stop", "unmount"} {
+				if err = m.run(old, op); err != nil {
+					return err
+				}
+			}
+		}
 		// An adapter must unmount only plugin paths after checking a running protected
 		// frontend, run APK with scripts and commit hooks disabled, then check its DB.
 		v := Manifest{ID: p.ID, Adapter: p.Adapter}
@@ -173,6 +191,18 @@ func (m *Manager) PackageApply(dir string) error {
 		if e = put(filepath.Join(m.Store, "package-journal.json"), j); e != nil {
 			return e
 		}
+		if state.Current != "" {
+			old, err := m.verify(m.gen(state.Current), true)
+			if err != nil {
+				return err
+			}
+			if err = m.active(state.Current); err != nil {
+				return err
+			}
+			if err = m.run(old, "mount"); err != nil {
+				return err
+			}
+		}
 		// Keep the backup and journal until a compatible generation passes promotion.
 		return nil
 	})
@@ -185,6 +215,16 @@ func (m *Manager) PackageCommit() error {
 		}
 		if j.Phase != "applied-awaiting-integration" {
 			return errors.New("package not applied")
+		}
+		if e := m.pins(j.After); e != nil {
+			return e
+		}
+		state, e := m.State()
+		if e != nil {
+			return e
+		}
+		if state.Current == j.Generation {
+			return errors.New("new compatible generation not promoted")
 		}
 		if e := m.Check(); e != nil {
 			return e
@@ -221,6 +261,21 @@ func (m *Manager) packageRecover() error {
 			}
 		}
 	}
+	// Protected files may still be bound to the pre-upgrade integration. Use
+	// only its signature-verified offline adapter to quiesce/unmount before restoring.
+	if j.Generation != "" {
+		old, err := m.verify(m.gen(j.Generation), false)
+		if err != nil {
+			return err
+		}
+		ctx, cancel := context.WithTimeout(context.Background(), 150*time.Second)
+		defer cancel()
+		for _, op := range []string{"stop", "unmount"} {
+			if err = m.Runner.Run(ctx, m.gen(old.ID), old, m.Store, op); err != nil {
+				return err
+			}
+		}
+	}
 	for _, x := range j.Entries {
 		target := filepath.Join(m.HostRoot, x.Path)
 		if x.Present {
@@ -237,9 +292,50 @@ func (m *Manager) packageRecover() error {
 			}
 		}
 	}
+	if j.Generation != "" {
+		old, err := m.verify(m.gen(j.Generation), true)
+		if err != nil {
+			return err
+		}
+		if err = m.active(old.ID); err != nil {
+			return err
+		}
+		for _, op := range []string{"preflight", "protect", "mount", "start"} {
+			if err = m.run(old, op); err != nil {
+				return err
+			}
+		}
+		if err = m.probation(old); err != nil {
+			return err
+		}
+		if err = put(filepath.Join(m.Store, "state.json"), State{Current: old.ID}); err != nil {
+			return err
+		}
+	}
 	if e = os.Remove(filepath.Join(m.Store, "package-journal.json")); e != nil {
 		return e
 	}
 	return SyncDir(m.Store)
 }
 func MarshalPackage(p PackagePlan) []byte { b, _ := json.Marshal(p); return b }
+
+// A package bridge is limited to the exact before/after pins from the previously
+// signature-verified package transaction. It cannot authorize an arbitrary upgrade.
+func (m *Manager) packageBridge(pin Pin, actual string) bool {
+	var j PackageJournal
+	if ReadJSON(filepath.Join(m.Store, "package-journal.json"), &j) != nil || j.Phase != "applied-awaiting-integration" {
+		return false
+	}
+	before, after := false, false
+	for _, p := range j.Before {
+		if p == pin {
+			before = true
+		}
+	}
+	for _, p := range j.After {
+		if p.Path == pin.Path && p.SHA256 == actual {
+			after = true
+		}
+	}
+	return before && after
+}

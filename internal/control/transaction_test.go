@@ -351,3 +351,21 @@ func TestPackageInterruptionAndCorruptBackup(t *testing.T) {
 		t.Fatal("new file retained")
 	}
 }
+func TestPackageBridgeIsExactAndTemporary(t *testing.T) {
+	m, k, _ := setup(t)
+	accept(t, m, k, "one")
+	before := Pin{Path: "/package-db", SHA256: Hash([]byte("installed 0.48.002"))}
+	after := Pin{Path: "/package-db", SHA256: Hash([]byte("updated"))}
+	os.WriteFile(filepath.Join(m.HostRoot, "package-db"), []byte("updated"), 0600)
+	if _, e := m.verify(m.gen("one"), true); e == nil {
+		t.Fatal("unauthorized package accepted")
+	}
+	put(filepath.Join(m.Store, "package-journal.json"), PackageJournal{ID: "reviewed", Phase: "applied-awaiting-integration", Before: []Pin{before}, After: []Pin{after}})
+	if _, e := m.verify(m.gen("one"), true); e != nil {
+		t.Fatal(e)
+	}
+	os.WriteFile(filepath.Join(m.HostRoot, "package-db"), []byte("other update"), 0600)
+	if _, e := m.verify(m.gen("one"), true); e == nil {
+		t.Fatal("bridge accepted unrelated change")
+	}
+}

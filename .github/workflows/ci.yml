@@ -29,6 +29,7 @@ jobs:
       - run: go vet ./...
       - run: go test -race -count=1 -json ./... > test-results.json
       - run: python3 -m compileall -q scripts
+      - run: python3 scripts/maintenance_test.py
       - run: for s in runtime/*.sh runtime/*.init runtime/dns-core-guard; do sh -n "$s"; done
       - run: CGO_ENABLED=0 go build -trimpath -buildvcs=false -o dist/dnsctl-linux-${{ matrix.arch }} ./cmd/dnsctl
       - uses: actions/upload-artifact@b7c566a772e6b6bfb58ed0dc250532a479d7789f

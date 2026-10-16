@@ -1,0 +1,8 @@
+[Unit]
+Description=Detect missed or failed GitHub maintenance runs independently
+[Timer]
+OnCalendar=hourly
+Persistent=true
+RandomizedDelaySec=300
+[Install]
+WantedBy=timers.target

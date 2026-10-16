@@ -1,0 +1,10 @@
+[Unit]
+Description=Independent router DNS maintenance check (workstation proposal)
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/python3 /opt/router-dns/scripts/maintenance_watch.py --pin /etc/router-dns/UPSTREAM.json --operations /etc/router-dns/operations.json --output /var/lib/router-dns/maintenance.json --notify
+TimeoutStartSec=120
+NoNewPrivileges=yes
+PrivateTmp=yes
+ProtectSystem=strict
+ReadWritePaths=/var/lib/router-dns
