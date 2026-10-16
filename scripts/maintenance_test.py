@@ -27,4 +27,18 @@ class TestMaintenance(unittest.TestCase):
    with patch.object(w.urllib.request,'build_opener',side_effect=OSError('fixture failure')):
     with self.assertRaises(OSError):w.deliver({'healthy':False,'utc':'fixture'}, {'accepted':True,'operator':'fixture only','webhook_url':'https://fixture.invalid'})
   finally:server.shutdown();server.server_close()
+class IntegrationStatus(unittest.TestCase):
+ def test_stale_and_inactive_workflow(self):
+  import integration_status as i,datetime as dt
+  now=dt.datetime.now(dt.timezone.utc)
+  data={'workflows':{'workflows':[]},'runs':{'workflow_runs':[]},'security_fixes':{'enabled':False}}
+  self.assertGreaterEqual(len(i.assess(data,now)),5)
+ def test_current_runs_do_not_claim_operator_assignment(self):
+  import integration_status as i,datetime as dt
+  now=dt.datetime.now(dt.timezone.utc);stamp=now.isoformat()
+  paths=['.github/workflows/ci.yml','.github/workflows/daily-security.yml']
+  data={'workflows':{'workflows':[{'path':p,'state':'active'} for p in paths]},'runs':{'workflow_runs':[{'path':p,'head_branch':'main','status':'completed','conclusion':'success','created_at':stamp,'updated_at':stamp} for p in paths]},'security_fixes':{'enabled':True}}
+  self.assertEqual(i.assess(data,now),[])
+  data['runs']['workflow_runs'][1]['conclusion']='failure'
+  self.assertIn('integration latest run failed: daily-security.yml',i.assess(data,now))
 if __name__=='__main__':unittest.main()

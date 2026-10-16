@@ -25,6 +25,12 @@ def main():
  r=subprocess.run(cmd,stdout=subprocess.DEVNULL,stderr=subprocess.DEVNULL,timeout=90)
  try:record=json.loads(a.output.read_text())
  except (OSError,ValueError):record={'healthy':False,'findings':['Checker failed; investigate credentials/network/scheduler']}
+ try:
+  from integration_status import assess,collect
+  findings=assess(collect(),datetime.datetime.now(datetime.timezone.utc))
+ except Exception:findings=['Integration maintenance checker failed; investigate']
+ record.setdefault('findings',[]).extend(findings)
+ record['healthy']=bool(record.get('healthy')) and not findings
  record['utc']=datetime.datetime.now(datetime.timezone.utc).isoformat();record['checker_exit']=r.returncode;record['notification']='not-configured'
  if a.notify:
   try:deliver(record,json.loads(a.operations.read_text()));record['notification']='acknowledged'
