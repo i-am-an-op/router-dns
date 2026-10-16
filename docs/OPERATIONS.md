@@ -146,3 +146,18 @@ Both repositories have explicit daily scanners; GitHub schedules are not a relia
 external heartbeat. Read-only checks and local fixture delivery tests do not appoint
 an operator or establish delivery to a real external channel. Run the watcher only
 with an independently reviewed operator record; its default writes local status.
+
+The private frontend parser test exposed a preflight environment mismatch:
+OpenClash supplies `SAFE_PATHS=/usr/share/openclash:/etc/ssl`; the controller must
+supply the same value before parsing its existing UI paths. This is corrected
+in controller rc.2. An isolated loopback-only parser fixture also needs a synthetic
+non-loopback address for Mihomo's existing `hosts: ...: lan` expansion; that
+fixture requirement is not a router configuration change.
+
+Before mounts change, Unbound preflight uses `unbound-checkconf -o interface` to
+parse the candidate syntax without trying to initialize validator modules against
+the still-active generation's absolute paths. Full module/TLS/anchor behavior is
+covered by the off-router composed suite and post-mount readiness; syntax-only
+preflight must not be described as full validator acceptance. This distinction
+follows Unbound 1.26.1 `smallapp/unbound-checkconf.c:checkconf`, whose option-print
+path returns before `morechecks` and module initialization.

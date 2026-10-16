@@ -27,7 +27,7 @@ func (ExecRunner) Run(ctx context.Context, dir string, v Manifest, store, operat
 		return syscall.Kill(-cmd.Process.Pid, syscall.SIGKILL)
 	}
 	cmd.WaitDelay = 2 * time.Second
-	cmd.Env = []string{"PATH=/usr/sbin:/usr/bin:/sbin:/bin", "DNS_GENERATION=" + dir, "DNS_STORE=" + store, "DNS_MODE=" + v.Mode, "DNS_TRANSPORT=" + v.Transport, "MIHOMO_MANAGED_DNS=1"}
+	cmd.Env = []string{"PATH=/usr/sbin:/usr/bin:/sbin:/bin", "DNS_GENERATION=" + dir, "DNS_STORE=" + store, "DNS_MODE=" + v.Mode, "DNS_TRANSPORT=" + v.Transport, "MIHOMO_MANAGED_DNS=1", "SAFE_PATHS=/usr/share/openclash:/etc/ssl", "SKIP_SYSTEM_IPV6_CHECK=1"}
 	// Hooks may handle private subscriptions. Never echo their output to logs.
 	if e := cmd.Run(); e != nil {
 		return fmt.Errorf("runtime operation %s failed", operation)

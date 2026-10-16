@@ -581,3 +581,17 @@ func TestAdapterTimeoutKillsChildren(t *testing.T) {
 		t.Fatal("hook child survived cancellation")
 	}
 }
+
+func TestAdapterMatchesInstalledFrontendEnvironment(t *testing.T) {
+	d := t.TempDir()
+	script := `#!/bin/sh
+[ "$SAFE_PATHS" = /usr/share/openclash:/etc/ssl ] &&
+[ "$SKIP_SYSTEM_IPV6_CHECK" = 1 ] && [ "$MIHOMO_MANAGED_DNS" = 1 ]
+`
+	if e := Atomic(filepath.Join(d, "adapter"), []byte(script), 0700); e != nil {
+		t.Fatal(e)
+	}
+	if e := (ExecRunner{}).Run(context.Background(), d, Manifest{Adapter: "adapter"}, d, "preflight"); e != nil {
+		t.Fatal(e)
+	}
+}

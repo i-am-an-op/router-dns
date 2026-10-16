@@ -29,7 +29,7 @@ case "${1:-}" in
     MIHOMO_MANAGED_DNS=1 "$G/bin/clash_meta" -t -d /etc/openclash -f "$G/config/frontend.yaml" >/dev/null 2>&1
     for lane in d1 g1 g2 g3; do
         "$G/stack/root/lib/ld-musl-aarch64.so.1" --library-path "$G/stack/root/usr/lib:$G/stack/root/lib" \
-          "$G/stack/root/usr/sbin/unbound-checkconf" "$G/stack/config/unbound-$lane.conf" >/dev/null
+          "$G/stack/root/usr/sbin/unbound-checkconf" -o interface "$G/stack/config/unbound-$lane.conf" >/dev/null
     done
     if [ "$DNS_MODE" = compose ]; then
         docker --host unix:///var/run/dns-evaluation-docker.sock info >/dev/null
