@@ -1,0 +1,16 @@
+{
+  "checked_utc": "2026-10-16T14:53:00.277110+00:00",
+  "repository": "i-am-an-op/mihomo",
+  "healthy": false,
+  "findings": [
+    "run pending over one hour: 38847386300",
+    "run pending over one hour: 38846329314",
+    "external notification delivery has not been tested",
+    "maintenance operator has not accepted responsibility"
+  ],
+  "scope": "control-plane freshness; not vulnerability absence or router health",
+  "automatic_deployment": false,
+  "utc": "2026-10-16T14:53:03.520414+00:00",
+  "checker_exit": 2,
+  "notification": "not-configured"
+}

@@ -1,0 +1,177 @@
+{
+  "scope": "real released controller and real private candidate bytes, actual cryptography/file/compatibility checks; temporary copies/ephemeral signatures only; no router/runtime operation",
+  "controller_sha256": "07df4c1b391b7c701b214e5ce7c7f79a5c2220d2ec8094340a41d564ab081a9c",
+  "production_signature_added": false,
+  "passed": 24,
+  "total": 24,
+  "cases": [
+    {
+      "candidate": "compose-separate",
+      "case": "valid-real-candidate",
+      "passed": true,
+      "accepted": true,
+      "manifest_sha256": "ec87babd6cf0580a0aadbcfe1f293128a81290e2fed06ae4137bceb03bbb5d9f"
+    },
+    {
+      "candidate": "compose-separate",
+      "case": "offline-refuses-runtime",
+      "passed": true,
+      "accepted": false,
+      "manifest_sha256": "ec87babd6cf0580a0aadbcfe1f293128a81290e2fed06ae4137bceb03bbb5d9f"
+    },
+    {
+      "candidate": "compose-separate",
+      "case": "wrong-target-architecture",
+      "passed": true,
+      "accepted": false,
+      "manifest_sha256": "ec87babd6cf0580a0aadbcfe1f293128a81290e2fed06ae4137bceb03bbb5d9f"
+    },
+    {
+      "candidate": "compose-separate",
+      "case": "wrong-package-baseline",
+      "passed": true,
+      "accepted": false,
+      "manifest_sha256": "ec87babd6cf0580a0aadbcfe1f293128a81290e2fed06ae4137bceb03bbb5d9f"
+    },
+    {
+      "candidate": "compose-separate",
+      "case": "corrupt-signed-payload",
+      "passed": true,
+      "accepted": false,
+      "manifest_sha256": "ec87babd6cf0580a0aadbcfe1f293128a81290e2fed06ae4137bceb03bbb5d9f"
+    },
+    {
+      "candidate": "compose-separate",
+      "case": "missing-core-payload",
+      "passed": true,
+      "accepted": false,
+      "manifest_sha256": "ec87babd6cf0580a0aadbcfe1f293128a81290e2fed06ae4137bceb03bbb5d9f"
+    },
+    {
+      "candidate": "compose-shared",
+      "case": "valid-real-candidate",
+      "passed": true,
+      "accepted": true,
+      "manifest_sha256": "05524813bb17727dc6a307eacff8f50b02dead9b69cfd022bfb1a94ae2272492"
+    },
+    {
+      "candidate": "compose-shared",
+      "case": "offline-refuses-runtime",
+      "passed": true,
+      "accepted": false,
+      "manifest_sha256": "05524813bb17727dc6a307eacff8f50b02dead9b69cfd022bfb1a94ae2272492"
+    },
+    {
+      "candidate": "compose-shared",
+      "case": "wrong-target-architecture",
+      "passed": true,
+      "accepted": false,
+      "manifest_sha256": "05524813bb17727dc6a307eacff8f50b02dead9b69cfd022bfb1a94ae2272492"
+    },
+    {
+      "candidate": "compose-shared",
+      "case": "wrong-package-baseline",
+      "passed": true,
+      "accepted": false,
+      "manifest_sha256": "05524813bb17727dc6a307eacff8f50b02dead9b69cfd022bfb1a94ae2272492"
+    },
+    {
+      "candidate": "compose-shared",
+      "case": "corrupt-signed-payload",
+      "passed": true,
+      "accepted": false,
+      "manifest_sha256": "05524813bb17727dc6a307eacff8f50b02dead9b69cfd022bfb1a94ae2272492"
+    },
+    {
+      "candidate": "compose-shared",
+      "case": "missing-core-payload",
+      "passed": true,
+      "accepted": false,
+      "manifest_sha256": "05524813bb17727dc6a307eacff8f50b02dead9b69cfd022bfb1a94ae2272492"
+    },
+    {
+      "candidate": "native-separate",
+      "case": "valid-real-candidate",
+      "passed": true,
+      "accepted": true,
+      "manifest_sha256": "333ae49f753746465f0f49cfcc3de68f7cb5d216327dfe50006b67790836bea8"
+    },
+    {
+      "candidate": "native-separate",
+      "case": "offline-refuses-runtime",
+      "passed": true,
+      "accepted": false,
+      "manifest_sha256": "333ae49f753746465f0f49cfcc3de68f7cb5d216327dfe50006b67790836bea8"
+    },
+    {
+      "candidate": "native-separate",
+      "case": "wrong-target-architecture",
+      "passed": true,
+      "accepted": false,
+      "manifest_sha256": "333ae49f753746465f0f49cfcc3de68f7cb5d216327dfe50006b67790836bea8"
+    },
+    {
+      "candidate": "native-separate",
+      "case": "wrong-package-baseline",
+      "passed": true,
+      "accepted": false,
+      "manifest_sha256": "333ae49f753746465f0f49cfcc3de68f7cb5d216327dfe50006b67790836bea8"
+    },
+    {
+      "candidate": "native-separate",
+      "case": "corrupt-signed-payload",
+      "passed": true,
+      "accepted": false,
+      "manifest_sha256": "333ae49f753746465f0f49cfcc3de68f7cb5d216327dfe50006b67790836bea8"
+    },
+    {
+      "candidate": "native-separate",
+      "case": "missing-core-payload",
+      "passed": true,
+      "accepted": false,
+      "manifest_sha256": "333ae49f753746465f0f49cfcc3de68f7cb5d216327dfe50006b67790836bea8"
+    },
+    {
+      "candidate": "native-shared",
+      "case": "valid-real-candidate",
+      "passed": true,
+      "accepted": true,
+      "manifest_sha256": "8ecad50d9df5e11ae6d52ce3c376a76607ecb3e536a52d1f9a59b30ec41d7a8f"
+    },
+    {
+      "candidate": "native-shared",
+      "case": "offline-refuses-runtime",
+      "passed": true,
+      "accepted": false,
+      "manifest_sha256": "8ecad50d9df5e11ae6d52ce3c376a76607ecb3e536a52d1f9a59b30ec41d7a8f"
+    },
+    {
+      "candidate": "native-shared",
+      "case": "wrong-target-architecture",
+      "passed": true,
+      "accepted": false,
+      "manifest_sha256": "8ecad50d9df5e11ae6d52ce3c376a76607ecb3e536a52d1f9a59b30ec41d7a8f"
+    },
+    {
+      "candidate": "native-shared",
+      "case": "wrong-package-baseline",
+      "passed": true,
+      "accepted": false,
+      "manifest_sha256": "8ecad50d9df5e11ae6d52ce3c376a76607ecb3e536a52d1f9a59b30ec41d7a8f"
+    },
+    {
+      "candidate": "native-shared",
+      "case": "corrupt-signed-payload",
+      "passed": true,
+      "accepted": false,
+      "manifest_sha256": "8ecad50d9df5e11ae6d52ce3c376a76607ecb3e536a52d1f9a59b30ec41d7a8f"
+    },
+    {
+      "candidate": "native-shared",
+      "case": "missing-core-payload",
+      "passed": true,
+      "accepted": false,
+      "manifest_sha256": "8ecad50d9df5e11ae6d52ce3c376a76607ecb3e536a52d1f9a59b30ec41d7a8f"
+    }
+  ]
+}

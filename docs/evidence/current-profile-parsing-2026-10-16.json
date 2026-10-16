@@ -1,0 +1,33 @@
+{
+  "source_commit": "1f67c00d7b884bfe7a59ddbfb1216d290adc8599",
+  "binary_sha256": "9f069d125c3b9a002da507d2ef8a285b9922d193c01d2f00887126f8275e5355",
+  "tests": [
+    {
+      "profile": "separate",
+      "returncode": 0,
+      "profile_sha256": "a5187cc4ec4f1cb595e50cece73ac9628a9605382e1c84b64ca3def5d501d6c3",
+      "network": "isolated loopback only"
+    },
+    {
+      "profile": "shared",
+      "returncode": 0,
+      "profile_sha256": "3d30243266e2f3a151edf63d15da4234008ee871436112161968c47957eb2367",
+      "network": "isolated loopback only"
+    }
+  ],
+  "environment": "isolated network namespace, 192.0.2.1 assigned only to its loopback for existing hosts:lan expansion; SAFE_PATHS matches installed OpenClash; MIHOMO_MANAGED_DNS=1",
+  "prior_failures": [
+    {
+      "attempt": 1,
+      "cause": "Missing SAFE_PATHS in controller preflight environment; real integration defect fixed in rc.2",
+      "evidence": "current-frontend-parser-2026-10-16.json; private current-parser-results logs retained"
+    },
+    {
+      "attempt": 2,
+      "cause": "loopback-only namespace had no address suitable for the existing hosts:lan expansion; not router config defect",
+      "observed_error": "lan is not a valid value",
+      "raw_log_note": "r2 log paths reused for successful third run; initial failure retained here and tool trace, not claimed as retained original log bytes"
+    }
+  ],
+  "scope": "parsing real proposed profiles, not application-routing or router execution"
+}

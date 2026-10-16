@@ -1,0 +1,3575 @@
+{
+  "scope": "actual files from script-suppressed workstation APK extraction; initial runtime installation proposal, not the generic regular-file-only controller package adapter",
+  "additions": [
+    {
+      "name": "btrfs-progs",
+      "version": "6.11-r3",
+      "license": "GPL-2.0-only",
+      "files": 19
+    },
+    {
+      "name": "ca-certificates",
+      "version": "20260816-r1",
+      "license": "GPL-2.0-or-later MPL-2.0",
+      "files": 243
+    },
+    {
+      "name": "containerd",
+      "version": "2.2.5-r1",
+      "license": "Apache-2.0",
+      "files": 5
+    },
+    {
+      "name": "docker",
+      "version": "29.6.1-r1",
+      "license": "Apache-2.0",
+      "files": 2
+    },
+    {
+      "name": "docker-compose",
+      "version": "5.1.4-r1",
+      "license": "Apache-2.0",
+      "files": 3
+    },
+    {
+      "name": "dockerd",
+      "version": "29.6.1-r1",
+      "license": "Apache-2.0",
+      "files": 9
+    },
+    {
+      "name": "ip6tables-nft",
+      "version": "1.8.10-r3",
+      "license": "GPL-2.0",
+      "files": 2
+    },
+    {
+      "name": "iptables-mod-extra",
+      "version": "1.8.10-r3",
+      "license": "GPL-2.0",
+      "files": 6
+    },
+    {
+      "name": "iptables-nft",
+      "version": "1.8.10-r3",
+      "license": "GPL-2.0",
+      "files": 2
+    },
+    {
+      "name": "kmod-br-netfilter",
+      "version": "6.12.94-r1",
+      "license": "GPL-2.0-only",
+      "files": 4
+    },
+    {
+      "name": "kmod-crypto-acompress",
+      "version": "6.12.94-r1",
+      "license": "GPL-2.0-only",
+      "files": 2
+    },
+    {
+      "name": "kmod-crypto-blake2b",
+      "version": "6.12.94-r1",
+      "license": "GPL-2.0-only",
+      "files": 3
+    },
+    {
+      "name": "kmod-crypto-xxhash",
+      "version": "6.12.94-r1",
+      "license": "GPL-2.0-only",
+      "files": 3
+    },
+    {
+      "name": "kmod-fs-btrfs",
+      "version": "6.12.94-r1",
+      "license": "GPL-2.0-only",
+      "files": 4
+    },
+    {
+      "name": "kmod-ip6tables",
+      "version": "6.12.94-r1",
+      "license": "GPL-2.0-only",
+      "files": 5
+    },
+    {
+      "name": "kmod-ipt-conntrack",
+      "version": "6.12.94-r1",
+      "license": "GPL-2.0-only",
+      "files": 5
+    },
+    {
+      "name": "kmod-ipt-core",
+      "version": "6.12.94-r1",
+      "license": "GPL-2.0-only",
+      "files": 14
+    },
+    {
+      "name": "kmod-ipt-extra",
+      "version": "6.12.94-r1",
+      "license": "GPL-2.0-only",
+      "files": 7
+    },
+    {
+      "name": "kmod-ipt-nat",
+      "version": "6.12.94-r1",
+      "license": "GPL-2.0-only",
+      "files": 6
+    },
+    {
+      "name": "kmod-ipt-nat6",
+      "version": "6.12.94-r1",
+      "license": "GPL-2.0-only",
+      "files": 4
+    },
+    {
+      "name": "kmod-ipt-physdev",
+      "version": "6.12.94-r1",
+      "license": "GPL-2.0-only",
+      "files": 3
+    },
+    {
+      "name": "kmod-lib-lzo",
+      "version": "6.12.94-r1",
+      "license": "GPL-2.0-only",
+      "files": 2
+    },
+    {
+      "name": "kmod-lib-raid6",
+      "version": "6.12.94-r1",
+      "license": "GPL-2.0-only",
+      "files": 3
+    },
+    {
+      "name": "kmod-lib-xor",
+      "version": "6.12.94-r1",
+      "license": "GPL-2.0-only",
+      "files": 4
+    },
+    {
+      "name": "kmod-lib-xxhash",
+      "version": "6.12.94-r1",
+      "license": "GPL-2.0-only",
+      "files": 1
+    },
+    {
+      "name": "kmod-lib-zlib-deflate",
+      "version": "6.12.94-r1",
+      "license": "GPL-2.0-only",
+      "files": 2
+    },
+    {
+      "name": "kmod-lib-zlib-inflate",
+      "version": "6.12.94-r1",
+      "license": "GPL-2.0-only",
+      "files": 2
+    },
+    {
+      "name": "kmod-lib-zstd",
+      "version": "6.12.94-r1",
+      "license": "GPL-2.0-only",
+      "files": 2
+    },
+    {
+      "name": "kmod-nf-ipt",
+      "version": "6.12.94-r1",
+      "license": "GPL-2.0-only",
+      "files": 4
+    },
+    {
+      "name": "kmod-nf-ipt6",
+      "version": "6.12.94-r1",
+      "license": "GPL-2.0-only",
+      "files": 3
+    },
+    {
+      "name": "kmod-nf-ipvs",
+      "version": "6.12.94-r1",
+      "license": "GPL-2.0-only",
+      "files": 15
+    },
+    {
+      "name": "kmod-nf-nat6",
+      "version": "6.12.94-r1",
+      "license": "GPL-2.0-only",
+      "files": 1
+    },
+    {
+      "name": "kmod-nft-compat",
+      "version": "6.12.94-r1",
+      "license": "GPL-2.0-only",
+      "files": 3
+    },
+    {
+      "name": "libattr",
+      "version": "2.5.2-r3",
+      "license": "LGPL-2.1-or-later",
+      "files": 5
+    },
+    {
+      "name": "libiptext-nft0",
+      "version": "1.8.10-r3",
+      "license": "GPL-2.0",
+      "files": 3
+    },
+    {
+      "name": "libiptext0",
+      "version": "1.8.10-r3",
+      "license": "GPL-2.0",
+      "files": 3
+    },
+    {
+      "name": "libiptext6-0",
+      "version": "1.8.10-r3",
+      "license": "GPL-2.0",
+      "files": 2
+    },
+    {
+      "name": "liblzo2",
+      "version": "2.10-r5",
+      "license": "GPL-2.0-or-later",
+      "files": 3
+    },
+    {
+      "name": "libmount1",
+      "version": "2.41.5-r1",
+      "license": "LGPL-2.1-or-later",
+      "files": 3
+    },
+    {
+      "name": "libseccomp",
+      "version": "2.5.5-r1",
+      "license": "LGPL-2.1-or-later",
+      "files": 3
+    },
+    {
+      "name": "libxtables12",
+      "version": "1.8.10-r3",
+      "license": "GPL-2.0",
+      "files": 3
+    },
+    {
+      "name": "runc",
+      "version": "1.3.6-r1",
+      "license": "Apache-2.0",
+      "files": 2
+    },
+    {
+      "name": "tini",
+      "version": "0.19.0-r4",
+      "license": "MIT",
+      "files": 3
+    },
+    {
+      "name": "xtables-nft",
+      "version": "1.8.10-r3",
+      "license": "GPL-2.0",
+      "files": 2
+    }
+  ],
+  "files": [
+    {
+      "path": "/lib/apk/packages/btrfs-progs.list",
+      "package": "btrfs-progs",
+      "mode": "0o644",
+      "kind": "regular",
+      "sha256": "1f7e41c642469728a66624e2cc44f90bc9843bd13b2004781767dd6f02dae456",
+      "bytes": 443
+    },
+    {
+      "path": "/lib/preinit/78_btrfs_scan_pre",
+      "package": "btrfs-progs",
+      "mode": "0o777",
+      "kind": "symlink",
+      "target": "./85_btrfs_scan_post"
+    },
+    {
+      "path": "/lib/preinit/85_btrfs_scan_post",
+      "package": "btrfs-progs",
+      "mode": "0o755",
+      "kind": "regular",
+      "sha256": "60c193707a50bbb91de7aa56be2af7976725ab4b757349c1aef57e6a6cb6c90b",
+      "bytes": 164
+    },
+    {
+      "path": "/usr/bin/btrfs",
+      "package": "btrfs-progs",
+      "mode": "0o755",
+      "kind": "regular",
+      "sha256": "98038b94a95e4d200b0abaf7b2a7d1abee6ad639c9c2b039487f353ad36999c9",
+      "bytes": 1185567
+    },
+    {
+      "path": "/usr/bin/btrfs-find-root",
+      "package": "btrfs-progs",
+      "mode": "0o777",
+      "kind": "symlink",
+      "target": "btrfs"
+    },
+    {
+      "path": "/usr/bin/btrfs-image",
+      "package": "btrfs-progs",
+      "mode": "0o777",
+      "kind": "symlink",
+      "target": "btrfs"
+    },
+    {
+      "path": "/usr/bin/btrfs-map-logical",
+      "package": "btrfs-progs",
+      "mode": "0o755",
+      "kind": "regular",
+      "sha256": "3f63b834752e17d14d5e21234d04e254d067917216ad49ab26d1c3b6c1a86706",
+      "bytes": 553819
+    },
+    {
+      "path": "/usr/bin/btrfs-select-super",
+      "package": "btrfs-progs",
+      "mode": "0o755",
+      "kind": "regular",
+      "sha256": "d94d57bd520e7c750d0963cc9a9646730dd3f0fd9c8c1faa15a5deeb28435569",
+      "bytes": 549723
+    },
+    {
+      "path": "/usr/bin/btrfsck",
+      "package": "btrfs-progs",
+      "mode": "0o777",
+      "kind": "symlink",
+      "target": "btrfs"
+    },
+    {
+      "path": "/usr/bin/btrfstune",
+      "package": "btrfs-progs",
+      "mode": "0o777",
+      "kind": "symlink",
+      "target": "btrfs"
+    },
+    {
+      "path": "/usr/bin/mkfs.btrfs",
+      "package": "btrfs-progs",
+      "mode": "0o777",
+      "kind": "symlink",
+      "target": "btrfs"
+    },
+    {
+      "path": "/usr/lib/libbtrfs.so",
+      "package": "btrfs-progs",
+      "mode": "0o777",
+      "kind": "symlink",
+      "target": "libbtrfs.so.0.1.4"
+    },
+    {
+      "path": "/usr/lib/libbtrfs.so.0",
+      "package": "btrfs-progs",
+      "mode": "0o777",
+      "kind": "symlink",
+      "target": "libbtrfs.so.0.1.4"
+    },
+    {
+      "path": "/usr/lib/libbtrfs.so.0.1",
+      "package": "btrfs-progs",
+      "mode": "0o777",
+      "kind": "symlink",
+      "target": "libbtrfs.so.0.1.4"
+    },
+    {
+      "path": "/usr/lib/libbtrfs.so.0.1.4",
+      "package": "btrfs-progs",
+      "mode": "0o755",
+      "kind": "regular",
+      "sha256": "320e2cf9b92fa1fde9441005bcc41a6706fcd4a8829afb3c7d577f524b98cf49",
+      "bytes": 16386
+    },
+    {
+      "path": "/usr/lib/libbtrfsutil.so",
+      "package": "btrfs-progs",
+      "mode": "0o777",
+      "kind": "symlink",
+      "target": "libbtrfsutil.so.1.3.2"
+    },
+    {
+      "path": "/usr/lib/libbtrfsutil.so.1",
+      "package": "btrfs-progs",
+      "mode": "0o777",
+      "kind": "symlink",
+      "target": "libbtrfsutil.so.1.3.2"
+    },
+    {
+      "path": "/usr/lib/libbtrfsutil.so.1.3",
+      "package": "btrfs-progs",
+      "mode": "0o777",
+      "kind": "symlink",
+      "target": "libbtrfsutil.so.1.3.2"
+    },
+    {
+      "path": "/usr/lib/libbtrfsutil.so.1.3.2",
+      "package": "btrfs-progs",
+      "mode": "0o755",
+      "kind": "regular",
+      "sha256": "7ad78d722f5d842df4f3505bb4fe7b4a08795fd7a78907a0f80fecedb7685209",
+      "bytes": 28674
+    },
+    {
+      "path": "/etc/ssl/certs/002c0b4f.0",
+      "package": "ca-certificates",
+      "mode": "0o777",
+      "kind": "symlink",
+      "target": "GlobalSign_Root_R46.crt"
+    },
+    {
+      "path": "/etc/ssl/certs/0179095f.0",
+      "package": "ca-certificates",
+      "mode": "0o777",
+      "kind": "symlink",
+      "target": "BJCA_Global_Root_CA1.crt"
+    },
+    {
+      "path": "/etc/ssl/certs/062cdee6.0",
+      "package": "ca-certificates",
+      "mode": "0o777",
+      "kind": "symlink",
+      "target": "GlobalSign_Root_CA_-_R3.crt"
+    },
+    {
+      "path": "/etc/ssl/certs/064e0aa9.0",
+      "package": "ca-certificates",
+      "mode": "0o777",
+      "kind": "symlink",
+      "target": "QuoVadis_Root_CA_2_G3.crt"
+    },
+    {
+      "path": "/etc/ssl/certs/06dc52d5.0",
+      "package": "ca-certificates",
+      "mode": "0o777",
+      "kind": "symlink",
+      "target": "SSL.com_EV_Root_Certification_Authority_RSA_R2.crt"
+    },
+    {
+      "path": "/etc/ssl/certs/09789157.0",
+      "package": "ca-certificates",
+      "mode": "0o777",
+      "kind": "symlink",
+      "target": "Starfield_Services_Root_Certificate_Authority_-_G2.crt"
+    },
+    {
+      "path": "/etc/ssl/certs/0a775a30.0",
+      "package": "ca-certificates",
+      "mode": "0o777",
+      "kind": "symlink",
+      "target": "GTS_Root_R3.crt"
+    },
+    {
+      "path": "/etc/ssl/certs/0b1b94ef.0",
+      "package": "ca-certificates",
+      "mode": "0o777",
+      "kind": "symlink",
+      "target": "CFCA_EV_ROOT.crt"
+    },
+    {
+      "path": "/etc/ssl/certs/0b9bc432.0",
+      "package": "ca-certificates",
+      "mode": "0o777",
+      "kind": "symlink",
+      "target": "ISRG_Root_X2.crt"
+    },
+    {
+      "path": "/etc/ssl/certs/0bf05006.0",
+      "package": "ca-certificates",
+      "mode": "0o777",
+      "kind": "symlink",
+      "target": "SSL.com_Root_Certification_Authority_ECC.crt"
+    },
+    {
+      "path": "/etc/ssl/certs/0f5dc4f3.0",
+      "package": "ca-certificates",
+      "mode": "0o777",
+      "kind": "symlink",
+      "target": "UCA_Extended_Validation_Root.crt"
+    },
+    {
+      "path": "/etc/ssl/certs/0f6fa695.0",
+      "package": "ca-certificates",
+      "mode": "0o777",
+      "kind": "symlink",
+      "target": "GDCA_TrustAUTH_R5_ROOT.crt"
+    },
+    {
+      "path": "/etc/ssl/certs/1001acf7.0",
+      "package": "ca-certificates",
+      "mode": "0o777",
+      "kind": "symlink",
+      "target": "GTS_Root_R1.crt"
+    },
+    {
+      "path": "/etc/ssl/certs/14bc7599.0",
+      "package": "ca-certificates",
+      "mode": "0o777",
+      "kind": "symlink",
+      "target": "emSign_ECC_Root_CA_-_G3.crt"
+    },
+    {
+      "path": "/etc/ssl/certs/1cef98f5.0",
+      "package": "ca-certificates",
+      "mode": "0o777",
+      "kind": "symlink",
+      "target": "TrustAsia_Global_Root_CA_G4.crt"
+    },
+    {
+      "path": "/etc/ssl/certs/1d3472b9.0",
+      "package": "ca-certificates",
+      "mode": "0o777",
+      "kind": "symlink",
+      "target": "GlobalSign_ECC_Root_CA_-_R5.crt"
+    },
+    {
+      "path": "/etc/ssl/certs/1e08bfd1.0",
+      "package": "ca-certificates",
+      "mode": "0o777",
+      "kind": "symlink",
+      "target": "IdenTrust_Public_Sector_Root_CA_1.crt"
+    },
+    {
+      "path": "/etc/ssl/certs/1e09d511.0",
+      "package": "ca-certificates",
+      "mode": "0o777",
+      "kind": "symlink",
+      "target": "T-TeleSec_GlobalRoot_Class_2.crt"
+    },
+    {
+      "path": "/etc/ssl/certs/2923b3f9.0",
+      "package": "ca-certificates",
+      "mode": "0o777",
+      "kind": "symlink",
+      "target": "emSign_Root_CA_-_G1.crt"
+    },
+    {
+      "path": "/etc/ssl/certs/2ae6433e.0",
+      "package": "ca-certificates",
+      "mode": "0o777",
+      "kind": "symlink",
+      "target": "CA_Disig_Root_R2.crt"
+    },
+    {
+      "path": "/etc/ssl/certs/2ccbdda3.0",
+      "package": "ca-certificates",
+      "mode": "0o777",
+      "kind": "symlink",
+      "target": "TrustAsia_TLS_ECC_Root_CA.crt"
+    },
+    {
+      "path": "/etc/ssl/certs/30e1580d.0",
+      "package": "ca-certificates",
+      "mode": "0o777",
+      "kind": "symlink",
+      "target": "OISTE_Server_Root_RSA_G1.crt"
+    },
+    {
+      "path": "/etc/ssl/certs/32888f65.0",
+      "package": "ca-certificates",
+      "mode": "0o777",
+      "kind": "symlink",
+      "target": "Hellenic_Academic_and_Research_Institutions_RootCA_2015.crt"
+    },
+    {
+      "path": "/etc/ssl/certs/36c6b318.0",
+      "package": "ca-certificates",
+      "mode": "0o777",
+      "kind": "symlink",
+      "target": "SECOM_TLS_RSA_Root_CA_2024.crt"
+    },
+    {
+      "path": "/etc/ssl/certs/3bde41ac.0",
+      "package": "ca-certificates",
+      "mode": "0o777",
+      "kind": "symlink",
+      "target": "Autoridad_de_Certificacion_Firmaprofesional_CIF_A62634068.crt"
+    },
+    {
+      "path": "/etc/ssl/certs/3e359ba6.0",
+      "package": "ca-certificates",
+      "mode": "0o777",
+      "kind": "symlink",
+      "target": "BJCA_Global_Root_CA2.crt"
+    },
+    {
+      "path": "/etc/ssl/certs/3fb36b73.0",
+      "package": "ca-certificates",
+      "mode": "0o777",
+      "kind": "symlink",
+      "target": "NAVER_Global_Root_Certification_Authority.crt"
+    },
+    {
+      "path": "/etc/ssl/certs/40193066.0",
+      "package": "ca-certificates",
+      "mode": "0o777",
+      "kind": "symlink",
+      "target": "Certum_Trusted_Network_CA_2.crt"
+    },
+    {
+      "path": "/etc/ssl/certs/4042bcee.0",
+      "package": "ca-certificates",
+      "mode": "0o777",
+      "kind": "symlink",
+      "target": "ISRG_Root_X1.crt"
+    },
+    {
+      "path": "/etc/ssl/certs/406c9bb1.0",
+      "package": "ca-certificates",
+      "mode": "0o777",
+      "kind": "symlink",
+      "target": "emSign_Root_CA_-_C1.crt"
+    },
+    {
+      "path": "/etc/ssl/certs/422cf4bf.0",
+      "package": "ca-certificates",
+      "mode": "0o777",
+      "kind": "symlink",
+      "target": "SECOM_TLS_ECC_Root_CA_2024.crt"
+    },
+    {
+      "path": "/etc/ssl/certs/48bec511.0",
+      "package": "ca-certificates",
+      "mode": "0o777",
+      "kind": "symlink",
+      "target": "Certum_Trusted_Network_CA.crt"
+    },
+    {
+      "path": "/etc/ssl/certs/4b718d9b.0",
+      "package": "ca-certificates",
+      "mode": "0o777",
+      "kind": "symlink",
+      "target": "emSign_ECC_Root_CA_-_C3.crt"
+    },
+    {
+      "path": "/etc/ssl/certs/4bfab552.0",
+      "package": "ca-certificates",
+      "mode": "0o777",
+      "kind": "symlink",
+      "target": "Starfield_Root_Certificate_Authority_-_G2.crt"
+    },
+    {
+      "path": "/etc/ssl/certs/5443e9e3.0",
+      "package": "ca-certificates",
+      "mode": "0o777",
+      "kind": "symlink",
+      "target": "T-TeleSec_GlobalRoot_Class_3.crt"
+    },
+    {
+      "path": "/etc/ssl/certs/54657681.0",
+      "package": "ca-certificates",
+      "mode": "0o777",
+      "kind": "symlink",
+      "target": "Buypass_Class_2_Root_CA.crt"
+    },
+    {
+      "path": "/etc/ssl/certs/5860aaa6.0",
+      "package": "ca-certificates",
+      "mode": "0o777",
+      "kind": "symlink",
+      "target": "Security_Communication_ECC_RootCA1.crt"
+    },
+    {
+      "path": "/etc/ssl/certs/5931b5bc.0",
+      "package": "ca-certificates",
+      "mode": "0o777",
+      "kind": "symlink",
+      "target": "D-TRUST_EV_Root_CA_1_2020.crt"
+    },
+    {
+      "path": "/etc/ssl/certs/5f15c80c.0",
+      "package": "ca-certificates",
+      "mode": "0o777",
+      "kind": "symlink",
+      "target": "TWCA_Global_Root_CA.crt"
+    },
+    {
+      "path": "/etc/ssl/certs/5f618aec.0",
+      "package": "ca-certificates",
+      "mode": "0o777",
+      "kind": "symlink",
+      "target": "certSIGN_Root_CA_G2.crt"
+    },
+    {
+      "path": "/etc/ssl/certs/607986c7.0",
+      "package": "ca-certificates",
+      "mode": "0o777",
+      "kind": "symlink",
+      "target": "DigiCert_Global_Root_G2.crt"
+    },
+    {
+      "path": "/etc/ssl/certs/6805c744.0",
+      "package": "ca-certificates",
+      "mode": "0o777",
+      "kind": "symlink",
+      "target": "OISTE_Server_Root_ECC_G1.crt"
+    },
+    {
+      "path": "/etc/ssl/certs/68dd7389.0",
+      "package": "ca-certificates",
+      "mode": "0o777",
+      "kind": "symlink",
+      "target": "Hongkong_Post_Root_CA_3.crt"
+    },
+    {
+      "path": "/etc/ssl/certs/6a9bdba3.0",
+      "package": "ca-certificates",
+      "mode": "0o777",
+      "kind": "symlink",
+      "target": "SecureSign_Root_CA15.crt"
+    },
+    {
+      "path": "/etc/ssl/certs/6d41d539.0",
+      "package": "ca-certificates",
+      "mode": "0o777",
+      "kind": "symlink",
+      "target": "Amazon_Root_CA_2.crt"
+    },
+    {
+      "path": "/etc/ssl/certs/6fa5da56.0",
+      "package": "ca-certificates",
+      "mode": "0o777",
+      "kind": "symlink",
+      "target": "SSL.com_Root_Certification_Authority_RSA.crt"
+    },
+    {
+      "path": "/etc/ssl/certs/749e9e03.0",
+      "package": "ca-certificates",
+      "mode": "0o777",
+      "kind": "symlink",
+      "target": "QuoVadis_Root_CA_1_G3.crt"
+    },
+    {
+      "path": "/etc/ssl/certs/75d1b2ed.0",
+      "package": "ca-certificates",
+      "mode": "0o777",
+      "kind": "symlink",
+      "target": "DigiCert_Trusted_Root_G4.crt"
+    },
+    {
+      "path": "/etc/ssl/certs/7719f463.0",
+      "package": "ca-certificates",
+      "mode": "0o777",
+      "kind": "symlink",
+      "target": "Hellenic_Academic_and_Research_Institutions_ECC_RootCA_2015.crt"
+    },
+    {
+      "path": "/etc/ssl/certs/773e07ad.0",
+      "package": "ca-certificates",
+      "mode": "0o777",
+      "kind": "symlink",
+      "target": "OISTE_WISeKey_Global_Root_GC_CA.crt"
+    },
+    {
+      "path": "/etc/ssl/certs/7a3adc42.0",
+      "package": "ca-certificates",
+      "mode": "0o777",
+      "kind": "symlink",
+      "target": "vTrus_Root_CA.crt"
+    },
+    {
+      "path": "/etc/ssl/certs/7a780d93.0",
+      "package": "ca-certificates",
+      "mode": "0o777",
+      "kind": "symlink",
+      "target": "Certainly_Root_R1.crt"
+    },
+    {
+      "path": "/etc/ssl/certs/7f3d5d1d.0",
+      "package": "ca-certificates",
+      "mode": "0o777",
+      "kind": "symlink",
+      "target": "DigiCert_Assured_ID_Root_G3.crt"
+    },
+    {
+      "path": "/etc/ssl/certs/7fa05551.0",
+      "package": "ca-certificates",
+      "mode": "0o777",
+      "kind": "symlink",
+      "target": "Telekom_Security_TLS_RSA_Root_2023.crt"
+    },
+    {
+      "path": "/etc/ssl/certs/8160b96c.0",
+      "package": "ca-certificates",
+      "mode": "0o777",
+      "kind": "symlink",
+      "target": "Microsec_e-Szigno_Root_CA_2009.crt"
+    },
+    {
+      "path": "/etc/ssl/certs/8508e720.0",
+      "package": "ca-certificates",
+      "mode": "0o777",
+      "kind": "symlink",
+      "target": "Certainly_Root_E1.crt"
+    },
+    {
+      "path": "/etc/ssl/certs/865fbdf9.0",
+      "package": "ca-certificates",
+      "mode": "0o777",
+      "kind": "symlink",
+      "target": "SSL.com_TLS_ECC_Root_CA_2022.crt"
+    },
+    {
+      "path": "/etc/ssl/certs/878d9bca.0",
+      "package": "ca-certificates",
+      "mode": "0o777",
+      "kind": "symlink",
+      "target": "SecureSign_Root_CA14.crt"
+    },
+    {
+      "path": "/etc/ssl/certs/8cb5ee0f.0",
+      "package": "ca-certificates",
+      "mode": "0o777",
+      "kind": "symlink",
+      "target": "Amazon_Root_CA_3.crt"
+    },
+    {
+      "path": "/etc/ssl/certs/8d89cda1.0",
+      "package": "ca-certificates",
+      "mode": "0o777",
+      "kind": "symlink",
+      "target": "Microsoft_ECC_Root_Certificate_Authority_2017.crt"
+    },
+    {
+      "path": "/etc/ssl/certs/8f103249.0",
+      "package": "ca-certificates",
+      "mode": "0o777",
+      "kind": "symlink",
+      "target": "Telia_Root_CA_v2.crt"
+    },
+    {
+      "path": "/etc/ssl/certs/9046744a.0",
+      "package": "ca-certificates",
+      "mode": "0o777",
+      "kind": "symlink",
+      "target": "Sectigo_Public_Server_Authentication_Root_R46.crt"
+    },
+    {
+      "path": "/etc/ssl/certs/90c5a3c8.0",
+      "package": "ca-certificates",
+      "mode": "0o777",
+      "kind": "symlink",
+      "target": "HiPKI_Root_CA_-_G1.crt"
+    },
+    {
+      "path": "/etc/ssl/certs/930ac5d2.0",
+      "package": "ca-certificates",
+      "mode": "0o777",
+      "kind": "symlink",
+      "target": "Actalis_Authentication_Root_CA.crt"
+    },
+    {
+      "path": "/etc/ssl/certs/9482e63a.0",
+      "package": "ca-certificates",
+      "mode": "0o777",
+      "kind": "symlink",
+      "target": "Certum_EC-384_CA.crt"
+    },
+    {
+      "path": "/etc/ssl/certs/9846683b.0",
+      "package": "ca-certificates",
+      "mode": "0o777",
+      "kind": "symlink",
+      "target": "DigiCert_TLS_ECC_P384_Root_G5.crt"
+    },
+    {
+      "path": "/etc/ssl/certs/988a38cb.0",
+      "package": "ca-certificates",
+      "mode": "0o777",
+      "kind": "symlink",
+      "target": "NetLock_Arany_=Class_Gold=_F\u0151tan\u00fas\u00edtv\u00e1ny.crt"
+    },
+    {
+      "path": "/etc/ssl/certs/9b46e03d.0",
+      "package": "ca-certificates",
+      "mode": "0o777",
+      "kind": "symlink",
+      "target": "Atos_TrustedRoot_Root_CA_RSA_TLS_2021.crt"
+    },
+    {
+      "path": "/etc/ssl/certs/9bf03295.0",
+      "package": "ca-certificates",
+      "mode": "0o777",
+      "kind": "symlink",
+      "target": "TrustAsia_Global_Root_CA_G3.crt"
+    },
+    {
+      "path": "/etc/ssl/certs/9cd9d94b.0",
+      "package": "ca-certificates",
+      "mode": "0o777",
+      "kind": "symlink",
+      "target": "Telia_RSA_TLS_Root_CA_v3.crt"
+    },
+    {
+      "path": "/etc/ssl/certs/9d04f354.0",
+      "package": "ca-certificates",
+      "mode": "0o777",
+      "kind": "symlink",
+      "target": "DigiCert_Assured_ID_Root_G2.crt"
+    },
+    {
+      "path": "/etc/ssl/certs/9e654b62.0",
+      "package": "ca-certificates",
+      "mode": "0o777",
+      "kind": "symlink",
+      "target": "SwissSign_RSA_TLS_Root_CA_2022_-_1.crt"
+    },
+    {
+      "path": "/etc/ssl/certs/9ef4a08a.0",
+      "package": "ca-certificates",
+      "mode": "0o777",
+      "kind": "symlink",
+      "target": "D-TRUST_BR_Root_CA_1_2020.crt"
+    },
+    {
+      "path": "/etc/ssl/certs/9f727ac7.0",
+      "package": "ca-certificates",
+      "mode": "0o777",
+      "kind": "symlink",
+      "target": "HARICA_TLS_RSA_Root_CA_2021.crt"
+    },
+    {
+      "path": "/etc/ssl/certs/ACCVRAIZ1.crt",
+      "package": "ca-certificates",
+      "mode": "0o644",
+      "kind": "regular",
+      "sha256": "04846f73d9d0421c60076fd02bad7f0a81a3f11a028d653b0de53290e41dcead",
+      "bytes": 2772
+    },
+    {
+      "path": "/etc/ssl/certs/AC_RAIZ_FNMT-RCM.crt",
+      "package": "ca-certificates",
+      "mode": "0o644",
+      "kind": "regular",
+      "sha256": "aa18ea4c9a8441a461bb436a1c90beb994ac841980b8fd62c72de9a62ddf8ae3",
+      "bytes": 1972
+    },
+    {
+      "path": "/etc/ssl/certs/AC_RAIZ_FNMT-RCM_SERVIDORES_SEGUROS.crt",
+      "package": "ca-certificates",
+      "mode": "0o644",
+      "kind": "regular",
+      "sha256": "8e3f237813d3f3e2f5767bc2a694a7557f84bb79fd60ef1adc25afd0c1fc5ef6",
+      "bytes": 904
+    },
+    {
+      "path": "/etc/ssl/certs/ANF_Secure_Server_Root_CA.crt",
+      "package": "ca-certificates",
+      "mode": "0o644",
+      "kind": "regular",
+      "sha256": "efb2df6e0075fa74e448077e402d171851b2ffe4668a614adc00dcbc75633afd",
+      "bytes": 2118
+    },
+    {
+      "path": "/etc/ssl/certs/Actalis_Authentication_Root_CA.crt",
+      "package": "ca-certificates",
+      "mode": "0o644",
+      "kind": "regular",
+      "sha256": "c6d25347727f267774611677588d76f8a54a6e14d3e99dd69ef2c20612ed87c5",
+      "bytes": 2049
+    },
+    {
+      "path": "/etc/ssl/certs/Amazon_Root_CA_1.crt",
+      "package": "ca-certificates",
+      "mode": "0o644",
+      "kind": "regular",
+      "sha256": "2c43952ee9e000ff2acc4e2ed0897c0a72ad5fa72c3d934e81741cbd54f05bd1",
+      "bytes": 1188
+    },
+    {
+      "path": "/etc/ssl/certs/Amazon_Root_CA_2.crt",
+      "package": "ca-certificates",
+      "mode": "0o644",
+      "kind": "regular",
+      "sha256": "a3a7fe25439d9a9b50f60af43684444d798a4c869305bf615881e5c84a44c1a2",
+      "bytes": 1883
+    },
+    {
+      "path": "/etc/ssl/certs/Amazon_Root_CA_3.crt",
+      "package": "ca-certificates",
+      "mode": "0o644",
+      "kind": "regular",
+      "sha256": "3eb7c3258f4af9222033dc1bb3dd2c7cfa0982b98e39fb8e9dc095cfeb38126c",
+      "bytes": 656
+    },
+    {
+      "path": "/etc/ssl/certs/Amazon_Root_CA_4.crt",
+      "package": "ca-certificates",
+      "mode": "0o644",
+      "kind": "regular",
+      "sha256": "b0b7961120481e33670315b2f843e643c42f693c7a1010eb9555e06ddc730214",
+      "bytes": 737
+    },
+    {
+      "path": "/etc/ssl/certs/Atos_TrustedRoot_Root_CA_ECC_TLS_2021.crt",
+      "package": "ca-certificates",
+      "mode": "0o644",
+      "kind": "regular",
+      "sha256": "970d70366b2f8c29ac71c8f71689ddd8fd321208a5ededbb2d784af33799a0f6",
+      "bytes": 782
+    },
+    {
+      "path": "/etc/ssl/certs/Atos_TrustedRoot_Root_CA_RSA_TLS_2021.crt",
+      "package": "ca-certificates",
+      "mode": "0o644",
+      "kind": "regular",
+      "sha256": "980dc408dd2def2d7930bec10c48e256d115f636c403b631ffb93558dacf5571",
+      "bytes": 1931
+    },
+    {
+      "path": "/etc/ssl/certs/Autoridad_de_Certificacion_Firmaprofesional_CIF_A62634068.crt",
+      "package": "ca-certificates",
+      "mode": "0o644",
+      "kind": "regular",
+      "sha256": "a618213c5dd7cbb59b3154de7241d7255333a0619cf434329becae876ce6e331",
+      "bytes": 2167
+    },
+    {
+      "path": "/etc/ssl/certs/BJCA_Global_Root_CA1.crt",
+      "package": "ca-certificates",
+      "mode": "0o644",
+      "kind": "regular",
+      "sha256": "08e1a8115accf7ce400a3f98fc31dbab522a3ed3644ca48389b4899e2d794f1a",
+      "bytes": 1952
+    },
+    {
+      "path": "/etc/ssl/certs/BJCA_Global_Root_CA2.crt",
+      "package": "ca-certificates",
+      "mode": "0o644",
+      "kind": "regular",
+      "sha256": "6c58125f88a4ff83d40e6b58c5532ea905be4daf1ec7da7f4542af3d34855340",
+      "bytes": 806
+    },
+    {
+      "path": "/etc/ssl/certs/Buypass_Class_2_Root_CA.crt",
+      "package": "ca-certificates",
+      "mode": "0o644",
+      "kind": "regular",
+      "sha256": "9c2a7510e01aec2c9b8cc2c9d03b16576858a93863a6d0a31a2ac05f47f5dbe1",
+      "bytes": 1915
+    },
+    {
+      "path": "/etc/ssl/certs/Buypass_Class_3_Root_CA.crt",
+      "package": "ca-certificates",
+      "mode": "0o644",
+      "kind": "regular",
+      "sha256": "8db5b7c8f058c56a8d033c2443d34fdfd3656150eaa73fe63c65161e7063ce99",
+      "bytes": 1915
+    },
+    {
+      "path": "/etc/ssl/certs/CA_Disig_Root_R2.crt",
+      "package": "ca-certificates",
+      "mode": "0o644",
+      "kind": "regular",
+      "sha256": "8adefca890c92e6d0877fdcba07655296852217da657026aea69ee547642528c",
+      "bytes": 1935
+    },
+    {
+      "path": "/etc/ssl/certs/CFCA_EV_ROOT.crt",
+      "package": "ca-certificates",
+      "mode": "0o644",
+      "kind": "regular",
+      "sha256": "94e4ab21333740d7ed0f2b5007744e5cf6792c0ddf4c6bdfb3ce8333010e7306",
+      "bytes": 1984
+    },
+    {
+      "path": "/etc/ssl/certs/COMODO_ECC_Certification_Authority.crt",
+      "package": "ca-certificates",
+      "mode": "0o644",
+      "kind": "regular",
+      "sha256": "d69f7b57250536f57ffba92cffe82a8bbcb16e03a9a2607ec967f362ce83f9ce",
+      "bytes": 940
+    },
+    {
+      "path": "/etc/ssl/certs/COMODO_RSA_Certification_Authority.crt",
+      "package": "ca-certificates",
+      "mode": "0o644",
+      "kind": "regular",
+      "sha256": "24b0d4292dacb02efc38542838e378bc35f040dcd21bebfddbc82dc7feb2876d",
+      "bytes": 2086
+    },
+    {
+      "path": "/etc/ssl/certs/Certainly_Root_E1.crt",
+      "package": "ca-certificates",
+      "mode": "0o644",
+      "kind": "regular",
+      "sha256": "1b28a5568648fef0d3faeb916cb7bdb054724cb3b5a00c6bfd3d8a2fba7a8bba",
+      "bytes": 741
+    },
+    {
+      "path": "/etc/ssl/certs/Certainly_Root_R1.crt",
+      "package": "ca-certificates",
+      "mode": "0o644",
+      "kind": "regular",
+      "sha256": "0c78902126532fde9eed4b2d8b6a2c9bbaa8b3abc59f233c45c6cb5514a9f808",
+      "bytes": 1891
+    },
+    {
+      "path": "/etc/ssl/certs/Certigna_Root_CA.crt",
+      "package": "ca-certificates",
+      "mode": "0o644",
+      "kind": "regular",
+      "sha256": "fe3b44c18182e167121a2c645cecc4817441d469dc00633e60fe8476f9e1ad96",
+      "bytes": 2264
+    },
+    {
+      "path": "/etc/ssl/certs/Certum_EC-384_CA.crt",
+      "package": "ca-certificates",
+      "mode": "0o644",
+      "kind": "regular",
+      "sha256": "c4a426fe57a7e4e6966e2103f2941eb7263e7c35727dd0f412bd593467304999",
+      "bytes": 891
+    },
+    {
+      "path": "/etc/ssl/certs/Certum_Trusted_Network_CA.crt",
+      "package": "ca-certificates",
+      "mode": "0o644",
+      "kind": "regular",
+      "sha256": "43f1bade6454349c258017cc99113f8b6a5712e3807e82ad9371348d52d60190",
+      "bytes": 1354
+    },
+    {
+      "path": "/etc/ssl/certs/Certum_Trusted_Network_CA_2.crt",
+      "package": "ca-certificates",
+      "mode": "0o644",
+      "kind": "regular",
+      "sha256": "9dd4cbb6d2c29cbb3ca98da02c042a690c0ef4c0521d98aae37e0a704c4bf210",
+      "bytes": 2078
+    },
+    {
+      "path": "/etc/ssl/certs/Certum_Trusted_Root_CA.crt",
+      "package": "ca-certificates",
+      "mode": "0o644",
+      "kind": "regular",
+      "sha256": "e6c62d3f63ba03f4dac458b7dac6c09eb4d71cc3c6621769c3883ed51677c01c",
+      "bytes": 2053
+    },
+    {
+      "path": "/etc/ssl/certs/D-TRUST_BR_Root_CA_1_2020.crt",
+      "package": "ca-certificates",
+      "mode": "0o644",
+      "kind": "regular",
+      "sha256": "ae927c01e73470cfc89943b5cd8f26e481d55c833517c1017f3fef404a38a317",
+      "bytes": 1050
+    },
+    {
+      "path": "/etc/ssl/certs/D-TRUST_BR_Root_CA_2_2023.crt",
+      "package": "ca-certificates",
+      "mode": "0o644",
+      "kind": "regular",
+      "sha256": "2754e50d3377d6613e95df6d7a40150bb3a1fa1ae35382af96c7be58cdcbeb14",
+      "bytes": 2025
+    },
+    {
+      "path": "/etc/ssl/certs/D-TRUST_EV_Root_CA_1_2020.crt",
+      "package": "ca-certificates",
+      "mode": "0o644",
+      "kind": "regular",
+      "sha256": "0b83e3ece7c33128cc31ac97595ce1bdb524db3f924623093b64e6a96ffb4b9b",
+      "bytes": 1050
+    },
+    {
+      "path": "/etc/ssl/certs/D-TRUST_EV_Root_CA_2_2023.crt",
+      "package": "ca-certificates",
+      "mode": "0o644",
+      "kind": "regular",
+      "sha256": "268e32f39fb4f9316d0680fde4eb479bbe8c4093193551c4b388f703ada60eca",
+      "bytes": 2025
+    },
+    {
+      "path": "/etc/ssl/certs/D-TRUST_Root_Class_3_CA_2_2009.crt",
+      "package": "ca-certificates",
+      "mode": "0o644",
+      "kind": "regular",
+      "sha256": "a00b8aa918457f5e7e58457b5e2f80d640fa77cc290572aaab1ae7b4734a9528",
+      "bytes": 1517
+    },
+    {
+      "path": "/etc/ssl/certs/D-TRUST_Root_Class_3_CA_2_EV_2009.crt",
+      "package": "ca-certificates",
+      "mode": "0o644",
+      "kind": "regular",
+      "sha256": "f81ceeaf6341513ef391ab3ea3302e8b2fb2c1527752797bba9b20ca22048b3c",
+      "bytes": 1537
+    },
+    {
+      "path": "/etc/ssl/certs/DigiCert_Assured_ID_Root_G2.crt",
+      "package": "ca-certificates",
+      "mode": "0o644",
+      "kind": "regular",
+      "sha256": "660b5aa96668c5162f4af6b0a01241d8527aef8fa8a5307a7033b83c3de4a72d",
+      "bytes": 1306
+    },
+    {
+      "path": "/etc/ssl/certs/DigiCert_Assured_ID_Root_G3.crt",
+      "package": "ca-certificates",
+      "mode": "0o644",
+      "kind": "regular",
+      "sha256": "c4fa4cc30be6aee0a4c0dff81f28768eedd83e8d4934a42f82179cbfa61f13ad",
+      "bytes": 851
+    },
+    {
+      "path": "/etc/ssl/certs/DigiCert_Global_Root_G2.crt",
+      "package": "ca-certificates",
+      "mode": "0o644",
+      "kind": "regular",
+      "sha256": "5d550643b6400d4341550a9b14aedd0b4fac33ae5deb7d8247b6b4f799c13306",
+      "bytes": 1294
+    },
+    {
+      "path": "/etc/ssl/certs/DigiCert_Global_Root_G3.crt",
+      "package": "ca-certificates",
+      "mode": "0o644",
+      "kind": "regular",
+      "sha256": "1914cd2d4cde263315f9e32c7683fc0e1b921919ad12b256d49bf782011c03cc",
+      "bytes": 839
+    },
+    {
+      "path": "/etc/ssl/certs/DigiCert_TLS_ECC_P384_Root_G5.crt",
+      "package": "ca-certificates",
+      "mode": "0o644",
+      "kind": "regular",
+      "sha256": "05161ad2ac04a0df956ef803e127aa877cc5131e0a727ed8e5de43f02e8868c4",
+      "bytes": 790
+    },
+    {
+      "path": "/etc/ssl/certs/DigiCert_TLS_RSA4096_Root_G5.crt",
+      "package": "ca-certificates",
+      "mode": "0o644",
+      "kind": "regular",
+      "sha256": "fe64d4b3ae749db5ec57b04ed9203c748fff446f57b9665fad988435d89c9e43",
+      "bytes": 1931
+    },
+    {
+      "path": "/etc/ssl/certs/DigiCert_Trusted_Root_G4.crt",
+      "package": "ca-certificates",
+      "mode": "0o644",
+      "kind": "regular",
+      "sha256": "ce7d6b44f5d510391be98c8d76b18709400a30cd87659bfebe1c6f97ff5181ee",
+      "bytes": 1988
+    },
+    {
+      "path": "/etc/ssl/certs/GDCA_TrustAUTH_R5_ROOT.crt",
+      "package": "ca-certificates",
+      "mode": "0o644",
+      "kind": "regular",
+      "sha256": "b0bf3a444f89d8be7db120bfecaa2f94d9e49ede21f680d674c1e8d839d8a9a2",
+      "bytes": 1980
+    },
+    {
+      "path": "/etc/ssl/certs/GTS_Root_R1.crt",
+      "package": "ca-certificates",
+      "mode": "0o644",
+      "kind": "regular",
+      "sha256": "4195ea007a7ef8d3e2d338e8d9ff0083198e36bfa025442ddf41bb5213904fc2",
+      "bytes": 1911
+    },
+    {
+      "path": "/etc/ssl/certs/GTS_Root_R3.crt",
+      "package": "ca-certificates",
+      "mode": "0o644",
+      "kind": "regular",
+      "sha256": "39238e09bb7d30e39fbf87746ceac206f7ec206cff3d73c743e3f818ca2ec54f",
+      "bytes": 765
+    },
+    {
+      "path": "/etc/ssl/certs/GTS_Root_R4.crt",
+      "package": "ca-certificates",
+      "mode": "0o644",
+      "kind": "regular",
+      "sha256": "7e8b80d078d3dd77d3ed2108dd2b33412c12d7d72cb0965741c70708691776a2",
+      "bytes": 765
+    },
+    {
+      "path": "/etc/ssl/certs/GlobalSign_ECC_Root_CA_-_R4.crt",
+      "package": "ca-certificates",
+      "mode": "0o644",
+      "kind": "regular",
+      "sha256": "d1b69887f73444c0fc0a6f22a2fe961c2423275f9c38ba7d50da2a4ba75394f1",
+      "bytes": 704
+    },
+    {
+      "path": "/etc/ssl/certs/GlobalSign_ECC_Root_CA_-_R5.crt",
+      "package": "ca-certificates",
+      "mode": "0o644",
+      "kind": "regular",
+      "sha256": "80eeafa5039f282345129a81ace7e1c1e1d4fd826f1eb3391a4ea56f38a6e3d8",
+      "bytes": 794
+    },
+    {
+      "path": "/etc/ssl/certs/GlobalSign_Root_CA_-_R3.crt",
+      "package": "ca-certificates",
+      "mode": "0o644",
+      "kind": "regular",
+      "sha256": "6bdc59f897631af7811e3201cbc58e5999de2600ae8667454a34514eecfd8381",
+      "bytes": 1229
+    },
+    {
+      "path": "/etc/ssl/certs/GlobalSign_Root_CA_-_R6.crt",
+      "package": "ca-certificates",
+      "mode": "0o644",
+      "kind": "regular",
+      "sha256": "5ff8425be71c1805446bf10601ce3cb9619889866766fc9285583ca5a4a7de94",
+      "bytes": 1972
+    },
+    {
+      "path": "/etc/ssl/certs/GlobalSign_Root_E46.crt",
+      "package": "ca-certificates",
+      "mode": "0o644",
+      "kind": "regular",
+      "sha256": "5bd16128d0934629c2e1713140a6f97c9828dbb5429ab5797b2573efc71de1a1",
+      "bytes": 769
+    },
+    {
+      "path": "/etc/ssl/certs/GlobalSign_Root_R46.crt",
+      "package": "ca-certificates",
+      "mode": "0o644",
+      "kind": "regular",
+      "sha256": "dcc1a6246e13880ca5b73ef547e082dd0401e4d8837b6d211be82f7be791ac65",
+      "bytes": 1915
+    },
+    {
+      "path": "/etc/ssl/certs/Go_Daddy_Root_Certificate_Authority_-_G2.crt",
+      "package": "ca-certificates",
+      "mode": "0o644",
+      "kind": "regular",
+      "sha256": "500329abac100a953a7396b54b36be57d333022f17401bc948248ea179cf1784",
+      "bytes": 1367
+    },
+    {
+      "path": "/etc/ssl/certs/HARICA_TLS_ECC_Root_CA_2021.crt",
+      "package": "ca-certificates",
+      "mode": "0o644",
+      "kind": "regular",
+      "sha256": "c6dc63e98b3a5e6a595c7d583a9c47c5efb6d316957466fd16c785b423eacf37",
+      "bytes": 867
+    },
+    {
+      "path": "/etc/ssl/certs/HARICA_TLS_RSA_Root_CA_2021.crt",
+      "package": "ca-certificates",
+      "mode": "0o644",
+      "kind": "regular",
+      "sha256": "05e0ebf9643197ccf8036cdd86a2ee14292c2a077dbe06435ed30369b8762564",
+      "bytes": 2017
+    },
+    {
+      "path": "/etc/ssl/certs/Hellenic_Academic_and_Research_Institutions_ECC_RootCA_2015.crt",
+      "package": "ca-certificates",
+      "mode": "0o644",
+      "kind": "regular",
+      "sha256": "1cdd90d42b48cced8f5ecbff087c49da56b224f0272e4b5074e63b82fff5fb16",
+      "bytes": 1017
+    },
+    {
+      "path": "/etc/ssl/certs/Hellenic_Academic_and_Research_Institutions_RootCA_2015.crt",
+      "package": "ca-certificates",
+      "mode": "0o644",
+      "kind": "regular",
+      "sha256": "677160e6297b48b87ede98ab7b4f2be55894491776f6191937ea397d01a6fb4b",
+      "bytes": 2155
+    },
+    {
+      "path": "/etc/ssl/certs/HiPKI_Root_CA_-_G1.crt",
+      "package": "ca-certificates",
+      "mode": "0o644",
+      "kind": "regular",
+      "sha256": "c3f06f635f1939ebeb125e5c1f030e329b63dd808d3ce803b1b1794bc78b253a",
+      "bytes": 1939
+    },
+    {
+      "path": "/etc/ssl/certs/Hongkong_Post_Root_CA_3.crt",
+      "package": "ca-certificates",
+      "mode": "0o644",
+      "kind": "regular",
+      "sha256": "1fd9801787f30a4ab835b1462afc3f71473a5eacc74c0a22ed392bc3da9362f3",
+      "bytes": 2074
+    },
+    {
+      "path": "/etc/ssl/certs/ISRG_Root_X1.crt",
+      "package": "ca-certificates",
+      "mode": "0o644",
+      "kind": "regular",
+      "sha256": "22b557a27055b33606b6559f37703928d3e4ad79f110b407d04986e1843543d1",
+      "bytes": 1939
+    },
+    {
+      "path": "/etc/ssl/certs/ISRG_Root_X2.crt",
+      "package": "ca-certificates",
+      "mode": "0o644",
+      "kind": "regular",
+      "sha256": "a13d881e11fe6df181b53841f9fa738a2d7ca9ae7be3d53c866f722b4242b013",
+      "bytes": 790
+    },
+    {
+      "path": "/etc/ssl/certs/IdenTrust_Commercial_Root_CA_1.crt",
+      "package": "ca-certificates",
+      "mode": "0o644",
+      "kind": "regular",
+      "sha256": "1d03b965511ce50d0a0bae1b549ed7048c783cfcba9aa40ea11d355b1889657c",
+      "bytes": 1923
+    },
+    {
+      "path": "/etc/ssl/certs/IdenTrust_Public_Sector_Root_CA_1.crt",
+      "package": "ca-certificates",
+      "mode": "0o644",
+      "kind": "regular",
+      "sha256": "9b4282f5a402e19016c4874a52df3367eabccf05be851ad03039f777a602d30a",
+      "bytes": 1931
+    },
+    {
+      "path": "/etc/ssl/certs/Izenpe.com.crt",
+      "package": "ca-certificates",
+      "mode": "0o644",
+      "kind": "regular",
+      "sha256": "1d37341b099afc610bf4feb387096577a0dc61bb8fd09444f1a199a1b1b117e3",
+      "bytes": 2122
+    },
+    {
+      "path": "/etc/ssl/certs/Microsec_e-Szigno_Root_CA_2009.crt",
+      "package": "ca-certificates",
+      "mode": "0o644",
+      "kind": "regular",
+      "sha256": "4f670affee7b14140a6d20937db6e991102d5f8bac1d2562ebf20a1afda94d73",
+      "bytes": 1460
+    },
+    {
+      "path": "/etc/ssl/certs/Microsoft_ECC_Root_Certificate_Authority_2017.crt",
+      "package": "ca-certificates",
+      "mode": "0o644",
+      "kind": "regular",
+      "sha256": "b4ee8ed700b7abe4836d119c8113bc8b717f4f1568abd7edd81f2526c5836983",
+      "bytes": 875
+    },
+    {
+      "path": "/etc/ssl/certs/Microsoft_RSA_Root_Certificate_Authority_2017.crt",
+      "package": "ca-certificates",
+      "mode": "0o644",
+      "kind": "regular",
+      "sha256": "626d330f6a8944fa4245f02f9795668e25a40b29b4cc5206bee73337b7dcd4d5",
+      "bytes": 2021
+    },
+    {
+      "path": "/etc/ssl/certs/NAVER_Global_Root_Certification_Authority.crt",
+      "package": "ca-certificates",
+      "mode": "0o644",
+      "kind": "regular",
+      "sha256": "9848c94859f83e48defe0b25a0f4347480b56ea2bb3336fe6d4dcf00d0d6031d",
+      "bytes": 2013
+    },
+    {
+      "path": "/etc/ssl/certs/NetLock_Arany_=Class_Gold=_F\u0151tan\u00fas\u00edtv\u00e1ny.crt",
+      "package": "ca-certificates",
+      "mode": "0o644",
+      "kind": "regular",
+      "sha256": "40f60f2e2f83fb6c63ddefeba7939a7852b2d468183ea939cc4dcac8fe4cc87d",
+      "bytes": 1476
+    },
+    {
+      "path": "/etc/ssl/certs/OISTE_Server_Root_ECC_G1.crt",
+      "package": "ca-certificates",
+      "mode": "0o644",
+      "kind": "regular",
+      "sha256": "2e79853866c15235f7fb4d93c0f8804fec72f2f3e2e02afbfcf2c631117e299e",
+      "bytes": 826
+    },
+    {
+      "path": "/etc/ssl/certs/OISTE_Server_Root_RSA_G1.crt",
+      "package": "ca-certificates",
+      "mode": "0o644",
+      "kind": "regular",
+      "sha256": "922e088fc95c6cb59be5bc1b05d7ab3651bee5c45928e6cb34ceadc375da627e",
+      "bytes": 1972
+    },
+    {
+      "path": "/etc/ssl/certs/OISTE_WISeKey_Global_Root_GB_CA.crt",
+      "package": "ca-certificates",
+      "mode": "0o644",
+      "kind": "regular",
+      "sha256": "2dc52d373089ff5173ac392a464746dd066aaa3b7d1b3494a473c96686666fce",
+      "bytes": 1346
+    },
+    {
+      "path": "/etc/ssl/certs/OISTE_WISeKey_Global_Root_GC_CA.crt",
+      "package": "ca-certificates",
+      "mode": "0o644",
+      "kind": "regular",
+      "sha256": "17b98c4d832e8349ecb55f1f90e41dfc7bcd9410d1e925ccd06612cd3b9b9a54",
+      "bytes": 895
+    },
+    {
+      "path": "/etc/ssl/certs/QuoVadis_Root_CA_1_G3.crt",
+      "package": "ca-certificates",
+      "mode": "0o644",
+      "kind": "regular",
+      "sha256": "4db45324410a01a7023b038e5da7d7274d3cfd392565c351cf3d297fd7664c73",
+      "bytes": 1923
+    },
+    {
+      "path": "/etc/ssl/certs/QuoVadis_Root_CA_2_G3.crt",
+      "package": "ca-certificates",
+      "mode": "0o644",
+      "kind": "regular",
+      "sha256": "825c67f5583131425c4e33275cc8e5c9dfd02cd190c6d71e1d335621e82965a8",
+      "bytes": 1923
+    },
+    {
+      "path": "/etc/ssl/certs/QuoVadis_Root_CA_3_G3.crt",
+      "package": "ca-certificates",
+      "mode": "0o644",
+      "kind": "regular",
+      "sha256": "198cfe560c191a800cbe923ceca0a4e4f3d5a0d7ff9316b47998765fdc0897be",
+      "bytes": 1923
+    },
+    {
+      "path": "/etc/ssl/certs/SECOM_TLS_ECC_Root_CA_2024.crt",
+      "package": "ca-certificates",
+      "mode": "0o644",
+      "kind": "regular",
+      "sha256": "f137a7369dc8b2eae354bfec1a38314a0b5910d4d8d8384367d8ed2e91e43d35",
+      "bytes": 859
+    },
+    {
+      "path": "/etc/ssl/certs/SECOM_TLS_RSA_Root_CA_2024.crt",
+      "package": "ca-certificates",
+      "mode": "0o644",
+      "kind": "regular",
+      "sha256": "51bb94d3ea9aef7b9db176bfba54b1172b2302df85b320ed1f18c36556f2e1ad",
+      "bytes": 2004
+    },
+    {
+      "path": "/etc/ssl/certs/SSL.com_EV_Root_Certification_Authority_ECC.crt",
+      "package": "ca-certificates",
+      "mode": "0o644",
+      "kind": "regular",
+      "sha256": "662d60a283f416d888ff18831009e2cba95c61377f648beeed91a3dea12ac286",
+      "bytes": 956
+    },
+    {
+      "path": "/etc/ssl/certs/SSL.com_EV_Root_Certification_Authority_RSA_R2.crt",
+      "package": "ca-certificates",
+      "mode": "0o644",
+      "kind": "regular",
+      "sha256": "a0681f1a11d5c02760bcb68b61b0d332f6c197e239c4b30dc47f91a79a73282b",
+      "bytes": 2114
+    },
+    {
+      "path": "/etc/ssl/certs/SSL.com_Root_Certification_Authority_ECC.crt",
+      "package": "ca-certificates",
+      "mode": "0o644",
+      "kind": "regular",
+      "sha256": "b68d02ce35bd02123cf5fcd329bdd33640214715dae0442a97782a4471e9b292",
+      "bytes": 944
+    },
+    {
+      "path": "/etc/ssl/certs/SSL.com_Root_Certification_Authority_RSA.crt",
+      "package": "ca-certificates",
+      "mode": "0o644",
+      "kind": "regular",
+      "sha256": "2e368debd3626ea9c5d94c582d80050a530b505aa77ba231eb13e4d208c36d67",
+      "bytes": 2094
+    },
+    {
+      "path": "/etc/ssl/certs/SSL.com_TLS_ECC_Root_CA_2022.crt",
+      "package": "ca-certificates",
+      "mode": "0o644",
+      "kind": "regular",
+      "sha256": "cf03adad817ae999648c5182ac996fc0682aeda4329c783756aa1c5c3d92eff9",
+      "bytes": 834
+    },
+    {
+      "path": "/etc/ssl/certs/SSL.com_TLS_RSA_Root_CA_2022.crt",
+      "package": "ca-certificates",
+      "mode": "0o644",
+      "kind": "regular",
+      "sha256": "e1c93696d4de9125e49f6a12b97a1cbcf8ce7331bc8268f1fe7b6ab447cc14cf",
+      "bytes": 1980
+    },
+    {
+      "path": "/etc/ssl/certs/SZAFIR_ROOT_CA2.crt",
+      "package": "ca-certificates",
+      "mode": "0o644",
+      "kind": "regular",
+      "sha256": "cbe8a1eec737c93d1c1cc54e31421f81bf358aa43fbc1ac763d80ce61a17fce0",
+      "bytes": 1257
+    },
+    {
+      "path": "/etc/ssl/certs/Sectigo_Public_Server_Authentication_Root_E46.crt",
+      "package": "ca-certificates",
+      "mode": "0o644",
+      "kind": "regular",
+      "sha256": "808130157f570b7640069852c88e256738007811a64c3aa9a4c31038347dc19c",
+      "bytes": 834
+    },
+    {
+      "path": "/etc/ssl/certs/Sectigo_Public_Server_Authentication_Root_R46.crt",
+      "package": "ca-certificates",
+      "mode": "0o644",
+      "kind": "regular",
+      "sha256": "7eaaf8c5047d5dbb4f3d7f173318ee936b09da4f0ceb5f3beb45c277480836eb",
+      "bytes": 1980
+    },
+    {
+      "path": "/etc/ssl/certs/SecureSign_Root_CA14.crt",
+      "package": "ca-certificates",
+      "mode": "0o644",
+      "kind": "regular",
+      "sha256": "1ad476fd9bf167e89bf98f13e9aec59a03443cf6e3d6645b1210fb1e7c702f88",
+      "bytes": 1948
+    },
+    {
+      "path": "/etc/ssl/certs/SecureSign_Root_CA15.crt",
+      "package": "ca-certificates",
+      "mode": "0o644",
+      "kind": "regular",
+      "sha256": "6198c864eaffa477ee9cf9aa10b534f022230e3129f99168962dc06358b4c9af",
+      "bytes": 802
+    },
+    {
+      "path": "/etc/ssl/certs/Security_Communication_ECC_RootCA1.crt",
+      "package": "ca-certificates",
+      "mode": "0o644",
+      "kind": "regular",
+      "sha256": "ef94d474067b306c482dfd066130f04855f50faecd461cee2964ce6c7260000e",
+      "bytes": 830
+    },
+    {
+      "path": "/etc/ssl/certs/Security_Communication_RootCA2.crt",
+      "package": "ca-certificates",
+      "mode": "0o644",
+      "kind": "regular",
+      "sha256": "39ad3110b8f84821ca22cfbd995914f2149521d27ce576e743de6a00dc39d9db",
+      "bytes": 1261
+    },
+    {
+      "path": "/etc/ssl/certs/Starfield_Root_Certificate_Authority_-_G2.crt",
+      "package": "ca-certificates",
+      "mode": "0o644",
+      "kind": "regular",
+      "sha256": "ca3760ba63bf0a2c5dd0dc7fe897838cc58f12a386b4ee53d2065229848e96a3",
+      "bytes": 1399
+    },
+    {
+      "path": "/etc/ssl/certs/Starfield_Services_Root_Certificate_Authority_-_G2.crt",
+      "package": "ca-certificates",
+      "mode": "0o644",
+      "kind": "regular",
+      "sha256": "870f56d009d8aeb95b716b0e7b0020225d542c4b283b9ed896edf97428d6712e",
+      "bytes": 1424
+    },
+    {
+      "path": "/etc/ssl/certs/SwissSign_RSA_TLS_Root_CA_2022_-_1.crt",
+      "package": "ca-certificates",
+      "mode": "0o644",
+      "kind": "regular",
+      "sha256": "d7a20d19e788235a092dcbd33831c59280ea01a9a7a7f663a8c41bf753df2c71",
+      "bytes": 1992
+    },
+    {
+      "path": "/etc/ssl/certs/T-TeleSec_GlobalRoot_Class_2.crt",
+      "package": "ca-certificates",
+      "mode": "0o644",
+      "kind": "regular",
+      "sha256": "b30989fd9e45c74bf417df74d1da639d1f04d4fd0900be813a2d6a031a56c845",
+      "bytes": 1367
+    },
+    {
+      "path": "/etc/ssl/certs/T-TeleSec_GlobalRoot_Class_3.crt",
+      "package": "ca-certificates",
+      "mode": "0o644",
+      "kind": "regular",
+      "sha256": "1cb130a113f4e8502517a679808a98bf076d59bdb223bfc61cd224b8e1abda49",
+      "bytes": 1367
+    },
+    {
+      "path": "/etc/ssl/certs/TUBITAK_Kamu_SM_SSL_Kok_Sertifikasi_-_Surum_1.crt",
+      "package": "ca-certificates",
+      "mode": "0o644",
+      "kind": "regular",
+      "sha256": "c6904218e180fbfb0ed91d81e892c2dd983c4a3404617cb36aeb3a434c3b9df0",
+      "bytes": 1582
+    },
+    {
+      "path": "/etc/ssl/certs/TWCA_CYBER_Root_CA.crt",
+      "package": "ca-certificates",
+      "mode": "0o644",
+      "kind": "regular",
+      "sha256": "68a5f526d2e08c363444536b22a8d4ebfff72d7810ba26dc47711bb6cbc39d50",
+      "bytes": 1984
+    },
+    {
+      "path": "/etc/ssl/certs/TWCA_Global_Root_CA.crt",
+      "package": "ca-certificates",
+      "mode": "0o644",
+      "kind": "regular",
+      "sha256": "5dadc31b57074a3168d1df23bb8b6b920acae1d426bf2288fc2de53cdd571089",
+      "bytes": 1883
+    },
+    {
+      "path": "/etc/ssl/certs/TWCA_Root_Certification_Authority.crt",
+      "package": "ca-certificates",
+      "mode": "0o644",
+      "kind": "regular",
+      "sha256": "b69a59344e58615a691fa9567d55ad6337f09b57647a389242cbf43716575559",
+      "bytes": 1269
+    },
+    {
+      "path": "/etc/ssl/certs/Telekom_Security_TLS_ECC_Root_2020.crt",
+      "package": "ca-certificates",
+      "mode": "0o644",
+      "kind": "regular",
+      "sha256": "a5ea4e7d6673e4d8cebbcbee010cce2f97b720ed2691abb35a119227c5dc0135",
+      "bytes": 843
+    },
+    {
+      "path": "/etc/ssl/certs/Telekom_Security_TLS_RSA_Root_2023.crt",
+      "package": "ca-certificates",
+      "mode": "0o644",
+      "kind": "regular",
+      "sha256": "899d7d6cc867b2bdf51250f88c9ab9e1e96aac5d59b51c93b3b0c69e96792b7c",
+      "bytes": 2037
+    },
+    {
+      "path": "/etc/ssl/certs/Telia_EC_TLS_Root_CA_v3.crt",
+      "package": "ca-certificates",
+      "mode": "0o644",
+      "kind": "regular",
+      "sha256": "1abf9760162f0bc990807ae867e6cf765f64ce902b1bb00aff851fc2fe8254b9",
+      "bytes": 822
+    },
+    {
+      "path": "/etc/ssl/certs/Telia_RSA_TLS_Root_CA_v3.crt",
+      "package": "ca-certificates",
+      "mode": "0o644",
+      "kind": "regular",
+      "sha256": "220576229ed5257e3fb33b1bd04c9ed24b080c82e22c3deb676cf7a102101157",
+      "bytes": 1972
+    },
+    {
+      "path": "/etc/ssl/certs/Telia_Root_CA_v2.crt",
+      "package": "ca-certificates",
+      "mode": "0o644",
+      "kind": "regular",
+      "sha256": "bf3bd189c3dd33bc81635d60284461f0d937c2c1d51cc4d7851c13466419fcb0",
+      "bytes": 1952
+    },
+    {
+      "path": "/etc/ssl/certs/TrustAsia_Global_Root_CA_G3.crt",
+      "package": "ca-certificates",
+      "mode": "0o644",
+      "kind": "regular",
+      "sha256": "d729fda98d8a3bf0d657b93fe0f70e22437359ef0de4ac5b4abcf3ef3667613a",
+      "bytes": 2017
+    },
+    {
+      "path": "/etc/ssl/certs/TrustAsia_Global_Root_CA_G4.crt",
+      "package": "ca-certificates",
+      "mode": "0o644",
+      "kind": "regular",
+      "sha256": "fc9662ebcadeb2c0a804bdb6503d0c23976c638cf73ff95ffafd33ead680e73d",
+      "bytes": 871
+    },
+    {
+      "path": "/etc/ssl/certs/TrustAsia_TLS_ECC_Root_CA.crt",
+      "package": "ca-certificates",
+      "mode": "0o644",
+      "kind": "regular",
+      "sha256": "4e68d469799a26c10aea3f2ff350af434033d4a2914ba6aaccc27a34fe24005e",
+      "bytes": 822
+    },
+    {
+      "path": "/etc/ssl/certs/TrustAsia_TLS_RSA_Root_CA.crt",
+      "package": "ca-certificates",
+      "mode": "0o644",
+      "kind": "regular",
+      "sha256": "76ae2d0df1228b565cf3533a7c22d59fc3683f240ce7192201072260fc6f0e27",
+      "bytes": 1968
+    },
+    {
+      "path": "/etc/ssl/certs/TunTrust_Root_CA.crt",
+      "package": "ca-certificates",
+      "mode": "0o644",
+      "kind": "regular",
+      "sha256": "8a852f7182753cb0193299c6cb2b4a106b1c38a789217b5eb380d736c5cc0081",
+      "bytes": 2037
+    },
+    {
+      "path": "/etc/ssl/certs/UCA_Extended_Validation_Root.crt",
+      "package": "ca-certificates",
+      "mode": "0o644",
+      "kind": "regular",
+      "sha256": "eaa3be600a842e5b603316ed14e9ae11a43003f68a8317f0f2c01a516da4e586",
+      "bytes": 1915
+    },
+    {
+      "path": "/etc/ssl/certs/UCA_Global_G2_Root.crt",
+      "package": "ca-certificates",
+      "mode": "0o644",
+      "kind": "regular",
+      "sha256": "de2e7b1bc7a2aed4e5866d3655d1041206c27caf376ee81bfc4012e8225e0e7c",
+      "bytes": 1891
+    },
+    {
+      "path": "/etc/ssl/certs/USERTrust_ECC_Certification_Authority.crt",
+      "package": "ca-certificates",
+      "mode": "0o644",
+      "kind": "regular",
+      "sha256": "08fb40ba4144166f6ae80c7ab60be23e97e5083836d45fa85a33a5d0bfec10f8",
+      "bytes": 948
+    },
+    {
+      "path": "/etc/ssl/certs/USERTrust_RSA_Certification_Authority.crt",
+      "package": "ca-certificates",
+      "mode": "0o644",
+      "kind": "regular",
+      "sha256": "8a3dbcb92ab1c6277647fe2ab8536b5c982abbfdb1f1df5728e01b906aba953a",
+      "bytes": 2094
+    },
+    {
+      "path": "/etc/ssl/certs/a09a51ae.0",
+      "package": "ca-certificates",
+      "mode": "0o777",
+      "kind": "symlink",
+      "target": "D-TRUST_EV_Root_CA_2_2023.crt"
+    },
+    {
+      "path": "/etc/ssl/certs/a3418fda.0",
+      "package": "ca-certificates",
+      "mode": "0o777",
+      "kind": "symlink",
+      "target": "GTS_Root_R4.crt"
+    },
+    {
+      "path": "/etc/ssl/certs/a89d74c2.0",
+      "package": "ca-certificates",
+      "mode": "0o777",
+      "kind": "symlink",
+      "target": "SSL.com_TLS_RSA_Root_CA_2022.crt"
+    },
+    {
+      "path": "/etc/ssl/certs/a94d09e5.0",
+      "package": "ca-certificates",
+      "mode": "0o777",
+      "kind": "symlink",
+      "target": "ACCVRAIZ1.crt"
+    },
+    {
+      "path": "/etc/ssl/certs/b0d5255e.0",
+      "package": "ca-certificates",
+      "mode": "0o777",
+      "kind": "symlink",
+      "target": "TrustAsia_TLS_RSA_Root_CA.crt"
+    },
+    {
+      "path": "/etc/ssl/certs/b0e59380.0",
+      "package": "ca-certificates",
+      "mode": "0o777",
+      "kind": "symlink",
+      "target": "GlobalSign_ECC_Root_CA_-_R4.crt"
+    },
+    {
+      "path": "/etc/ssl/certs/b433981b.0",
+      "package": "ca-certificates",
+      "mode": "0o777",
+      "kind": "symlink",
+      "target": "ANF_Secure_Server_Root_CA.crt"
+    },
+    {
+      "path": "/etc/ssl/certs/b7a5b843.0",
+      "package": "ca-certificates",
+      "mode": "0o777",
+      "kind": "symlink",
+      "target": "TWCA_Root_Certification_Authority.crt"
+    },
+    {
+      "path": "/etc/ssl/certs/b81b93f0.0",
+      "package": "ca-certificates",
+      "mode": "0o777",
+      "kind": "symlink",
+      "target": "AC_RAIZ_FNMT-RCM_SERVIDORES_SEGUROS.crt"
+    },
+    {
+      "path": "/etc/ssl/certs/b8d25de6.0",
+      "package": "ca-certificates",
+      "mode": "0o777",
+      "kind": "symlink",
+      "target": "TWCA_CYBER_Root_CA.crt"
+    },
+    {
+      "path": "/etc/ssl/certs/bf53fb88.0",
+      "package": "ca-certificates",
+      "mode": "0o777",
+      "kind": "symlink",
+      "target": "Microsoft_RSA_Root_Certificate_Authority_2017.crt"
+    },
+    {
+      "path": "/etc/ssl/certs/c01eb047.0",
+      "package": "ca-certificates",
+      "mode": "0o777",
+      "kind": "symlink",
+      "target": "UCA_Global_G2_Root.crt"
+    },
+    {
+      "path": "/etc/ssl/certs/c28a8a30.0",
+      "package": "ca-certificates",
+      "mode": "0o777",
+      "kind": "symlink",
+      "target": "D-TRUST_Root_Class_3_CA_2_2009.crt"
+    },
+    {
+      "path": "/etc/ssl/certs/cbf06781.0",
+      "package": "ca-certificates",
+      "mode": "0o777",
+      "kind": "symlink",
+      "target": "Go_Daddy_Root_Certificate_Authority_-_G2.crt"
+    },
+    {
+      "path": "/etc/ssl/certs/cc450945.0",
+      "package": "ca-certificates",
+      "mode": "0o777",
+      "kind": "symlink",
+      "target": "Izenpe.com.crt"
+    },
+    {
+      "path": "/etc/ssl/certs/cd58d51e.0",
+      "package": "ca-certificates",
+      "mode": "0o777",
+      "kind": "symlink",
+      "target": "Security_Communication_RootCA2.crt"
+    },
+    {
+      "path": "/etc/ssl/certs/cd8c0d63.0",
+      "package": "ca-certificates",
+      "mode": "0o777",
+      "kind": "symlink",
+      "target": "AC_RAIZ_FNMT-RCM.crt"
+    },
+    {
+      "path": "/etc/ssl/certs/ce5e74ef.0",
+      "package": "ca-certificates",
+      "mode": "0o777",
+      "kind": "symlink",
+      "target": "Amazon_Root_CA_1.crt"
+    },
+    {
+      "path": "/etc/ssl/certs/certSIGN_Root_CA_G2.crt",
+      "package": "ca-certificates",
+      "mode": "0o644",
+      "kind": "regular",
+      "sha256": "80eee369aa5b29931209226fcb4b014ba31daa7f630d44a196817c1bb6b334f1",
+      "bytes": 1891
+    },
+    {
+      "path": "/etc/ssl/certs/d4dae3dd.0",
+      "package": "ca-certificates",
+      "mode": "0o777",
+      "kind": "symlink",
+      "target": "D-TRUST_Root_Class_3_CA_2_EV_2009.crt"
+    },
+    {
+      "path": "/etc/ssl/certs/d52c538d.0",
+      "package": "ca-certificates",
+      "mode": "0o777",
+      "kind": "symlink",
+      "target": "DigiCert_TLS_RSA4096_Root_G5.crt"
+    },
+    {
+      "path": "/etc/ssl/certs/d6325660.0",
+      "package": "ca-certificates",
+      "mode": "0o777",
+      "kind": "symlink",
+      "target": "COMODO_RSA_Certification_Authority.crt"
+    },
+    {
+      "path": "/etc/ssl/certs/da0cfd1d.0",
+      "package": "ca-certificates",
+      "mode": "0o777",
+      "kind": "symlink",
+      "target": "Sectigo_Public_Server_Authentication_Root_E46.crt"
+    },
+    {
+      "path": "/etc/ssl/certs/dc4d6a89.0",
+      "package": "ca-certificates",
+      "mode": "0o777",
+      "kind": "symlink",
+      "target": "GlobalSign_Root_CA_-_R6.crt"
+    },
+    {
+      "path": "/etc/ssl/certs/dd8e9d41.0",
+      "package": "ca-certificates",
+      "mode": "0o777",
+      "kind": "symlink",
+      "target": "DigiCert_Global_Root_G3.crt"
+    },
+    {
+      "path": "/etc/ssl/certs/ddcda989.0",
+      "package": "ca-certificates",
+      "mode": "0o777",
+      "kind": "symlink",
+      "target": "Telekom_Security_TLS_ECC_Root_2020.crt"
+    },
+    {
+      "path": "/etc/ssl/certs/de6d66f3.0",
+      "package": "ca-certificates",
+      "mode": "0o777",
+      "kind": "symlink",
+      "target": "Amazon_Root_CA_4.crt"
+    },
+    {
+      "path": "/etc/ssl/certs/e-Szigno_Root_CA_2017.crt",
+      "package": "ca-certificates",
+      "mode": "0o644",
+      "kind": "regular",
+      "sha256": "8c1306d5c64b43ce6c189b8450f27160aaff3f504211ca6819af6035ae1a7d73",
+      "bytes": 843
+    },
+    {
+      "path": "/etc/ssl/certs/e-Szigno_TLS_Root_CA_2023.crt",
+      "package": "ca-certificates",
+      "mode": "0o644",
+      "kind": "regular",
+      "sha256": "cc04af62fe7fcbc8c1d5efec83d6ae73b5549cc01debe53d43b4b5186df90405",
+      "bytes": 1034
+    },
+    {
+      "path": "/etc/ssl/certs/e18bfb83.0",
+      "package": "ca-certificates",
+      "mode": "0o777",
+      "kind": "symlink",
+      "target": "QuoVadis_Root_CA_3_G3.crt"
+    },
+    {
+      "path": "/etc/ssl/certs/e35234b1.0",
+      "package": "ca-certificates",
+      "mode": "0o777",
+      "kind": "symlink",
+      "target": "Certum_Trusted_Root_CA.crt"
+    },
+    {
+      "path": "/etc/ssl/certs/e73d606e.0",
+      "package": "ca-certificates",
+      "mode": "0o777",
+      "kind": "symlink",
+      "target": "OISTE_WISeKey_Global_Root_GB_CA.crt"
+    },
+    {
+      "path": "/etc/ssl/certs/e868b802.0",
+      "package": "ca-certificates",
+      "mode": "0o777",
+      "kind": "symlink",
+      "target": "e-Szigno_Root_CA_2017.crt"
+    },
+    {
+      "path": "/etc/ssl/certs/e8de2f56.0",
+      "package": "ca-certificates",
+      "mode": "0o777",
+      "kind": "symlink",
+      "target": "Buypass_Class_3_Root_CA.crt"
+    },
+    {
+      "path": "/etc/ssl/certs/ecccd8db.0",
+      "package": "ca-certificates",
+      "mode": "0o777",
+      "kind": "symlink",
+      "target": "HARICA_TLS_ECC_Root_CA_2021.crt"
+    },
+    {
+      "path": "/etc/ssl/certs/ed858448.0",
+      "package": "ca-certificates",
+      "mode": "0o777",
+      "kind": "symlink",
+      "target": "vTrus_ECC_Root_CA.crt"
+    },
+    {
+      "path": "/etc/ssl/certs/eed8c118.0",
+      "package": "ca-certificates",
+      "mode": "0o777",
+      "kind": "symlink",
+      "target": "COMODO_ECC_Certification_Authority.crt"
+    },
+    {
+      "path": "/etc/ssl/certs/ef954a4e.0",
+      "package": "ca-certificates",
+      "mode": "0o777",
+      "kind": "symlink",
+      "target": "IdenTrust_Commercial_Root_CA_1.crt"
+    },
+    {
+      "path": "/etc/ssl/certs/emSign_ECC_Root_CA_-_C3.crt",
+      "package": "ca-certificates",
+      "mode": "0o644",
+      "kind": "regular",
+      "sha256": "b1d0ac5a261e857409cc921acb515796538b48847722f0a00ddccbf60bccec81",
+      "bytes": 814
+    },
+    {
+      "path": "/etc/ssl/certs/emSign_ECC_Root_CA_-_G3.crt",
+      "package": "ca-certificates",
+      "mode": "0o644",
+      "kind": "regular",
+      "sha256": "36e68e205b53c67c7a013894e0d5c8583063468118d1ce78ecbc2200d1dd185c",
+      "bytes": 859
+    },
+    {
+      "path": "/etc/ssl/certs/emSign_Root_CA_-_C1.crt",
+      "package": "ca-certificates",
+      "mode": "0o644",
+      "kind": "regular",
+      "sha256": "fb98230f8746d60429c20f8ce04254384337b479a77698939f7041d0c0eb4289",
+      "bytes": 1257
+    },
+    {
+      "path": "/etc/ssl/certs/emSign_Root_CA_-_G1.crt",
+      "package": "ca-certificates",
+      "mode": "0o644",
+      "kind": "regular",
+      "sha256": "8d390d4c54f6a4a040b04413f1f002192027c66a2a835741f78a152074584a27",
+      "bytes": 1302
+    },
+    {
+      "path": "/etc/ssl/certs/f0c70a8d.0",
+      "package": "ca-certificates",
+      "mode": "0o777",
+      "kind": "symlink",
+      "target": "SSL.com_EV_Root_Certification_Authority_ECC.crt"
+    },
+    {
+      "path": "/etc/ssl/certs/f30dd6ad.0",
+      "package": "ca-certificates",
+      "mode": "0o777",
+      "kind": "symlink",
+      "target": "USERTrust_ECC_Certification_Authority.crt"
+    },
+    {
+      "path": "/etc/ssl/certs/f44703f1.0",
+      "package": "ca-certificates",
+      "mode": "0o777",
+      "kind": "symlink",
+      "target": "e-Szigno_TLS_Root_CA_2023.crt"
+    },
+    {
+      "path": "/etc/ssl/certs/f51bb24c.0",
+      "package": "ca-certificates",
+      "mode": "0o777",
+      "kind": "symlink",
+      "target": "Certigna_Root_CA.crt"
+    },
+    {
+      "path": "/etc/ssl/certs/faf4fe6b.0",
+      "package": "ca-certificates",
+      "mode": "0o777",
+      "kind": "symlink",
+      "target": "Telia_EC_TLS_Root_CA_v3.crt"
+    },
+    {
+      "path": "/etc/ssl/certs/fb717492.0",
+      "package": "ca-certificates",
+      "mode": "0o777",
+      "kind": "symlink",
+      "target": "Atos_TrustedRoot_Root_CA_ECC_TLS_2021.crt"
+    },
+    {
+      "path": "/etc/ssl/certs/fc5a8f99.0",
+      "package": "ca-certificates",
+      "mode": "0o777",
+      "kind": "symlink",
+      "target": "USERTrust_RSA_Certification_Authority.crt"
+    },
+    {
+      "path": "/etc/ssl/certs/fd64f3fc.0",
+      "package": "ca-certificates",
+      "mode": "0o777",
+      "kind": "symlink",
+      "target": "TunTrust_Root_CA.crt"
+    },
+    {
+      "path": "/etc/ssl/certs/fe8a2cd8.0",
+      "package": "ca-certificates",
+      "mode": "0o777",
+      "kind": "symlink",
+      "target": "SZAFIR_ROOT_CA2.crt"
+    },
+    {
+      "path": "/etc/ssl/certs/feffd413.0",
+      "package": "ca-certificates",
+      "mode": "0o777",
+      "kind": "symlink",
+      "target": "GlobalSign_Root_E46.crt"
+    },
+    {
+      "path": "/etc/ssl/certs/ff34af3f.0",
+      "package": "ca-certificates",
+      "mode": "0o777",
+      "kind": "symlink",
+      "target": "TUBITAK_Kamu_SM_SSL_Kok_Sertifikasi_-_Surum_1.crt"
+    },
+    {
+      "path": "/etc/ssl/certs/ffdd40f9.0",
+      "package": "ca-certificates",
+      "mode": "0o777",
+      "kind": "symlink",
+      "target": "D-TRUST_BR_Root_CA_2_2023.crt"
+    },
+    {
+      "path": "/etc/ssl/certs/vTrus_ECC_Root_CA.crt",
+      "package": "ca-certificates",
+      "mode": "0o644",
+      "kind": "regular",
+      "sha256": "2ce349e2da9df497cc62aca37b009a2c3261ccdbe06a4c4a063f8105da40eb5d",
+      "bytes": 774
+    },
+    {
+      "path": "/etc/ssl/certs/vTrus_Root_CA.crt",
+      "package": "ca-certificates",
+      "mode": "0o644",
+      "kind": "regular",
+      "sha256": "8cc726cf62c554561e89e1237495bea3026b1709ba7153fed3401fcd489b5aaf",
+      "bytes": 1911
+    },
+    {
+      "path": "/lib/apk/packages/ca-certificates.list",
+      "package": "ca-certificates",
+      "mode": "0o644",
+      "kind": "regular",
+      "sha256": "130207b8aa306ed0218f51b6e2e9e2b5784c26e35c33047d575374a0185c880c",
+      "bytes": 8791
+    },
+    {
+      "path": "/lib/apk/packages/containerd.list",
+      "package": "containerd",
+      "mode": "0o644",
+      "kind": "regular",
+      "sha256": "f94405816920b993c8bd82da18e3f73eefad702de137fdfb3ad3484f21ec713c",
+      "bytes": 93
+    },
+    {
+      "path": "/usr/bin/containerd",
+      "package": "containerd",
+      "mode": "0o755",
+      "kind": "regular",
+      "sha256": "1741dd469c16ac1bc34fa16298667201c3606f86fb6928fa6dd4d0d84a7a6817",
+      "bytes": 41528832
+    },
+    {
+      "path": "/usr/bin/containerd-shim-runc-v2",
+      "package": "containerd",
+      "mode": "0o755",
+      "kind": "regular",
+      "sha256": "04ff2cb44f00e74efae836b64fe168cb48d9cba990d3b243bfffe191640b35bf",
+      "bytes": 9853848
+    },
+    {
+      "path": "/usr/bin/containerd-stress",
+      "package": "containerd",
+      "mode": "0o755",
+      "kind": "regular",
+      "sha256": "bf032e11dc181274dda2c22278f72af84ff4fccad534841bfe09581541d42d0a",
+      "bytes": 18594240
+    },
+    {
+      "path": "/usr/bin/ctr",
+      "package": "containerd",
+      "mode": "0o755",
+      "kind": "regular",
+      "sha256": "c3dc611b20e605626f1f5371e9ce8e2fd9ee2eda165adc5974abf6c9270192cf",
+      "bytes": 21327200
+    },
+    {
+      "path": "/lib/apk/packages/docker.list",
+      "package": "docker",
+      "mode": "0o644",
+      "kind": "regular",
+      "sha256": "ce536b639a11544da8f2741be433402954edb513f4ec4089084104b133a9a8ae",
+      "bytes": 16
+    },
+    {
+      "path": "/usr/bin/docker",
+      "package": "docker",
+      "mode": "0o755",
+      "kind": "regular",
+      "sha256": "bd934d6872cf24beeb63456166199d2a0c5905ec2f143aca90817989f4bf559e",
+      "bytes": 27333208
+    },
+    {
+      "path": "/lib/apk/packages/docker-compose.list",
+      "package": "docker-compose",
+      "mode": "0o644",
+      "kind": "regular",
+      "sha256": "9bc7da4d060709bdaa11315696a0b6749a3fe31f93a507b459550a8ee2633031",
+      "bytes": 67
+    },
+    {
+      "path": "/usr/bin/docker-compose",
+      "package": "docker-compose",
+      "mode": "0o777",
+      "kind": "symlink",
+      "target": "../lib/docker/cli-plugins/docker-compose"
+    },
+    {
+      "path": "/usr/lib/docker/cli-plugins/docker-compose",
+      "package": "docker-compose",
+      "mode": "0o755",
+      "kind": "regular",
+      "sha256": "8485296655c1e46028530524bef5141eb548ccc0826f38e65df97c81da97e8eb",
+      "bytes": 27525832
+    },
+    {
+      "path": "/etc/config/dockerd",
+      "package": "dockerd",
+      "mode": "0o600",
+      "kind": "regular",
+      "sha256": "de328ad19356ce925c72897dbb074be5cb2fd8cb69ed96586d0537b3f1315662",
+      "bytes": 1922
+    },
+    {
+      "path": "/etc/init.d/dockerd",
+      "package": "dockerd",
+      "mode": "0o755",
+      "kind": "regular",
+      "sha256": "36573a8260be9392a9adc1e19a5874480a133681bcfcf08b41a214d2ffbad49b",
+      "bytes": 9126
+    },
+    {
+      "path": "/etc/sysctl.d/12-br-netfilter-ip.conf",
+      "package": "dockerd",
+      "mode": "0o644",
+      "kind": "regular",
+      "sha256": "d2869e4dbb99d438e480431ce5c0ac98e9db322efec8c950be547aad98a2404c",
+      "bytes": 237
+    },
+    {
+      "path": "/lib/apk/packages/dockerd.conffiles",
+      "package": "dockerd",
+      "mode": "0o644",
+      "kind": "regular",
+      "sha256": "8035c45bbadea7d3a8dd76768bfad8e30e7ddb3ebd96ec33ec3e48b30e3c1590",
+      "bytes": 20
+    },
+    {
+      "path": "/lib/apk/packages/dockerd.conffiles_static",
+      "package": "dockerd",
+      "mode": "0o644",
+      "kind": "regular",
+      "sha256": "ac9dcbc8f903fcad34f8a8aaeb8dd0a631ebf9821dcc3dc1557f5d86d0aa074b",
+      "bytes": 85
+    },
+    {
+      "path": "/lib/apk/packages/dockerd.list",
+      "package": "dockerd",
+      "mode": "0o644",
+      "kind": "regular",
+      "sha256": "d17a97d1831b5e208940155dd1111f04eca2f413e2445d688f3cb25de0ef6ff9",
+      "bytes": 150
+    },
+    {
+      "path": "/lib/apk/packages/dockerd.rusers",
+      "package": "dockerd",
+      "mode": "0o644",
+      "kind": "regular",
+      "sha256": "0b011f00126bdc743db8b7496eba9f540c5097674beb4d27a8d83f45479a07a9",
+      "bytes": 14
+    },
+    {
+      "path": "/usr/bin/docker-proxy",
+      "package": "dockerd",
+      "mode": "0o755",
+      "kind": "regular",
+      "sha256": "886ca5fa76f77d76e65fe1942e89757b91ce84dbc31da3874fc743eb3ade3f31",
+      "bytes": 2416088
+    },
+    {
+      "path": "/usr/bin/dockerd",
+      "package": "dockerd",
+      "mode": "0o755",
+      "kind": "regular",
+      "sha256": "8c4ac74750e343168fe97002ddaebd07d542b58118b951643b38172c848c1650",
+      "bytes": 78213560
+    },
+    {
+      "path": "/lib/apk/packages/ip6tables-nft.alternatives",
+      "package": "ip6tables-nft",
+      "mode": "0o644",
+      "kind": "regular",
+      "sha256": "cdbb5dbb4bf95bd33043ea9fbb30da72c2c0e24639dec5833cba56ad317b44e0",
+      "bytes": 402
+    },
+    {
+      "path": "/lib/apk/packages/ip6tables-nft.list",
+      "package": "ip6tables-nft",
+      "mode": "0o644",
+      "kind": "regular",
+      "sha256": "96073800724eac36febad334c98e9591bb2198f8fed31dff8d55941e3649434b",
+      "bytes": 45
+    },
+    {
+      "path": "/lib/apk/packages/iptables-mod-extra.list",
+      "package": "iptables-mod-extra",
+      "mode": "0o644",
+      "kind": "regular",
+      "sha256": "09b73873e2c18ae31fa2ea90c569cd4c7e4d09bd3e4407a70dab5896097b0e87",
+      "bytes": 171
+    },
+    {
+      "path": "/usr/lib/iptables/libxt_addrtype.so",
+      "package": "iptables-mod-extra",
+      "mode": "0o755",
+      "kind": "regular",
+      "sha256": "6855f822ba8bd31d073cdbfb48fcdb410e231d8393b5c1b06a5935e23c903b14",
+      "bytes": 8538
+    },
+    {
+      "path": "/usr/lib/iptables/libxt_cgroup.so",
+      "package": "iptables-mod-extra",
+      "mode": "0o755",
+      "kind": "regular",
+      "sha256": "bd8d8d96a949d338b812f297e4adbe8ce928a1c150bad79580cc1269c24ec901",
+      "bytes": 8730
+    },
+    {
+      "path": "/usr/lib/iptables/libxt_owner.so",
+      "package": "iptables-mod-extra",
+      "mode": "0o755",
+      "kind": "regular",
+      "sha256": "acf17ae83dc0f24d1f7efff3439c529c5f1f872bde2ad130fb7733a0567cc830",
+      "bytes": 12826
+    },
+    {
+      "path": "/usr/lib/iptables/libxt_pkttype.so",
+      "package": "iptables-mod-extra",
+      "mode": "0o755",
+      "kind": "regular",
+      "sha256": "7f88f445880d94b083f3395822313c71cf369c729df058af43ce25c164346c7a",
+      "bytes": 8346
+    },
+    {
+      "path": "/usr/lib/iptables/libxt_quota.so",
+      "package": "iptables-mod-extra",
+      "mode": "0o755",
+      "kind": "regular",
+      "sha256": "01020350ced5bee962ca0795c77d20c4cf379bbe76c2ffc704a6358aab8a68b6",
+      "bytes": 4250
+    },
+    {
+      "path": "/lib/apk/packages/iptables-nft.alternatives",
+      "package": "iptables-nft",
+      "mode": "0o644",
+      "kind": "regular",
+      "sha256": "6fe8894c6291b589da195c88565c57c1d576c3b9a7b6f5b899894932a85411a5",
+      "bytes": 394
+    },
+    {
+      "path": "/lib/apk/packages/iptables-nft.list",
+      "package": "iptables-nft",
+      "mode": "0o644",
+      "kind": "regular",
+      "sha256": "10b774503d2e52177d1a091a814adef6d74a7a7158dccb382f33ba4fc7d4ed7b",
+      "bytes": 44
+    },
+    {
+      "path": "/etc/modules.d/br-netfilter",
+      "package": "kmod-br-netfilter",
+      "mode": "0o644",
+      "kind": "regular",
+      "sha256": "3bfff2585066e0a9f96bbde61be25b49a06762530ee2fbb570958556fffe428a",
+      "bytes": 13
+    },
+    {
+      "path": "/etc/sysctl.d/11-br-netfilter.conf",
+      "package": "kmod-br-netfilter",
+      "mode": "0o644",
+      "kind": "regular",
+      "sha256": "fd1dd4f2667663c13930c46b07bd381d77b0a54e3a4ff8291028c7fe508c5f75",
+      "bytes": 275
+    },
+    {
+      "path": "/lib/apk/packages/kmod-br-netfilter.list",
+      "package": "kmod-br-netfilter",
+      "mode": "0o644",
+      "kind": "regular",
+      "sha256": "a3b40841823d37a43140dd72bb6b4291ac79cb469eb6c10223a413774563dd41",
+      "bytes": 100
+    },
+    {
+      "path": "/lib/modules/6.12.94/br_netfilter.ko",
+      "package": "kmod-br-netfilter",
+      "mode": "0o644",
+      "kind": "regular",
+      "sha256": "0844621cdedbb660543956472b22be4cf4198c7134a9a2eb21c44eea49473ec7",
+      "bytes": 26792
+    },
+    {
+      "path": "/etc/modules.d/09-crypto-acompress",
+      "package": "kmod-crypto-acompress",
+      "mode": "0o644",
+      "kind": "regular",
+      "sha256": "e6ecda546ce61ce9975e2c79f0a71bde1a41cb81c73a81c75673710f4c529592",
+      "bytes": 17
+    },
+    {
+      "path": "/lib/apk/packages/kmod-crypto-acompress.list",
+      "package": "kmod-crypto-acompress",
+      "mode": "0o644",
+      "kind": "regular",
+      "sha256": "65ddf34577559450c6778da14f2e8114c1272aefee3796a5b3b211cfee989649",
+      "bytes": 35
+    },
+    {
+      "path": "/etc/modules.d/09-crypto-blake2b",
+      "package": "kmod-crypto-blake2b",
+      "mode": "0o644",
+      "kind": "regular",
+      "sha256": "ae01a5848a3cf3a1d3063c55c22be77a0b4b24e77c36bf5b1c831cf1aa9d1a17",
+      "bytes": 16
+    },
+    {
+      "path": "/lib/apk/packages/kmod-crypto-blake2b.list",
+      "package": "kmod-crypto-blake2b",
+      "mode": "0o644",
+      "kind": "regular",
+      "sha256": "68e1b0ab6799828f96459259142a4662df5f49a9647d36d0680ab38195eb3dd5",
+      "bytes": 73
+    },
+    {
+      "path": "/lib/modules/6.12.94/blake2b_generic.ko",
+      "package": "kmod-crypto-blake2b",
+      "mode": "0o644",
+      "kind": "regular",
+      "sha256": "27026b4f993e178d34186b666a4d21c779ef4e583b78459e843c835753fdacbb",
+      "bytes": 15488
+    },
+    {
+      "path": "/etc/modules.d/09-crypto-xxhash",
+      "package": "kmod-crypto-xxhash",
+      "mode": "0o644",
+      "kind": "regular",
+      "sha256": "32c6925d37ca4776ad400d454baf71d27c74d512403d0214e0a9e9632df86c4b",
+      "bytes": 15
+    },
+    {
+      "path": "/lib/apk/packages/kmod-crypto-xxhash.list",
+      "package": "kmod-crypto-xxhash",
+      "mode": "0o644",
+      "kind": "regular",
+      "sha256": "a7b283e6defd3c40b9da62548de77da2ed30d05ac11f6f8d6cd36ca16a2309b0",
+      "bytes": 71
+    },
+    {
+      "path": "/lib/modules/6.12.94/xxhash_generic.ko",
+      "package": "kmod-crypto-xxhash",
+      "mode": "0o644",
+      "kind": "regular",
+      "sha256": "4762724991930882dde1182c8591ec44e7dec0ea6bc31ae4bad4b1f94063af0c",
+      "bytes": 4672
+    },
+    {
+      "path": "/etc/modules-boot.d/30-fs-btrfs",
+      "package": "kmod-fs-btrfs",
+      "mode": "0o777",
+      "kind": "symlink",
+      "target": "../modules.d/30-fs-btrfs"
+    },
+    {
+      "path": "/etc/modules.d/30-fs-btrfs",
+      "package": "kmod-fs-btrfs",
+      "mode": "0o644",
+      "kind": "regular",
+      "sha256": "7e2b88c929164974f3746d0fe13a6b8e8a3d962744836ec39bda818d12809f01",
+      "bytes": 6
+    },
+    {
+      "path": "/lib/apk/packages/kmod-fs-btrfs.list",
+      "package": "kmod-fs-btrfs",
+      "mode": "0o644",
+      "kind": "regular",
+      "sha256": "46a164fff1fc1555bd2f08d92518c389d40948282deaa64312a3d3abd2c01b78",
+      "bytes": 89
+    },
+    {
+      "path": "/lib/modules/6.12.94/btrfs.ko",
+      "package": "kmod-fs-btrfs",
+      "mode": "0o644",
+      "kind": "regular",
+      "sha256": "2d2aa484cfa4a8e4dbb4d856bc07c95cbf0f735b5d0bf9e7fbd16a4a983aa0f1",
+      "bytes": 1593384
+    },
+    {
+      "path": "/etc/modules.d/42-ip6tables",
+      "package": "kmod-ip6tables",
+      "mode": "0o644",
+      "kind": "regular",
+      "sha256": "08c7f5097531f6503f785b8183909780750877da94d6c1c3105c0662d6a9b9ee",
+      "bytes": 44
+    },
+    {
+      "path": "/lib/apk/packages/kmod-ip6tables.list",
+      "package": "kmod-ip6tables",
+      "mode": "0o644",
+      "kind": "regular",
+      "sha256": "9f505027ceb5c9dddfb586d51ecd0cdf4ab3d972b075d0c60c2ba8e74630b41f",
+      "bytes": 144
+    },
+    {
+      "path": "/lib/modules/6.12.94/ip6t_REJECT.ko",
+      "package": "kmod-ip6tables",
+      "mode": "0o644",
+      "kind": "regular",
+      "sha256": "cf06502a837ce0198a793d0f4724aa115eca5d2e959f8247ddc233f9c7a1e901",
+      "bytes": 5384
+    },
+    {
+      "path": "/lib/modules/6.12.94/ip6table_filter.ko",
+      "package": "kmod-ip6tables",
+      "mode": "0o644",
+      "kind": "regular",
+      "sha256": "56d2a78c37f78395bdeb110fdec7d800bd9b89ab53b5b4ce0681ffa3e3da7685",
+      "bytes": 6304
+    },
+    {
+      "path": "/lib/modules/6.12.94/ip6table_mangle.ko",
+      "package": "kmod-ip6tables",
+      "mode": "0o644",
+      "kind": "regular",
+      "sha256": "fd4896a04b6dba845ffc309fc922fb49d4d065e13b1394be1a6bda4b7b54b0f5",
+      "bytes": 6144
+    },
+    {
+      "path": "/etc/modules.d/ipt-conntrack",
+      "package": "kmod-ipt-conntrack",
+      "mode": "0o644",
+      "kind": "regular",
+      "sha256": "f16cf7881be231e7bf9b35069082889a312934328630ce1374bdc0f20abaa491",
+      "bytes": 28
+    },
+    {
+      "path": "/lib/apk/packages/kmod-ipt-conntrack.list",
+      "package": "kmod-ipt-conntrack",
+      "mode": "0o644",
+      "kind": "regular",
+      "sha256": "ee6f3332cd4f9740eb8658874db10b6cdf696d3ca1a9c609233e8b646c13fac6",
+      "bytes": 129
+    },
+    {
+      "path": "/lib/modules/6.12.94/xt_CT.ko",
+      "package": "kmod-ipt-conntrack",
+      "mode": "0o644",
+      "kind": "regular",
+      "sha256": "e026b76254413533136680955851be5ff9a0b66767c0836018f14be9637fd15d",
+      "bytes": 10040
+    },
+    {
+      "path": "/lib/modules/6.12.94/xt_conntrack.ko",
+      "package": "kmod-ipt-conntrack",
+      "mode": "0o644",
+      "kind": "regular",
+      "sha256": "67f67f7bc1f6f972d96c0e250b83fea628e04ac88ce18454102fd7606dd8360c",
+      "bytes": 6888
+    },
+    {
+      "path": "/lib/modules/6.12.94/xt_state.ko",
+      "package": "kmod-ipt-conntrack",
+      "mode": "0o644",
+      "kind": "regular",
+      "sha256": "56aa4608fcc0d6daee8639e06ef9bcc72d5def3a1bb6c09f4517aaf9a1f5c3cf",
+      "bytes": 4824
+    },
+    {
+      "path": "/etc/modules.d/ipt-core",
+      "package": "kmod-ipt-core",
+      "mode": "0o644",
+      "kind": "regular",
+      "sha256": "b5e8cb2c73960a775d3030e0e66f4c873d6b7bf52ceac91dbc67c5234066f793",
+      "bytes": 124
+    },
+    {
+      "path": "/lib/apk/packages/kmod-ipt-core.list",
+      "package": "kmod-ipt-core",
+      "mode": "0o644",
+      "kind": "regular",
+      "sha256": "c9f643f5e3435ccacefc0b96089d4186a239a4957f5dec4cbda1af3fc95679bb",
+      "bytes": 436
+    },
+    {
+      "path": "/lib/modules/6.12.94/ipt_REJECT.ko",
+      "package": "kmod-ipt-core",
+      "mode": "0o644",
+      "kind": "regular",
+      "sha256": "721519a19f171283ec6c38012d895596cb166763a1b437e975322d3a35814cb2",
+      "bytes": 5336
+    },
+    {
+      "path": "/lib/modules/6.12.94/iptable_filter.ko",
+      "package": "kmod-ipt-core",
+      "mode": "0o644",
+      "kind": "regular",
+      "sha256": "e8b0043bfa83113a2a76e6ee5b4a7f54e601254c434ba75c0e9a1c35eafaa3ad",
+      "bytes": 6224
+    },
+    {
+      "path": "/lib/modules/6.12.94/iptable_mangle.ko",
+      "package": "kmod-ipt-core",
+      "mode": "0o644",
+      "kind": "regular",
+      "sha256": "e049f3e4ef427a4dc540988ef103c87e2aa7694e41f045153d74d11e434753b6",
+      "bytes": 6088
+    },
+    {
+      "path": "/lib/modules/6.12.94/xt_LOG.ko",
+      "package": "kmod-ipt-core",
+      "mode": "0o644",
+      "kind": "regular",
+      "sha256": "ac3dad12bbb0c936372c3d96cbb399d2b3372669535c49048d3d5980981d14dc",
+      "bytes": 4872
+    },
+    {
+      "path": "/lib/modules/6.12.94/xt_TCPMSS.ko",
+      "package": "kmod-ipt-core",
+      "mode": "0o644",
+      "kind": "regular",
+      "sha256": "b28c623ab0d851d1c65594f93d24c960362cea3f3d5cd9d59c20cd4674c556d0",
+      "bytes": 8528
+    },
+    {
+      "path": "/lib/modules/6.12.94/xt_comment.ko",
+      "package": "kmod-ipt-core",
+      "mode": "0o644",
+      "kind": "regular",
+      "sha256": "c50e403117826c7a7083de964d08e3986d88ff14cd91a47397a54c83f7bfdfae",
+      "bytes": 3680
+    },
+    {
+      "path": "/lib/modules/6.12.94/xt_limit.ko",
+      "package": "kmod-ipt-core",
+      "mode": "0o644",
+      "kind": "regular",
+      "sha256": "0e5a8dea2e23df925750ade8a1c2e322c4d0073dcee3f06d12eae37710fec980",
+      "bytes": 5520
+    },
+    {
+      "path": "/lib/modules/6.12.94/xt_mac.ko",
+      "package": "kmod-ipt-core",
+      "mode": "0o644",
+      "kind": "regular",
+      "sha256": "c6e69a761bc019f60d6c2b852d3f85bb6e71f659dfc052ec81b08874637a4146",
+      "bytes": 3968
+    },
+    {
+      "path": "/lib/modules/6.12.94/xt_mark.ko",
+      "package": "kmod-ipt-core",
+      "mode": "0o644",
+      "kind": "regular",
+      "sha256": "9ef0db0ef828a10c56d27c3bfc85f159f9969fc84845f8c3d1c4147bce9a2c96",
+      "bytes": 4504
+    },
+    {
+      "path": "/lib/modules/6.12.94/xt_multiport.ko",
+      "package": "kmod-ipt-core",
+      "mode": "0o644",
+      "kind": "regular",
+      "sha256": "0582ebba4eccd4e0ba1502b467f434f71390a58113b2920387f3af32bf9e5827",
+      "bytes": 5008
+    },
+    {
+      "path": "/lib/modules/6.12.94/xt_tcpudp.ko",
+      "package": "kmod-ipt-core",
+      "mode": "0o644",
+      "kind": "regular",
+      "sha256": "3748f4d5f83939a726a15991472dc545679f07642a76e23ec55f295ec4838a05",
+      "bytes": 6680
+    },
+    {
+      "path": "/lib/modules/6.12.94/xt_time.ko",
+      "package": "kmod-ipt-core",
+      "mode": "0o644",
+      "kind": "regular",
+      "sha256": "c341c9a7af5467cfd40d81fda369f6b7a3594141e1d7bf6d946050be8918641e",
+      "bytes": 6248
+    },
+    {
+      "path": "/etc/modules.d/ipt-extra",
+      "package": "kmod-ipt-extra",
+      "mode": "0o644",
+      "kind": "regular",
+      "sha256": "c2c15f98fa60d34876e788e1abc72ce27a98c2bf1bf203fa08327a1ec9da01f2",
+      "bytes": 51
+    },
+    {
+      "path": "/lib/apk/packages/kmod-ipt-extra.list",
+      "package": "kmod-ipt-extra",
+      "mode": "0o644",
+      "kind": "regular",
+      "sha256": "305ce05030fd78ddc1999db021fbe2be283f469d17c9d2e74b10b44fa299be3c",
+      "bytes": 196
+    },
+    {
+      "path": "/lib/modules/6.12.94/xt_addrtype.ko",
+      "package": "kmod-ipt-extra",
+      "mode": "0o644",
+      "kind": "regular",
+      "sha256": "ceb49476cdcd311d950441950d77d5387b1cbfcb34a0943777572e476931a457",
+      "bytes": 7160
+    },
+    {
+      "path": "/lib/modules/6.12.94/xt_cgroup.ko",
+      "package": "kmod-ipt-extra",
+      "mode": "0o644",
+      "kind": "regular",
+      "sha256": "6193d965cfe851c244ca0fc73de72a7136df918f8604da3d486e1071a6e11253",
+      "bytes": 7720
+    },
+    {
+      "path": "/lib/modules/6.12.94/xt_owner.ko",
+      "package": "kmod-ipt-extra",
+      "mode": "0o644",
+      "kind": "regular",
+      "sha256": "322c60e3ec563a870b7318fb9b1a62cfe34ba17d873485763dce2d722f2e1a65",
+      "bytes": 5320
+    },
+    {
+      "path": "/lib/modules/6.12.94/xt_pkttype.ko",
+      "package": "kmod-ipt-extra",
+      "mode": "0o644",
+      "kind": "regular",
+      "sha256": "190d44e429d5df290b8a0d6486503bb36424828564be36f4fe30c813f925f030",
+      "bytes": 3832
+    },
+    {
+      "path": "/lib/modules/6.12.94/xt_quota.ko",
+      "package": "kmod-ipt-extra",
+      "mode": "0o644",
+      "kind": "regular",
+      "sha256": "7968b8aba801357738cde9d29013886719e4d704bb9185e405df55b64e420868",
+      "bytes": 4464
+    },
+    {
+      "path": "/etc/modules.d/ipt-nat",
+      "package": "kmod-ipt-nat",
+      "mode": "0o644",
+      "kind": "regular",
+      "sha256": "f30fff235eeb1878c1b99dd93a05b5cedc75d3e6b4146dbc10fe39db9df5cfb9",
+      "bytes": 45
+    },
+    {
+      "path": "/lib/apk/packages/kmod-ipt-nat.list",
+      "package": "kmod-ipt-nat",
+      "mode": "0o644",
+      "kind": "regular",
+      "sha256": "ff84dd81e373ac5306cb392af4101d1a2f630bf2bf9cfdb737d20acd0d902609",
+      "bytes": 164
+    },
+    {
+      "path": "/lib/modules/6.12.94/iptable_nat.ko",
+      "package": "kmod-ipt-nat",
+      "mode": "0o644",
+      "kind": "regular",
+      "sha256": "7483312e10b079ede88477a5992e4f6711dd41b77d5ae0566017dea251a09913",
+      "bytes": 6544
+    },
+    {
+      "path": "/lib/modules/6.12.94/xt_MASQUERADE.ko",
+      "package": "kmod-ipt-nat",
+      "mode": "0o644",
+      "kind": "regular",
+      "sha256": "30d9c2e302e9b8c99105e0eb340d94ed71e417896f7d687ae7a1a48ecd374d05",
+      "bytes": 5136
+    },
+    {
+      "path": "/lib/modules/6.12.94/xt_REDIRECT.ko",
+      "package": "kmod-ipt-nat",
+      "mode": "0o644",
+      "kind": "regular",
+      "sha256": "e7831bd25999f586ddffd154c63c5b20a22977d7d3a3c4dc778e41909e436698",
+      "bytes": 4976
+    },
+    {
+      "path": "/lib/modules/6.12.94/xt_nat.ko",
+      "package": "kmod-ipt-nat",
+      "mode": "0o644",
+      "kind": "regular",
+      "sha256": "d360bb4850ff1ef98c4d8a7c68f4223d6196aa2772d9edd1a3b5429ed4fad2cc",
+      "bytes": 7472
+    },
+    {
+      "path": "/etc/modules.d/43-ipt-nat6",
+      "package": "kmod-ipt-nat6",
+      "mode": "0o644",
+      "kind": "regular",
+      "sha256": "42b19fc5db42f53edb2e00baff289ad9aa106454fed737850de08f1594cd618e",
+      "bytes": 22
+    },
+    {
+      "path": "/lib/apk/packages/kmod-ipt-nat6.list",
+      "package": "kmod-ipt-nat6",
+      "mode": "0o644",
+      "kind": "regular",
+      "sha256": "44bfe33bb63ec29dbc2861729087d7b4b02ff7329d85e786c00c5ff5b967775c",
+      "bytes": 97
+    },
+    {
+      "path": "/lib/modules/6.12.94/ip6t_NPT.ko",
+      "package": "kmod-ipt-nat6",
+      "mode": "0o644",
+      "kind": "regular",
+      "sha256": "ec0ed6777a60a3d482db2fd48cbb1dec78bc487c25c671826c29ad7ff334c0d2",
+      "bytes": 6200
+    },
+    {
+      "path": "/lib/modules/6.12.94/ip6table_nat.ko",
+      "package": "kmod-ipt-nat6",
+      "mode": "0o644",
+      "kind": "regular",
+      "sha256": "860da2866605791bec5c6381d9b8d9ffe610781015fa59f2ebdb5bf345e93301",
+      "bytes": 6560
+    },
+    {
+      "path": "/etc/modules.d/ipt-physdev",
+      "package": "kmod-ipt-physdev",
+      "mode": "0o644",
+      "kind": "regular",
+      "sha256": "673b4783ed79f5262d13e77b33c7946b0763d49d94d25fbb7f189ed5ecc79a19",
+      "bytes": 11
+    },
+    {
+      "path": "/lib/apk/packages/kmod-ipt-physdev.list",
+      "package": "kmod-ipt-physdev",
+      "mode": "0o644",
+      "kind": "regular",
+      "sha256": "9e7d7d669f8aa542d0c2ab30e4979934947160aa47b2a363718d9ec536b20213",
+      "bytes": 62
+    },
+    {
+      "path": "/lib/modules/6.12.94/xt_physdev.ko",
+      "package": "kmod-ipt-physdev",
+      "mode": "0o644",
+      "kind": "regular",
+      "sha256": "a2cf1a72e7abeaa69a8a8094fa395da1c7db80491fd4c656d16941bb8740827f",
+      "bytes": 5600
+    },
+    {
+      "path": "/etc/modules.d/lib-lzo",
+      "package": "kmod-lib-lzo",
+      "mode": "0o644",
+      "kind": "regular",
+      "sha256": "085e042691c0164a2c7f9e82c3bbae362c454c3bf0cdb8a931c8414fc6e070ba",
+      "bytes": 40
+    },
+    {
+      "path": "/lib/apk/packages/kmod-lib-lzo.list",
+      "package": "kmod-lib-lzo",
+      "mode": "0o644",
+      "kind": "regular",
+      "sha256": "ec4f5604173127e5ed0839404fceb143253e8ca2ff84e418e85efec3f0c6d52c",
+      "bytes": 23
+    },
+    {
+      "path": "/etc/modules.d/lib-raid6",
+      "package": "kmod-lib-raid6",
+      "mode": "0o644",
+      "kind": "regular",
+      "sha256": "32006423ed9a2d3466d0c1a3866864594b0c86f034232deff96d0591215bdbf4",
+      "bytes": 9
+    },
+    {
+      "path": "/lib/apk/packages/kmod-lib-raid6.list",
+      "package": "kmod-lib-raid6",
+      "mode": "0o644",
+      "kind": "regular",
+      "sha256": "456c14de0a9891903028c182d3cae18c3636d7829a06b2941ac475122e6a9697",
+      "bytes": 58
+    },
+    {
+      "path": "/lib/modules/6.12.94/raid6_pq.ko",
+      "package": "kmod-lib-raid6",
+      "mode": "0o644",
+      "kind": "regular",
+      "sha256": "2981a2728c20e5ac0ecc4775ec10221c073ea4acd19efde5a0e1545495a981e3",
+      "bytes": 101688
+    },
+    {
+      "path": "/etc/modules.d/lib-xor",
+      "package": "kmod-lib-xor",
+      "mode": "0o644",
+      "kind": "regular",
+      "sha256": "bde8d307e0b51bf160c71dbd7a6c2392151711967022fb17964b906ea77dc401",
+      "bytes": 13
+    },
+    {
+      "path": "/lib/apk/packages/kmod-lib-xor.list",
+      "package": "kmod-lib-xor",
+      "mode": "0o644",
+      "kind": "regular",
+      "sha256": "6160df217c214a89a6f26d2c25c25ac6c4c22eef082d4a1f6fccbe9eb243f3ef",
+      "bytes": 84
+    },
+    {
+      "path": "/lib/modules/6.12.94/xor-neon.ko",
+      "package": "kmod-lib-xor",
+      "mode": "0o644",
+      "kind": "regular",
+      "sha256": "5e2d59cdbb4c754085bae60151ee13cbb08b4668aff17e6cb0d6523200ae15ab",
+      "bytes": 4952
+    },
+    {
+      "path": "/lib/modules/6.12.94/xor.ko",
+      "package": "kmod-lib-xor",
+      "mode": "0o644",
+      "kind": "regular",
+      "sha256": "4d18005f51db93908444bf097b9e94a74af47146194e0b50d4ab965dd2d0c869",
+      "bytes": 8640
+    },
+    {
+      "path": "/lib/apk/packages/kmod-lib-xxhash.list",
+      "package": "kmod-lib-xxhash",
+      "mode": "0o644",
+      "kind": "regular",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "/etc/modules.d/lib-zlib-deflate",
+      "package": "kmod-lib-zlib-deflate",
+      "mode": "0o644",
+      "kind": "regular",
+      "sha256": "c730011da66840669081f113ce4f43be7afda43e62f0c3b9280b43d2881479c1",
+      "bytes": 13
+    },
+    {
+      "path": "/lib/apk/packages/kmod-lib-zlib-deflate.list",
+      "package": "kmod-lib-zlib-deflate",
+      "mode": "0o644",
+      "kind": "regular",
+      "sha256": "7100b19cdd306fde37f7c68aad9e0330f871f3fe24106069dbec63cf7aa8ed4e",
+      "bytes": 32
+    },
+    {
+      "path": "/etc/modules.d/lib-zlib-inflate",
+      "package": "kmod-lib-zlib-inflate",
+      "mode": "0o644",
+      "kind": "regular",
+      "sha256": "f149db99bcb32d39d0e64705fdca456d3251911becda5174ea8773090c5f9de3",
+      "bytes": 13
+    },
+    {
+      "path": "/lib/apk/packages/kmod-lib-zlib-inflate.list",
+      "package": "kmod-lib-zlib-inflate",
+      "mode": "0o644",
+      "kind": "regular",
+      "sha256": "e88fd2bb54ed123028b07c0fbbea90adae9d3fe0c6ca25b7ab8e4961ef55b7a0",
+      "bytes": 32
+    },
+    {
+      "path": "/etc/modules.d/lib-zstd",
+      "package": "kmod-lib-zstd",
+      "mode": "0o644",
+      "kind": "regular",
+      "sha256": "b8d87a8e4f0d559ac92854c7c6e9918d52d5c2dee281dba9bea1fc7f3d264c06",
+      "bytes": 35
+    },
+    {
+      "path": "/lib/apk/packages/kmod-lib-zstd.list",
+      "package": "kmod-lib-zstd",
+      "mode": "0o644",
+      "kind": "regular",
+      "sha256": "50c443832b6b6324619546d03ec68a9f4c0612aec626ee197b7b690870502485",
+      "bytes": 24
+    },
+    {
+      "path": "/etc/modules.d/nf-ipt",
+      "package": "kmod-nf-ipt",
+      "mode": "0o644",
+      "kind": "regular",
+      "sha256": "e2161e8d760b086d82b50bb1f34aaee9ff3058feb95596589e601bc52ea4392f",
+      "bytes": 19
+    },
+    {
+      "path": "/lib/apk/packages/kmod-nf-ipt.list",
+      "package": "kmod-nf-ipt",
+      "mode": "0o644",
+      "kind": "regular",
+      "sha256": "2bd8bdb9d9d5b90525046b3ffa2d11120b0a9cb2f4007397ac3a1b42ae2afe34",
+      "bytes": 89
+    },
+    {
+      "path": "/lib/modules/6.12.94/ip_tables.ko",
+      "package": "kmod-nf-ipt",
+      "mode": "0o644",
+      "kind": "regular",
+      "sha256": "d8a28c260856ea064430cffd26a634c1182d79d109ecfa41b141f4d100589db6",
+      "bytes": 23736
+    },
+    {
+      "path": "/lib/modules/6.12.94/x_tables.ko",
+      "package": "kmod-nf-ipt",
+      "mode": "0o644",
+      "kind": "regular",
+      "sha256": "b4754b9c8693897f9c552f91a9b9f5e2da09e94f026527ddd2ea5aa4eb389d58",
+      "bytes": 43920
+    },
+    {
+      "path": "/etc/modules.d/nf-ipt6",
+      "package": "kmod-nf-ipt6",
+      "mode": "0o644",
+      "kind": "regular",
+      "sha256": "f6a7a46f3ad7582e82fdbc1229869d26cf275a05f7a2c25af6aeeeace5e69540",
+      "bytes": 11
+    },
+    {
+      "path": "/lib/apk/packages/kmod-nf-ipt6.list",
+      "package": "kmod-nf-ipt6",
+      "mode": "0o644",
+      "kind": "regular",
+      "sha256": "212fcec0b32598fead15f5fd922b918dc4f15bbbd7c3e424d0b23bad7f845c48",
+      "bytes": 58
+    },
+    {
+      "path": "/lib/modules/6.12.94/ip6_tables.ko",
+      "package": "kmod-nf-ipt6",
+      "mode": "0o644",
+      "kind": "regular",
+      "sha256": "31b2a44f94a9f178936c4d982efc858ac5acd99f779e6cde7a76f29ce471a0a5",
+      "bytes": 23400
+    },
+    {
+      "path": "/lib/apk/packages/kmod-nf-ipvs.list",
+      "package": "kmod-nf-ipvs",
+      "mode": "0o644",
+      "kind": "regular",
+      "sha256": "8227f0d9e5d344eeba4fcd51bf3f1360097ed50fd6798e9ae8215872a17f880f",
+      "bytes": 467
+    },
+    {
+      "path": "/lib/modules/6.12.94/ip_vs.ko",
+      "package": "kmod-nf-ipvs",
+      "mode": "0o644",
+      "kind": "regular",
+      "sha256": "b421ce05360d82d91b30a79afd49b3848c0c7827f70d9bce8f9cc91630d82fab",
+      "bytes": 208112
+    },
+    {
+      "path": "/lib/modules/6.12.94/ip_vs_dh.ko",
+      "package": "kmod-nf-ipvs",
+      "mode": "0o644",
+      "kind": "regular",
+      "sha256": "711002de59b1988898d142ab4cd6b2d7e51e43bc807cbc9e88801e106e7bd313",
+      "bytes": 5136
+    },
+    {
+      "path": "/lib/modules/6.12.94/ip_vs_fo.ko",
+      "package": "kmod-nf-ipvs",
+      "mode": "0o644",
+      "kind": "regular",
+      "sha256": "e7010508a0b22c9f3fee0461d935d356bf256ce77e7ace5d5f0787641a286032",
+      "bytes": 4136
+    },
+    {
+      "path": "/lib/modules/6.12.94/ip_vs_lblc.ko",
+      "package": "kmod-nf-ipvs",
+      "mode": "0o644",
+      "kind": "regular",
+      "sha256": "d5c989c7ab18a5f9d537feef432e141a65ee249fd7b56adbfbf97b8ad537a99e",
+      "bytes": 9920
+    },
+    {
+      "path": "/lib/modules/6.12.94/ip_vs_lblcr.ko",
+      "package": "kmod-nf-ipvs",
+      "mode": "0o644",
+      "kind": "regular",
+      "sha256": "62d7eea46d33243733520fd0e8413007ad81aecd91609c8014243f1709c06ea4",
+      "bytes": 11992
+    },
+    {
+      "path": "/lib/modules/6.12.94/ip_vs_lc.ko",
+      "package": "kmod-nf-ipvs",
+      "mode": "0o644",
+      "kind": "regular",
+      "sha256": "e06045e43a7f1f252211a6420ae80eb5e0b9e01ed8501f7d9b6b91cfcdc3bd0e",
+      "bytes": 4160
+    },
+    {
+      "path": "/lib/modules/6.12.94/ip_vs_nq.ko",
+      "package": "kmod-nf-ipvs",
+      "mode": "0o644",
+      "kind": "regular",
+      "sha256": "f1440339f6ff8ac789a67ca11c9e8bbfb191de02bdcd61a8547c2bc21e004d10",
+      "bytes": 4200
+    },
+    {
+      "path": "/lib/modules/6.12.94/ip_vs_ovf.ko",
+      "package": "kmod-nf-ipvs",
+      "mode": "0o644",
+      "kind": "regular",
+      "sha256": "9e9704757db3aa996aa6468489ba7f1aecab9d7907d65a5517a91fdfb315dbf2",
+      "bytes": 4160
+    },
+    {
+      "path": "/lib/modules/6.12.94/ip_vs_rr.ko",
+      "package": "kmod-nf-ipvs",
+      "mode": "0o644",
+      "kind": "regular",
+      "sha256": "0a95aeb3ba24881e6fb64750b1b9d0dbe56f6961b143548ce013814f5a3ee430",
+      "bytes": 4808
+    },
+    {
+      "path": "/lib/modules/6.12.94/ip_vs_sed.ko",
+      "package": "kmod-nf-ipvs",
+      "mode": "0o644",
+      "kind": "regular",
+      "sha256": "0fa5df526051be4fae67efd919ba9ab0590425a4a8668e937108e4d13b539b8c",
+      "bytes": 4216
+    },
+    {
+      "path": "/lib/modules/6.12.94/ip_vs_sh.ko",
+      "package": "kmod-nf-ipvs",
+      "mode": "0o644",
+      "kind": "regular",
+      "sha256": "4871902add0d6a0b6d87753b16cee5e2a03b7db1e9c61d72efa00408d8c96534",
+      "bytes": 5712
+    },
+    {
+      "path": "/lib/modules/6.12.94/ip_vs_wlc.ko",
+      "package": "kmod-nf-ipvs",
+      "mode": "0o644",
+      "kind": "regular",
+      "sha256": "30fa96c2a3a241bbc1c34cfb2d005365ac974527476daa878b1568422ff4924a",
+      "bytes": 4216
+    },
+    {
+      "path": "/lib/modules/6.12.94/ip_vs_wrr.ko",
+      "package": "kmod-nf-ipvs",
+      "mode": "0o644",
+      "kind": "regular",
+      "sha256": "f3b5c9f2e6561bfc07c69bd5f64eb5c04886a25af56e17461d107cb95a7a369c",
+      "bytes": 5824
+    },
+    {
+      "path": "/lib/modules/6.12.94/xt_ipvs.ko",
+      "package": "kmod-nf-ipvs",
+      "mode": "0o644",
+      "kind": "regular",
+      "sha256": "a3761e715c799a7a2fecb25b4aa904f7fa1099a881305f8cd7c8ffc9749c8c17",
+      "bytes": 5832
+    },
+    {
+      "path": "/lib/apk/packages/kmod-nf-nat6.list",
+      "package": "kmod-nf-nat6",
+      "mode": "0o644",
+      "kind": "regular",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "/etc/modules.d/nft-compat",
+      "package": "kmod-nft-compat",
+      "mode": "0o644",
+      "kind": "regular",
+      "sha256": "2f160cc49e630c804d4c3dd895350ceec705ccb2f2fe96260e4cb48b81e49342",
+      "bytes": 11
+    },
+    {
+      "path": "/lib/apk/packages/kmod-nft-compat.list",
+      "package": "kmod-nft-compat",
+      "mode": "0o644",
+      "kind": "regular",
+      "sha256": "dacc05abbdcbcec6794076dbe95699dd861ab9d2ee71bf5995bd1dca73a78979",
+      "bytes": 61
+    },
+    {
+      "path": "/lib/modules/6.12.94/nft_compat.ko",
+      "package": "kmod-nft-compat",
+      "mode": "0o644",
+      "kind": "regular",
+      "sha256": "0a2430072d567a9c8f4106a0b2d7c75ec3a4df30b5f63e1be5a3b9ae949fa47d",
+      "bytes": 14936
+    },
+    {
+      "path": "/etc/xattr.conf",
+      "package": "libattr",
+      "mode": "0o644",
+      "kind": "regular",
+      "sha256": "0fc794a9826011c88b118c5ff4e30dfcbebd73518e64b0cda7aaec3ad7e578bd",
+      "bytes": 681
+    },
+    {
+      "path": "/lib/apk/packages/libattr.list",
+      "package": "libattr",
+      "mode": "0o644",
+      "kind": "regular",
+      "sha256": "1751127a870bade188eddd9ae48bb39f226bdc34edcc7c7cd8a0716bed8f5e2c",
+      "bytes": 87
+    },
+    {
+      "path": "/usr/lib/libattr.so",
+      "package": "libattr",
+      "mode": "0o777",
+      "kind": "symlink",
+      "target": "libattr.so.1.1.2502"
+    },
+    {
+      "path": "/usr/lib/libattr.so.1",
+      "package": "libattr",
+      "mode": "0o777",
+      "kind": "symlink",
+      "target": "libattr.so.1.1.2502"
+    },
+    {
+      "path": "/usr/lib/libattr.so.1.1.2502",
+      "package": "libattr",
+      "mode": "0o755",
+      "kind": "regular",
+      "sha256": "f6eba79b771af037a1ace91ea6489678cd5eb8570b4aaffcf7fd57a4ee8b598b",
+      "bytes": 16386
+    },
+    {
+      "path": "/lib/apk/packages/libiptext-nft0.list",
+      "package": "libiptext-nft0",
+      "mode": "0o644",
+      "kind": "regular",
+      "sha256": "934ee19363ee0aaabb58b119bc5a7745a54198366eefbcda8bc604248eec1e56",
+      "bytes": 53
+    },
+    {
+      "path": "/usr/lib/libiptext_arpt.so",
+      "package": "libiptext-nft0",
+      "mode": "0o755",
+      "kind": "regular",
+      "sha256": "5b8703ce503d98841ccdf14b05041d781aeeeb05c10d7fe362d8dc8c5c7f81ec",
+      "bytes": 4098
+    },
+    {
+      "path": "/usr/lib/libiptext_ebt.so",
+      "package": "libiptext-nft0",
+      "mode": "0o755",
+      "kind": "regular",
+      "sha256": "46f4dc46fbb62868837bd2173476a44b6eff1625211551ea18f9941ccc76932f",
+      "bytes": 8346
+    },
+    {
+      "path": "/lib/apk/packages/libiptext0.list",
+      "package": "libiptext0",
+      "mode": "0o644",
+      "kind": "regular",
+      "sha256": "3725a077eb0b838aa431b7ef269595b75cb473034ae33194481ebf918a548a74",
+      "bytes": 45
+    },
+    {
+      "path": "/usr/lib/libiptext.so",
+      "package": "libiptext0",
+      "mode": "0o755",
+      "kind": "regular",
+      "sha256": "1c0e6bd1f46d7c5b0b6804716757c997ea396b92cade2b6d7b3e8642f2670995",
+      "bytes": 94570
+    },
+    {
+      "path": "/usr/lib/libiptext4.so",
+      "package": "libiptext0",
+      "mode": "0o755",
+      "kind": "regular",
+      "sha256": "752ef8f9f4990ee6cf4c272c1221fc4cd69cdfc0b4786346a5f2bd82a43558c1",
+      "bytes": 12642
+    },
+    {
+      "path": "/lib/apk/packages/libiptext6-0.list",
+      "package": "libiptext6-0",
+      "mode": "0o644",
+      "kind": "regular",
+      "sha256": "d6d64d75cda3fe2611acba4f6e2e30cb0e748766f85935d7e95ad844c2ccad46",
+      "bytes": 23
+    },
+    {
+      "path": "/usr/lib/libiptext6.so",
+      "package": "libiptext6-0",
+      "mode": "0o755",
+      "kind": "regular",
+      "sha256": "04124e0bedee58ae2d57f9d566b7d98e8007d540ac4a50587249c32ed882c359",
+      "bytes": 12642
+    },
+    {
+      "path": "/lib/apk/packages/liblzo2.list",
+      "package": "liblzo2",
+      "mode": "0o644",
+      "kind": "regular",
+      "sha256": "d964dc8edbb4656a6bb8a3b0f6fb52c1de60119dfc099921101dee8a2633520c",
+      "bytes": 48
+    },
+    {
+      "path": "/usr/lib/liblzo2.so.2",
+      "package": "liblzo2",
+      "mode": "0o777",
+      "kind": "symlink",
+      "target": "liblzo2.so.2.0.0"
+    },
+    {
+      "path": "/usr/lib/liblzo2.so.2.0.0",
+      "package": "liblzo2",
+      "mode": "0o644",
+      "kind": "regular",
+      "sha256": "49565426344c8cec9c45ba7b3dc4a6662e99e532096de46278ffec82b9223203",
+      "bytes": 106499
+    },
+    {
+      "path": "/lib/apk/packages/libmount1.list",
+      "package": "libmount1",
+      "mode": "0o644",
+      "kind": "regular",
+      "sha256": "30f41ec4e2a325d1c12ee23ecd23316ceb486e90092cfe0d2e93447042f1d459",
+      "bytes": 50
+    },
+    {
+      "path": "/usr/lib/libmount.so.1",
+      "package": "libmount1",
+      "mode": "0o777",
+      "kind": "symlink",
+      "target": "libmount.so.1.1.0"
+    },
+    {
+      "path": "/usr/lib/libmount.so.1.1.0",
+      "package": "libmount1",
+      "mode": "0o755",
+      "kind": "regular",
+      "sha256": "a94d432ccf612833e3f4fa3c65c8f9340b462f84524f548889976dc6a6b3b9de",
+      "bytes": 397928
+    },
+    {
+      "path": "/lib/apk/packages/libseccomp.list",
+      "package": "libseccomp",
+      "mode": "0o644",
+      "kind": "regular",
+      "sha256": "ff631a7377d6481b96b75fe7dc8521d64dd689a02cd070ba566f1e9b2316aceb",
+      "bytes": 54
+    },
+    {
+      "path": "/usr/lib/libseccomp.so.2",
+      "package": "libseccomp",
+      "mode": "0o777",
+      "kind": "symlink",
+      "target": "libseccomp.so.2.5.5"
+    },
+    {
+      "path": "/usr/lib/libseccomp.so.2.5.5",
+      "package": "libseccomp",
+      "mode": "0o755",
+      "kind": "regular",
+      "sha256": "0ffe790a9966f9564a0b9b2d29edef8fd9603f4e4676eae1d4e1c85c077526a4",
+      "bytes": 102459
+    },
+    {
+      "path": "/lib/apk/packages/libxtables12.list",
+      "package": "libxtables12",
+      "mode": "0o644",
+      "kind": "regular",
+      "sha256": "4019dcf8dfe19e4409788f06c4ae0c973a79a764e0b0fcacce0e0548214eaa83",
+      "bytes": 56
+    },
+    {
+      "path": "/usr/lib/libxtables.so.12",
+      "package": "libxtables12",
+      "mode": "0o777",
+      "kind": "symlink",
+      "target": "libxtables.so.12.7.0"
+    },
+    {
+      "path": "/usr/lib/libxtables.so.12.7.0",
+      "package": "libxtables12",
+      "mode": "0o755",
+      "kind": "regular",
+      "sha256": "aba0734deab96ce04b77b1715b132fd2912bab513478ee0f9a25acc7e1524bb7",
+      "bytes": 53260
+    },
+    {
+      "path": "/lib/apk/packages/runc.list",
+      "package": "runc",
+      "mode": "0o644",
+      "kind": "regular",
+      "sha256": "c35c8457c9de505253e8c4b9b504745f2fc69e0816c0ed3c01813abbe03584a7",
+      "bytes": 15
+    },
+    {
+      "path": "/usr/sbin/runc",
+      "package": "runc",
+      "mode": "0o755",
+      "kind": "regular",
+      "sha256": "a7869288118874ceaa4aa7231a78bebc43b9fff3655f5a9039c8ea61cc97d24c",
+      "bytes": 10800640
+    },
+    {
+      "path": "/lib/apk/packages/tini.list",
+      "package": "tini",
+      "mode": "0o644",
+      "kind": "regular",
+      "sha256": "e52466029dfca360f17a07c6c3e36d279aab1e54f2dc3301576da74ecce08849",
+      "bytes": 35
+    },
+    {
+      "path": "/usr/bin/docker-init",
+      "package": "tini",
+      "mode": "0o755",
+      "kind": "regular",
+      "sha256": "ea68478dc5910286548cfcc8dd5742e639e321fb549f4b2837e6aa8adba61b35",
+      "bytes": 58995
+    },
+    {
+      "path": "/usr/bin/tini",
+      "package": "tini",
+      "mode": "0o755",
+      "kind": "regular",
+      "sha256": "dea9861134a0964e7011f93e7f2a064f7199e406ad16fbd08b97449f6babea81",
+      "bytes": 17521
+    },
+    {
+      "path": "/lib/apk/packages/xtables-nft.list",
+      "package": "xtables-nft",
+      "mode": "0o644",
+      "kind": "regular",
+      "sha256": "9165bdb9d1a77dedb2c2245d9933414f27383a853962e525c2a7cc73c47f657f",
+      "bytes": 28
+    },
+    {
+      "path": "/usr/sbin/xtables-nft-multi",
+      "package": "xtables-nft",
+      "mode": "0o755",
+      "kind": "regular",
+      "sha256": "99f7e3879f60ee87090972679f6789325abadbbe3f467a9a4591747feae75a84",
+      "bytes": 185147
+    }
+  ],
+  "file_count": 425,
+  "symlink_count": 141,
+  "regular_payload_bytes": 243570373,
+  "next_boot_sensitive": [
+    "/etc/init.d/dockerd",
+    "/etc/sysctl.d/12-br-netfilter-ip.conf",
+    "/etc/modules.d/br-netfilter",
+    "/etc/sysctl.d/11-br-netfilter.conf",
+    "/etc/modules.d/09-crypto-acompress",
+    "/etc/modules.d/09-crypto-blake2b",
+    "/etc/modules.d/09-crypto-xxhash",
+    "/etc/modules.d/30-fs-btrfs",
+    "/etc/modules.d/42-ip6tables",
+    "/etc/modules.d/ipt-conntrack",
+    "/etc/modules.d/ipt-core",
+    "/etc/modules.d/ipt-extra",
+    "/etc/modules.d/ipt-nat",
+    "/etc/modules.d/43-ipt-nat6",
+    "/etc/modules.d/ipt-physdev",
+    "/etc/modules.d/lib-lzo",
+    "/etc/modules.d/lib-raid6",
+    "/etc/modules.d/lib-xor",
+    "/etc/modules.d/lib-zlib-deflate",
+    "/etc/modules.d/lib-zlib-inflate",
+    "/etc/modules.d/lib-zstd",
+    "/etc/modules.d/nf-ipt",
+    "/etc/modules.d/nf-ipt6",
+    "/etc/modules.d/nft-compat"
+  ],
+  "before_pins": {
+    "package-database.txt": "16792c0233ceb9b7d6288081991e4989626121a948efe6709dc2882b09528fab",
+    "world.txt": "9aa6391abc7b3e7b9f312429c8328af2369a47fe82a5fe03809ac14ecbde014d"
+  },
+  "after_pins": {
+    "lib/apk/db/installed": "dd366e8515e0bd7efd2f82faf63a1f13e3ab93e1c5a08f39590e30b4c6829451",
+    "etc/apk/world": "bfef6e89d7f8b6383d9ae9569f28f89a2faa7faae75721ab73287e9f7cb1789f"
+  },
+  "router_writes": false,
+  "required_before_authorized_install": [
+    "Fresh ownership/existence/mode snapshot of every payload path and parent; stop on unexpected existing owner or changed solve",
+    "Backup installed/world/scripts/triggers, config, rc links and baseline networking; prove offline restoration in maintenance window",
+    "Use authenticated local signed indexes/packages with scripts=no and commit-hooks=no; do not invoke stock dockerd boot/uciadd",
+    "Review account setup, module-autoload/sysctl next-boot files and package symlinks explicitly; do not pass this plan to regular-file-only package-apply",
+    "Observe empty dedicated daemon before any DNS container; stop on unexplained service/network/firewall/sysctl changes"
+  ]
+}

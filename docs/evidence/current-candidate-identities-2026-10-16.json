@@ -1,0 +1,296 @@
+{
+  "recorded_utc": "2026-10-16T15:28:26.564735+00:00",
+  "scope": "review inventory; no router installation/start and no production publication",
+  "deployment_choice": "evaluate Compose fairly; deployment choice undecided",
+  "source_units": [
+    {
+      "role": "frontend",
+      "repository": "i-am-an-op/mihomo",
+      "source_commit": "1f67c00d7b884bfe7a59ddbfb1216d290adc8599",
+      "unpublished_draft": "v1.19.32-dns.1-rc.2",
+      "artifacts": [
+        {
+          "path": ".work/release-rc2/mihomo-linux-arm64",
+          "sha256": "936d72e6deef2a6ae5532b75209477fc6131da1983eba05bc538a506cd9b01be",
+          "bytes": 57344126,
+          "architecture": "arm64",
+          "provenance": {
+            "verified_utc": "2026-10-16T14:30:47.510236+00:00",
+            "artifact_sha256": "936d72e6deef2a6ae5532b75209477fc6131da1983eba05bc538a506cd9b01be",
+            "architecture": "arm64",
+            "source_commit": "1f67c00d7b884bfe7a59ddbfb1216d290adc8599",
+            "repository_id": 1421581663,
+            "bundle_sha256": "a095eba8a6bc30d6f915db3d7c5afb45565a1f5c11495347a4ee5aaffca75044",
+            "trusted_root_sha256": "65ca537f6ed8a47fd0e560c421baa1f6c1efb8b25fc200d8c5c02c0e92eb2b9c",
+            "policy_sha256": "a45568fbb03681b9596162db0f9c7600726ee61825467b8d7aaa5c19fae9a3b5",
+            "verification_result_sha256": "19b00e366be3775fc9697ed710d4be6848badbfeeaa88316cb16c21d8601fdfb",
+            "cryptographic_verification": true,
+            "binary_executed": false,
+            "deployment_approved": false
+          }
+        },
+        {
+          "path": ".work/release-rc2/mihomo-linux-amd64",
+          "sha256": "9f069d125c3b9a002da507d2ef8a285b9922d193c01d2f00887126f8275e5355",
+          "bytes": 61931646,
+          "architecture": "amd64",
+          "provenance": {
+            "verified_utc": "2026-10-16T14:30:47.697631+00:00",
+            "artifact_sha256": "9f069d125c3b9a002da507d2ef8a285b9922d193c01d2f00887126f8275e5355",
+            "architecture": "amd64",
+            "source_commit": "1f67c00d7b884bfe7a59ddbfb1216d290adc8599",
+            "repository_id": 1421581663,
+            "bundle_sha256": "cb5adc901df9e3ce3006ded9ba69bd5585256d3c037d825694ca144bce3a78ca",
+            "trusted_root_sha256": "65ca537f6ed8a47fd0e560c421baa1f6c1efb8b25fc200d8c5c02c0e92eb2b9c",
+            "policy_sha256": "692a5e70cbd3d5a7c99c91adc7926eff3501fb30e718bd3bd741722b3d6a29f7",
+            "verification_result_sha256": "eb8b926c9e39c9ada0b5991876e75a776eeb9cd6b8555f7d560c01ba8c0f7909",
+            "cryptographic_verification": true,
+            "binary_executed": false,
+            "deployment_approved": false
+          }
+        }
+      ]
+    },
+    {
+      "role": "controller",
+      "repository": "i-am-an-op/router-dns",
+      "source_commit": "fe8ba6744e5c87a6c6a7f5185833a2525ed01174",
+      "unpublished_draft": "v0.1.0-rc.4",
+      "artifacts": [
+        {
+          "path": ".work/integration-release-rc4/dnsctl-linux-arm64",
+          "sha256": "8ce4ecef6e9d858ddfde08857e0e6bce01bbf5ccbf2c5051dfb0db34a29236b4",
+          "bytes": 3735678,
+          "architecture": "arm64",
+          "provenance": {
+            "verified_utc": "2026-10-16T15:21:10.851332+00:00",
+            "artifact_sha256": "8ce4ecef6e9d858ddfde08857e0e6bce01bbf5ccbf2c5051dfb0db34a29236b4",
+            "architecture": "arm64",
+            "source_commit": "fe8ba6744e5c87a6c6a7f5185833a2525ed01174",
+            "repository_id": 1422214651,
+            "bundle_sha256": "5856c6d9ca899b9c537b0c0cee81a39eb7c88e200539fc4c8860c1c2ef0e6a3c",
+            "trusted_root_sha256": "65ca537f6ed8a47fd0e560c421baa1f6c1efb8b25fc200d8c5c02c0e92eb2b9c",
+            "policy_sha256": "5e6a0f8f12b47f4b104f079ba50b7e2b7b5745a92841559cfc4e64ea10e75cc2",
+            "verification_result_sha256": "60fcf6f0720f6ade69cb8a0cb75170c1ecbad33b76ec7175269981336e08fbe1",
+            "cryptographic_verification": true,
+            "binary_executed": false,
+            "deployment_approved": false
+          }
+        },
+        {
+          "path": ".work/integration-release-rc4/dnsctl-linux-amd64",
+          "sha256": "07df4c1b391b7c701b214e5ce7c7f79a5c2220d2ec8094340a41d564ab081a9c",
+          "bytes": 3924094,
+          "architecture": "amd64",
+          "provenance": {
+            "verified_utc": "2026-10-16T15:21:10.936176+00:00",
+            "artifact_sha256": "07df4c1b391b7c701b214e5ce7c7f79a5c2220d2ec8094340a41d564ab081a9c",
+            "architecture": "amd64",
+            "source_commit": "fe8ba6744e5c87a6c6a7f5185833a2525ed01174",
+            "repository_id": 1422214651,
+            "bundle_sha256": "58db89a7c66064a440f0530c816db6b810360195e2dde13be47b175b9fde4b68",
+            "trusted_root_sha256": "65ca537f6ed8a47fd0e560c421baa1f6c1efb8b25fc200d8c5c02c0e92eb2b9c",
+            "policy_sha256": "7e48290de64ca8675347ec0cf124bac7e8ab093dbb23d2f40504938d71b2843d",
+            "verification_result_sha256": "3ee3632745922e8c80070b1f920727069f1ba7074cf2c08621e6b494267276c3",
+            "cryptographic_verification": true,
+            "binary_executed": false,
+            "deployment_approved": false
+          }
+        }
+      ]
+    }
+  ],
+  "generations": [
+    {
+      "id": "mt6000-20261016-v4-compose-separate",
+      "mode": "compose",
+      "transport": "separate",
+      "directory": ".private/mt6000-production-candidates-20261016-v4/compose-separate",
+      "manifest": {
+        "path": ".private/mt6000-production-candidates-20261016-v4/compose-separate/generation/manifest.json",
+        "sha256": "ec87babd6cf0580a0aadbcfe1f293128a81290e2fed06ae4137bceb03bbb5d9f",
+        "bytes": 18334
+      },
+      "immutable_files": 59,
+      "protected_mount_targets": 36,
+      "host_pins": [
+        {
+          "path": "/lib/apk/db/installed",
+          "sha256": "dd366e8515e0bd7efd2f82faf63a1f13e3ab93e1c5a08f39590e30b4c6829451"
+        },
+        {
+          "path": "/etc/apk/world",
+          "sha256": "bfef6e89d7f8b6383d9ae9569f28f89a2faa7faae75721ab73287e9f7cb1789f"
+        }
+      ],
+      "bootstrap_archive": {
+        "path": ".private/mt6000-production-candidates-20261016-v4/compose-separate/bootstrap.tar.gz",
+        "sha256": "7d4ca68d2d0b6e141247738f8307104818605ecf6b73d1f19184bf34e3a5338b",
+        "bytes": 1490080
+      },
+      "candidate_archive": {
+        "path": ".private/mt6000-production-candidates-20261016-v4/compose-separate.tar.gz",
+        "sha256": "b0d004cacbc89dba40dc636eddacb58de6acad9c72986b21caef6fdfc40fcd67",
+        "bytes": 70663328
+      },
+      "production_signed": false,
+      "review_key_present": false
+    },
+    {
+      "id": "mt6000-20261016-v4-compose-shared",
+      "mode": "compose",
+      "transport": "shared",
+      "directory": ".private/mt6000-production-candidates-20261016-v4/compose-shared",
+      "manifest": {
+        "path": ".private/mt6000-production-candidates-20261016-v4/compose-shared/generation/manifest.json",
+        "sha256": "05524813bb17727dc6a307eacff8f50b02dead9b69cfd022bfb1a94ae2272492",
+        "bytes": 18330
+      },
+      "immutable_files": 59,
+      "protected_mount_targets": 36,
+      "host_pins": [
+        {
+          "path": "/lib/apk/db/installed",
+          "sha256": "dd366e8515e0bd7efd2f82faf63a1f13e3ab93e1c5a08f39590e30b4c6829451"
+        },
+        {
+          "path": "/etc/apk/world",
+          "sha256": "bfef6e89d7f8b6383d9ae9569f28f89a2faa7faae75721ab73287e9f7cb1789f"
+        }
+      ],
+      "bootstrap_archive": {
+        "path": ".private/mt6000-production-candidates-20261016-v4/compose-shared/bootstrap.tar.gz",
+        "sha256": "52833c60c2e7af51884e569cdc7954fcb617d5a34eaa82360dba056cf76854b4",
+        "bytes": 1490080
+      },
+      "candidate_archive": {
+        "path": ".private/mt6000-production-candidates-20261016-v4/compose-shared.tar.gz",
+        "sha256": "6fbae3daf478753a6275c2fb395aa39fdca4898dac8af5d54d3bd8f0b515c9a6",
+        "bytes": 70663218
+      },
+      "production_signed": false,
+      "review_key_present": false
+    },
+    {
+      "id": "mt6000-20261016-v4-native-separate",
+      "mode": "native",
+      "transport": "separate",
+      "directory": ".private/mt6000-production-candidates-20261016-v4/native-separate",
+      "manifest": {
+        "path": ".private/mt6000-production-candidates-20261016-v4/native-separate/generation/manifest.json",
+        "sha256": "333ae49f753746465f0f49cfcc3de68f7cb5d216327dfe50006b67790836bea8",
+        "bytes": 18332
+      },
+      "immutable_files": 59,
+      "protected_mount_targets": 36,
+      "host_pins": [
+        {
+          "path": "/lib/apk/db/installed",
+          "sha256": "16792c0233ceb9b7d6288081991e4989626121a948efe6709dc2882b09528fab"
+        },
+        {
+          "path": "/etc/apk/world",
+          "sha256": "9aa6391abc7b3e7b9f312429c8328af2369a47fe82a5fe03809ac14ecbde014d"
+        }
+      ],
+      "bootstrap_archive": {
+        "path": ".private/mt6000-production-candidates-20261016-v4/native-separate/bootstrap.tar.gz",
+        "sha256": "72476f97c49a084d82338aa488e30ca85ea5ff507abc688682d298b28f08fca6",
+        "bytes": 1489423
+      },
+      "candidate_archive": {
+        "path": ".private/mt6000-production-candidates-20261016-v4/native-separate.tar.gz",
+        "sha256": "70418582cae915fc698a2afe6bd905be761ac3cbd3c506ce9deb9d1deb3c9101",
+        "bytes": 70662464
+      },
+      "production_signed": false,
+      "review_key_present": false
+    },
+    {
+      "id": "mt6000-20261016-v4-native-shared",
+      "mode": "native",
+      "transport": "shared",
+      "directory": ".private/mt6000-production-candidates-20261016-v4/native-shared",
+      "manifest": {
+        "path": ".private/mt6000-production-candidates-20261016-v4/native-shared/generation/manifest.json",
+        "sha256": "8ecad50d9df5e11ae6d52ce3c376a76607ecb3e536a52d1f9a59b30ec41d7a8f",
+        "bytes": 18328
+      },
+      "immutable_files": 59,
+      "protected_mount_targets": 36,
+      "host_pins": [
+        {
+          "path": "/lib/apk/db/installed",
+          "sha256": "16792c0233ceb9b7d6288081991e4989626121a948efe6709dc2882b09528fab"
+        },
+        {
+          "path": "/etc/apk/world",
+          "sha256": "9aa6391abc7b3e7b9f312429c8328af2369a47fe82a5fe03809ac14ecbde014d"
+        }
+      ],
+      "bootstrap_archive": {
+        "path": ".private/mt6000-production-candidates-20261016-v4/native-shared/bootstrap.tar.gz",
+        "sha256": "6b780065c6900c96c0f27439316a208d1e265b74cdaad99c776cd5b418a39c0c",
+        "bytes": 1489423
+      },
+      "candidate_archive": {
+        "path": ".private/mt6000-production-candidates-20261016-v4/native-shared.tar.gz",
+        "sha256": "af22ea934435607b9a12bb1bb83969e6ccb537903e8ad9d1225d104a09aaa733",
+        "bytes": 70662424
+      },
+      "production_signed": false,
+      "review_key_present": false
+    }
+  ],
+  "paired_shadow": {
+    "directory": ".private/mt6000-paired-lifecycle-20261016-v4",
+    "archive": {
+      "path": ".private/mt6000-paired-lifecycle-20261016-v4.tar.gz",
+      "sha256": "f199e19e26b6c850d805845a05f3680b3cbcd0bb2c5644d58831de8cbe875032",
+      "bytes": 46948622
+    },
+    "immutable_list": {
+      "path": ".private/mt6000-paired-lifecycle-20261016-v4/pilot.SHA256SUMS",
+      "sha256": "da0f922588073e4deb715a21a0c21ccaa7c527cbd73e0946d0e5c1948f55dd24",
+      "bytes": 3130
+    },
+    "readiness_cases": 16,
+    "controller": {
+      "path": ".private/mt6000-paired-lifecycle-20261016-v4/bin/dnsctl",
+      "sha256": "8ce4ecef6e9d858ddfde08857e0e6bce01bbf5ccbf2c5051dfb0db34a29236b4",
+      "bytes": 3735678
+    },
+    "logical_prefix": "/opt/dns-evaluation/20261016-rc1",
+    "logical_prefix_is_version_identity": false
+  },
+  "images": {
+    "identities": {
+      "auxiliary": "sha256:cc288218eee735317ba95ece7109e03c9db08bb3fd838f85564b92e5c08f4630",
+      "coredns": "sha256:5d3b3e589fcf57f626c7967bff5171924cf9c55068911247a1f7bd2458e726c3"
+    },
+    "auxiliary_evidence": {
+      "image_id": "sha256:cc288218eee735317ba95ece7109e03c9db08bb3fd838f85564b92e5c08f4630",
+      "architecture": "arm64",
+      "archive_sha256": "e1ca47a3357bab0c66b138d66ca764c9843a474ea9692ad7f3309d1023cf694f",
+      "archive_bytes": 68190720,
+      "exact_payload_files": 20,
+      "unexpected_files": 0,
+      "entrypoint_and_loader_modes_verified": true,
+      "dockerfile_sha256": "a83968ffffa8d480d91de78e28defa28ed03c4ad6288711361e06cfecd07a36b",
+      "builder": "Existing workstation Docker 29.9.0 integrated BuildKit; COPY-only scratch build, linux/arm64, offline isolated namespaces",
+      "image_built": true,
+      "payload_verified": true,
+      "workload_executed": false,
+      "provenance_limit": "Local build/manifest evidence, not a published or independently attested release. License inventory and image advisory triage remain release gates.",
+      "initial_build_failure": "Deprecated legacy builder produced amd64 intermediate metadata during arm64 build; normal BuildKit path succeeded without source/binary changes"
+    },
+    "coredns_upstream_arm_manifest": "sha256:9a631b1e34491f93a35334bc02d8ae190f16224be41689c7f42cc1711a95fe3a"
+  },
+  "frozen_original_pilot": {
+    "path": ".private/mt6000-pilot-20261016-rc1.tar.gz",
+    "sha256": "592fb0d718f0ec57fbfe5df665018dd6f5457265c197a7cd520d35c8beaabf09",
+    "bytes": 45615628
+  },
+  "credentials_published": false,
+  "review_signature_policy": "No accepted key; temporary signatures are used only on test copies. Archives/checksums are not deployment authorization."
+}

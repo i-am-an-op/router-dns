@@ -1,0 +1,16 @@
+[
+  {
+    "id": 38847386300,
+    "command": "force-cancel",
+    "exit": 1,
+    "stdout": "{\"message\":\"Cannot cancel a workflow run that has not been queued yet.\",\"documentation_url\":\"https://docs.github.com/rest/actions/workflow-runs#force-cancel-a-workflow-run\",\"status\":\"409\"}",
+    "stderr": "gh: Cannot cancel a workflow run that has not been queued yet. (HTTP 409)\n"
+  },
+  {
+    "id": 38846329314,
+    "command": "force-cancel",
+    "exit": 1,
+    "stdout": "{\"message\":\"Cannot cancel a workflow run that has not been queued yet.\",\"documentation_url\":\"https://docs.github.com/rest/actions/workflow-runs#force-cancel-a-workflow-run\",\"status\":\"409\"}",
+    "stderr": "gh: Cannot cancel a workflow run that has not been queued yet. (HTTP 409)\n"
+  }
+]

@@ -1,0 +1,183 @@
+{
+  "scope": "Shared native and auxiliary-image package inventory plus bounded primary-advisory review; no claim of exhaustive vulnerability freedom or legal certification",
+  "date": "2026-10-16",
+  "image_id": "sha256:cc288218eee735317ba95ece7109e03c9db08bb3fd838f85564b92e5c08f4630",
+  "package_database_sha256": "637ec2fb440177f29fd449a6297d3c1cb2b42b758de3cf30d3db0478e62f5b0a",
+  "packages": [
+    {
+      "name": "ca-bundle",
+      "version": "20260816-r1",
+      "url": "https://downloads.openwrt.org/releases/25.12.5/packages/aarch64_cortex-a53/base/ca-bundle-20260816-r1.apk",
+      "bytes": 107337,
+      "sha256": "22f49453c235d2caefe6859bf797a96bfcd874b1f43df6ee45dc6a48a37e57d3",
+      "license": "GPL-2.0-or-later MPL-2.0",
+      "recipe_origin": "feeds/base/system/ca-certificates"
+    },
+    {
+      "name": "drill",
+      "version": "1.8.3-r1",
+      "url": "https://downloads.openwrt.org/releases/25.12.5/packages/aarch64_cortex-a53/packages/drill-1.8.3-r1.apk",
+      "bytes": 24538,
+      "sha256": "e8f67f3e66f5a738ee35ac1d3839a8faa0dcedefe7f8eddff45b7f91fbc17ee9",
+      "license": "BSD-3-Clause",
+      "recipe_origin": "feeds/packages/feeds/packages/libs/ldns"
+    },
+    {
+      "name": "libc",
+      "version": "1.2.5-r5",
+      "url": "https://downloads.openwrt.org/releases/25.12.5/targets/mediatek/filogic/packages/libc-1.2.5-r5.apk",
+      "bytes": 297299,
+      "sha256": "0e8d6132d5a8471c37cce150e67258bfbd285d94c4819053f88b6a1db4258586",
+      "license": "GPL-3.0-with-GCC-exception",
+      "recipe_origin": "feeds/base/libs/toolchain"
+    },
+    {
+      "name": "libevent2-7",
+      "version": "2.1.12-r2",
+      "url": "https://downloads.openwrt.org/releases/25.12.5/packages/aarch64_cortex-a53/base/libevent2-7-2.1.12-r2.apk",
+      "bytes": 111812,
+      "sha256": "75c4d85a2af30756144407b49d246f80aec2a6a88a705fde26c2a5d0166276c4",
+      "license": "BSD-3-Clause",
+      "recipe_origin": "feeds/base/libs/libevent2"
+    },
+    {
+      "name": "libgcc1",
+      "version": "14.3.0-r5",
+      "url": "https://downloads.openwrt.org/releases/25.12.5/targets/mediatek/filogic/packages/libgcc1-14.3.0-r5.apk",
+      "bytes": 50219,
+      "sha256": "d8b548046d39ba8dd6902c2f1f2348bcfe1aab276660adff42d524664fd147b5",
+      "license": "GPL-3.0-with-GCC-exception",
+      "recipe_origin": "feeds/base/libs/toolchain"
+    },
+    {
+      "name": "libldns",
+      "version": "1.8.3-r1",
+      "url": "https://downloads.openwrt.org/releases/25.12.5/packages/aarch64_cortex-a53/packages/libldns-1.8.3-r1.apk",
+      "bytes": 154473,
+      "sha256": "49c9eb59a11d60f9b239ae691460e11cda525a59b5f2cf9ca92ba91d055adc36",
+      "license": "BSD-3-Clause",
+      "recipe_origin": "feeds/packages/feeds/packages/libs/ldns"
+    },
+    {
+      "name": "libmnl0",
+      "version": "1.0.5-r1",
+      "url": "https://downloads.openwrt.org/releases/25.12.5/packages/aarch64_cortex-a53/base/libmnl0-1.0.5-r1.apk",
+      "bytes": 8203,
+      "sha256": "e6c123fa136c628c50fcfdc98fbc3407786ec37db1a605341c0388568eadfd63",
+      "license": "LGPL-2.1+",
+      "recipe_origin": "feeds/base/libs/libmnl"
+    },
+    {
+      "name": "libopenssl3",
+      "version": "3.5.9-r1",
+      "url": "https://downloads.openwrt.org/releases/25.12.5/packages/aarch64_cortex-a53/base/libopenssl3-3.5.9-r1.apk",
+      "bytes": 2023046,
+      "sha256": "3bf49cfb5715609a933c905a06c3d55607d0a415d7d6cbc430603b78509351e1",
+      "license": "Apache-2.0",
+      "recipe_origin": "feeds/base/libs/openssl"
+    },
+    {
+      "name": "libpthread",
+      "version": "1.2.5-r5",
+      "url": "https://downloads.openwrt.org/releases/25.12.5/targets/mediatek/filogic/packages/libpthread-1.2.5-r5.apk",
+      "bytes": 646,
+      "sha256": "2ff9fd162a3139cdec9750fdd209073b6ff85b12989fb7946f71aeb5c4adaad6",
+      "license": "GPL-3.0-with-GCC-exception",
+      "recipe_origin": "feeds/base/libs/toolchain"
+    },
+    {
+      "name": "libunbound",
+      "version": "1.26.1-r2",
+      "url": "https://downloads.openwrt.org/releases/25.12.5/packages/aarch64_cortex-a53/packages/libunbound-1.26.1-r2.apk",
+      "bytes": 495065,
+      "sha256": "2232c411af458bb86f147eb671e293ba2fddffe042900015280f7cecd71ad79b",
+      "license": "BSD-3-Clause",
+      "recipe_origin": "feeds/packages/feeds/packages/net/unbound"
+    },
+    {
+      "name": "unbound-checkconf",
+      "version": "1.26.1-r2",
+      "url": "https://downloads.openwrt.org/releases/25.12.5/packages/aarch64_cortex-a53/packages/unbound-checkconf-1.26.1-r2.apk",
+      "bytes": 57327,
+      "sha256": "b349901572a39f3bd9ade4683e9c03040176340f601980d5cabb821c2d3ead41",
+      "license": "BSD-3-Clause",
+      "recipe_origin": "feeds/packages/feeds/packages/net/unbound"
+    },
+    {
+      "name": "unbound-daemon",
+      "version": "1.26.1-r2",
+      "url": "https://downloads.openwrt.org/releases/25.12.5/packages/aarch64_cortex-a53/packages/unbound-daemon-1.26.1-r2.apk",
+      "bytes": 174909,
+      "sha256": "378cdbbdbb0b229719f7edcb80045ff035392ef7063d5c3a5814afaecad6de0a",
+      "license": "BSD-3-Clause",
+      "recipe_origin": "feeds/packages/feeds/packages/net/unbound"
+    }
+  ],
+  "go_components": [
+    {
+      "name": "mihomo",
+      "source": "1f67c00d7b884bfe7a59ddbfb1216d290adc8599",
+      "license": "GPL-3.0",
+      "sbom": "rc2-advisory-disposition-2026-10-16.json",
+      "toolchain": "go1.26.9",
+      "classification": "attested maintained fork, not an official upstream image"
+    },
+    {
+      "name": "CoreDNS",
+      "version": "1.14.7",
+      "source": "427fc80ed9ca47f354585eb30a3f1332950856c4",
+      "license": "Apache-2.0",
+      "toolchain": "go1.26.6",
+      "advisory_review": "coredns-vulnerability-triage-2026-10-16.json",
+      "classification": "separate official image/binary, NOT included in auxiliary image",
+      "known_scan": "38 symbol advisory identities; 15 fixed CoreDNS version overreports, 23 dependency/stdlib identities with configuration-specific assessment; NOT a clean scan"
+    }
+  ],
+  "primary_advisory_review": [
+    {
+      "component": "Unbound",
+      "version": "1.26.1-r2",
+      "source": "https://nlnetlabs.nl/projects/unbound/security-advisories/",
+      "reviewed_ids": [
+        "CVE-2026-81642",
+        "CVE-2026-81634",
+        "CVE-2026-82717",
+        "CVE-2026-77955",
+        "CVE-2026-78227",
+        "CVE-2026-80225",
+        "CVE-2026-82720",
+        "CVE-2026-85501",
+        "CVE-2026-77860"
+      ],
+      "finding": "Publisher identifies 1.26.1 as fixing this 2026-09-16 set; current selected package uses that version. No exploit test or every-C-library audit claimed."
+    },
+    {
+      "component": "OpenSSL",
+      "version": "3.5.9-r1",
+      "source": "https://www.openssl-library.org/news/vulnerabilities-3.5/",
+      "reviewed_ids": [
+        "CVE-2026-35189",
+        "CVE-2026-54875",
+        "CVE-2026-77696",
+        "CVE-2026-84782"
+      ],
+      "finding": "Selected version meets publisher 3.5.9 fix boundary for reviewed 2026-09-29 issues. Client DoT uses TLS, not DTLS or QUIC. This is version/configuration review, not proof of no vulnerabilities."
+    },
+    {
+      "component": "CoreDNS",
+      "version": "1.14.7",
+      "source": "https://github.com/coredns/coredns/security/advisories/GHSA-9gm5-9rfh-m6vx",
+      "reviewed_ids": [
+        "GHSA-9gm5-9rfh-m6vx",
+        "GHSA-mrg3-qvqr-jw29"
+      ],
+      "finding": "Publisher patched version1.14.7 matches candidate. Does not erase old-toolchain/dependency findings; retain configuration-specific assessment."
+    }
+  ],
+  "limitations": [
+    "No whole-image attestation/publisher signature for locally built auxiliary image.",
+    "Direct package inventory is not a complete transitive license notice/source-offer bundle for public distribution; images remain private/unpublished.",
+    "musl, libgcc, libevent, libldns and libmnl are pinned/authenticated official packages; no exhaustive source/exploit audit claimed.",
+    "Refresh advisory databases and reassess any plugin/transport/build change before promotion. Runtime daemon has separate package inventory and target isolation tests."
+  ]
+}
