@@ -29,6 +29,7 @@ for tree in ['bin','root','config']:
    if rel=='config/Corefile':
     src=prepared/'Corefile';text=f.read_text().replace('bind 127.0.0.1 ::1','bind 127.0.0.1 ::1 192.168.2.2');src.write_text(text)
    add(src,'stack/'+rel,0o755 if f.stat().st_mode&0o111 else 0o644,BASE+'/'+rel)
+add(a.pair/'root/etc/ssl/certs/ca-certificates.crt','stack/compose-ca.crt',0o644,BASE+'/native-payload/root/etc/ssl/certs/ca-certificates.crt')
 # Root-only native integration/API credential stays outside world-readable stack.
 front=yaml.safe_load(a.frontend.read_text());secret=front.get('secret','');controller=front.get('external-controller','127.0.0.1:9090')
 if '\n' in secret or '\r' in secret:raise SystemExit('invalid controller credential')
