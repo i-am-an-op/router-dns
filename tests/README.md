@@ -7,6 +7,9 @@ deadline and termination of hook children. Service and package operations in
 these Go cases use recorded adapters, not OpenWrt. `scripts/package_hook_test.py`
 executes captured Docker package hook control flow with only OS paths mapped to
 stubs; it also checks the exact installed OpenClash overlay and drift rejection.
+`python3 scripts/pilot_test.py` executes pilot startup/cleanup/watchdog cases
+against explicit mount, ubus, Docker, clock and probe stubs. Real OpenWrt procd
+and the elapsed 900-second deadline remain router acceptance cases.
 
 The opt-in Go test `TestKernelReadOnlyMountAndMissingTarget` actually binds files
 read-only and tests overwrite/rename rejection. Run only in an unprivileged
