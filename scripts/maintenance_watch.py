@@ -22,9 +22,13 @@ def main():
  p=argparse.ArgumentParser(description=__doc__);p.add_argument('--operations',type=Path);p.add_argument('--pin',type=Path,required=True);p.add_argument('--output',type=Path,required=True);p.add_argument('--notify',action='store_true');a=p.parse_args();os.umask(0o077)
  cmd=['python3',str(Path(__file__).with_name('maintenance_check.py')),'--output',str(a.output),'--pin',str(a.pin)]
  if a.operations:cmd+=['--operations',str(a.operations)]
- r=subprocess.run(cmd,stdout=subprocess.DEVNULL,stderr=subprocess.DEVNULL,timeout=90)
- try:record=json.loads(a.output.read_text())
- except (OSError,ValueError):record={'healthy':False,'findings':['Checker failed; investigate credentials/network/scheduler']}
+ try:
+  r=subprocess.run(cmd,stdout=subprocess.DEVNULL,stderr=subprocess.DEVNULL,timeout=90)
+  if r.returncode not in (0,2):raise ValueError('checker failed')
+  record=json.loads(a.output.read_text())
+ except (OSError,ValueError,subprocess.TimeoutExpired):
+  r=subprocess.CompletedProcess(cmd,124)
+  record={'healthy':False,'findings':['Checker failed or timed out; investigate credentials/network/scheduler']}
  try:
   from integration_status import assess,collect
   findings=assess(collect(),datetime.datetime.now(datetime.timezone.utc))
