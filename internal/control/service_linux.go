@@ -136,19 +136,44 @@ func StopService(ctx context.Context, name, procRoot string, call ServiceCall) e
 	if e = WaitProcesses(ctx, procRoot, tokens); e != nil {
 		return e
 	}
-	// A respawn or competing launcher is not a successful quiesce.
-	b, e = call(ctx, "ubus", "call", "service", "list", query)
-	if e != nil {
-		return errors.New("cannot verify stopped service")
-	}
-	services = nil
-	if e = json.Unmarshal(b, &services); e != nil {
-		return errors.New("invalid final service response")
-	}
-	for _, in := range services[name].Instances {
-		if in.Running || in.PID > 0 {
-			return errors.New("owned service still registered as running")
+	// Give procd time to reap an already exited captured PID, but refuse a
+	// newly registered process. Service deletion itself is asynchronous.
+	for {
+		b, e = call(ctx, "ubus", "call", "service", "list", query)
+		if e != nil {
+			return errors.New("cannot verify stopped service")
+		}
+		services = nil
+		if e = json.Unmarshal(b, &services); e != nil {
+			return errors.New("invalid final service response")
+		}
+		pending := false
+		for _, in := range services[name].Instances {
+			if !in.Running && in.PID <= 0 {
+				continue
+			}
+			captured := false
+			for _, token := range tokens {
+				if token.PID == in.PID {
+					captured = true
+				}
+			}
+			got, e := processToken(procRoot, in.PID)
+			if e != nil {
+				return e
+			}
+			if !captured || got.Start != "" {
+				return errors.New("owned service respawned during stop")
+			}
+			pending = true
+		}
+		if !pending {
+			return nil
+		}
+		select {
+		case <-ctx.Done():
+			return errors.New("owned service registration did not clear")
+		case <-time.After(50 * time.Millisecond):
 		}
 	}
-	return nil
 }

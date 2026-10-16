@@ -28,7 +28,7 @@ func procFixture(t *testing.T, root string, pid int, state, start string) {
 	}
 }
 func TestServiceQuiescence(t *testing.T) {
-	for _, state := range []string{"exited", "pid-reused", "zombie", "still-alive", "respawn", "stop-failed", "malformed"} {
+	for _, state := range []string{"exited", "pid-reused", "zombie", "stale-registration", "still-alive", "respawn", "stop-failed", "malformed"} {
 		t.Run(state, func(t *testing.T) {
 			root := t.TempDir()
 			procFixture(t, root, 123, "S", "100")
@@ -40,7 +40,7 @@ func TestServiceQuiescence(t *testing.T) {
 				}
 				if calls == 2 {
 					switch state {
-					case "exited":
+					case "exited", "stale-registration":
 						os.Remove(filepath.Join(root, "123/stat"))
 					case "pid-reused":
 						procFixture(t, root, 123, "S", "101")
@@ -58,12 +58,15 @@ func TestServiceQuiescence(t *testing.T) {
 				if state == "respawn" {
 					return []byte(`{"dns-evaluation":{"instances":{"one":{"pid":456,"running":true}}}}`), nil
 				}
+				if state == "stale-registration" && calls == 3 {
+					return []byte(`{"dns-evaluation":{"instances":{"one":{"pid":123,"running":true}}}}`), nil
+				}
 				return []byte(`{}`), nil
 			}
 			ctx, cancel := context.WithTimeout(context.Background(), 100*time.Millisecond)
 			defer cancel()
 			err := StopService(ctx, "dns-evaluation", root, call)
-			pass := state == "exited" || state == "pid-reused" || state == "zombie"
+			pass := state == "exited" || state == "pid-reused" || state == "zombie" || state == "stale-registration"
 			if (err == nil) != pass {
 				t.Fatalf("%s: %v", state, err)
 			}
