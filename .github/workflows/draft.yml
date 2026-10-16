@@ -54,7 +54,7 @@ jobs:
       - run: go mod download && go mod verify
       - run: go test -race -count=1 ./...
       - run: python3 scripts/build.py
-      - uses: actions/attest-build-provenance@977bb373ede98d70efdf65b84cb5f73e068dcc2a
+      - uses: actions/attest-build-provenance@4d101475d8b20a2381f78447822ac1eab6504dd8
         with:
           subject-path: dist/*
       - env:
