@@ -1,5 +1,5 @@
 {
-  "checked_utc": "2026-10-16T14:53:00.277110+00:00",
+  "checked_utc": "2026-10-16T16:12:47.969678+00:00",
   "repository": "i-am-an-op/mihomo",
   "healthy": false,
   "findings": [
@@ -10,7 +10,7 @@
   ],
   "scope": "control-plane freshness; not vulnerability absence or router health",
   "automatic_deployment": false,
-  "utc": "2026-10-16T14:53:03.520414+00:00",
+  "utc": "2026-10-16T16:12:51.832253+00:00",
   "checker_exit": 2,
   "notification": "not-configured"
 }

@@ -1,7 +1,7 @@
 {
   "scope": "actual offline cryptographic verifier, real candidate and altered bytes/policies; no binary execution, router or service action",
-  "artifact_sha256": "936d72e6deef2a6ae5532b75209477fc6131da1983eba05bc538a506cd9b01be",
-  "source_commit": "1f67c00d7b884bfe7a59ddbfb1216d290adc8599",
+  "artifact_sha256": "375b52c27eb6b5cf1aa9bf2f3a77a3f39d045fae5197a64f8fd37dab69684eaf",
+  "source_commit": "0af636b44ce2fc433675abf89a8347738a9d27e8",
   "cases": [
     {
       "case": "authentic exact-source candidate",

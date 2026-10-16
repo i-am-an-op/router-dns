@@ -1,0 +1,56 @@
+{
+  "source_commit": "0af636b44ce2fc433675abf89a8347738a9d27e8",
+  "ci_run": "https://github.com/i-am-an-op/mihomo/actions/runs/38926980110",
+  "draft_run": "https://github.com/i-am-an-op/mihomo/actions/runs/38928935357",
+  "results": [
+    {
+      "architecture": "arm64",
+      "suite": "protocol",
+      "passed": 12,
+      "total": 12,
+      "raw_path": ".work/release-rc3/protocol-arm64.json",
+      "sha256": "de394b879ad02d94faf629ab8e3688ef006a852d96b12f71eb3c0a440bc32889"
+    },
+    {
+      "architecture": "arm64",
+      "suite": "managed-wire",
+      "passed": 12,
+      "total": 12,
+      "raw_path": ".work/release-rc3/managed-wire-arm64.json",
+      "sha256": "36937e09572fac44c83a7a077c8aa746c42fb90011dbae9eac9aa5d41bfbb84d"
+    },
+    {
+      "architecture": "arm64",
+      "suite": "managed-api",
+      "passed": 13,
+      "total": 13,
+      "raw_path": ".work/release-rc3/managed-api-arm64.json",
+      "sha256": "ca9e15ea9ec1ae54773c1b35687a958f7381505d893e02d0a760276cd9dfc009"
+    },
+    {
+      "architecture": "amd64",
+      "suite": "protocol",
+      "passed": 12,
+      "total": 12,
+      "raw_path": ".work/release-rc3/protocol-amd64.json",
+      "sha256": "1fed7d038b4c460bdae1a63e1ffccc7fa0a7c572a3c6ff8e3f6f9453a58bd099"
+    },
+    {
+      "architecture": "amd64",
+      "suite": "managed-wire",
+      "passed": 12,
+      "total": 12,
+      "raw_path": ".work/release-rc3/managed-wire-amd64.json",
+      "sha256": "da903bb57dac82693811d9a4030247580c853306c0b27190555590d9c7e31e77"
+    },
+    {
+      "architecture": "amd64",
+      "suite": "managed-api",
+      "passed": 13,
+      "total": 13,
+      "raw_path": ".work/release-rc3/managed-api-amd64.json",
+      "sha256": "4119d4bcb0be954262b5bc3bf3412071224320acccf3dfe6459a095810a88eb9"
+    }
+  ],
+  "router_execution": false
+}

@@ -1,7 +1,7 @@
 {
   "scope": "Shared native and auxiliary-image package inventory plus bounded primary-advisory review; no claim of exhaustive vulnerability freedom or legal certification",
   "date": "2026-10-16",
-  "image_id": "sha256:cc288218eee735317ba95ece7109e03c9db08bb3fd838f85564b92e5c08f4630",
+  "image_id": "sha256:8ee55a989c0ac15ee8058695289e82834ac45d99b77ee94b54f114cb4cefeea3",
   "package_database_sha256": "637ec2fb440177f29fd449a6297d3c1cb2b42b758de3cf30d3db0478e62f5b0a",
   "packages": [
     {
@@ -116,9 +116,9 @@
   "go_components": [
     {
       "name": "mihomo",
-      "source": "1f67c00d7b884bfe7a59ddbfb1216d290adc8599",
+      "source": "0af636b44ce2fc433675abf89a8347738a9d27e8",
       "license": "GPL-3.0",
-      "sbom": "rc2-advisory-disposition-2026-10-16.json",
+      "sbom": "rc3-advisory-disposition-2026-10-16.json",
       "toolchain": "go1.26.9",
       "classification": "attested maintained fork, not an official upstream image"
     },
@@ -179,5 +179,6 @@
     "Direct package inventory is not a complete transitive license notice/source-offer bundle for public distribution; images remain private/unpublished.",
     "musl, libgcc, libevent, libldns and libmnl are pinned/authenticated official packages; no exhaustive source/exploit audit claimed.",
     "Refresh advisory databases and reassess any plugin/transport/build change before promotion. Runtime daemon has separate package inventory and target isolation tests."
-  ]
+  ],
+  "revision_note": "Updated image/core identity after actual rc.3 image payload validation; official package payload and exact Go dependency components unchanged. Prior record retained."
 }

@@ -1,6 +1,6 @@
 {
-  "source_commit": "1f67c00d7b884bfe7a59ddbfb1216d290adc8599",
-  "binary_sha256": "9f069d125c3b9a002da507d2ef8a285b9922d193c01d2f00887126f8275e5355",
+  "source_commit": "0af636b44ce2fc433675abf89a8347738a9d27e8",
+  "binary_sha256": "229ac57751c73ac6837826497b88cc5be84e843050c5513313289fa4980350f6",
   "tests": [
     {
       "profile": "separate",
@@ -29,5 +29,7 @@
       "raw_log_note": "r2 log paths reused for successful third run; initial failure retained here and tool trace, not claimed as retained original log bytes"
     }
   ],
-  "scope": "parsing real proposed profiles, not application-routing or router execution"
+  "scope": "parsing real proposed profiles, not application-routing or router execution",
+  "artifact_identity_status": "Both architectures of the independently built exact-source binaries are byte-identical to the attested GitHub draft assets; comparison recorded separately",
+  "independent_byte_comparison": "rc3-independent-build-comparison-2026-10-16.json"
 }

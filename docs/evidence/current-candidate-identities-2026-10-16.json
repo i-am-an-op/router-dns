@@ -1,49 +1,49 @@
 {
-  "recorded_utc": "2026-10-16T15:28:26.564735+00:00",
+  "recorded_utc": "2026-10-16T16:12:04.525522+00:00",
   "scope": "review inventory; no router installation/start and no production publication",
   "deployment_choice": "evaluate Compose fairly; deployment choice undecided",
   "source_units": [
     {
       "role": "frontend",
       "repository": "i-am-an-op/mihomo",
-      "source_commit": "1f67c00d7b884bfe7a59ddbfb1216d290adc8599",
-      "unpublished_draft": "v1.19.32-dns.1-rc.2",
+      "source_commit": "0af636b44ce2fc433675abf89a8347738a9d27e8",
+      "unpublished_draft": "v1.19.32-dns.1-rc.3",
       "artifacts": [
         {
-          "path": ".work/release-rc2/mihomo-linux-arm64",
-          "sha256": "936d72e6deef2a6ae5532b75209477fc6131da1983eba05bc538a506cd9b01be",
+          "path": ".work/release-rc3/mihomo-linux-arm64",
+          "sha256": "375b52c27eb6b5cf1aa9bf2f3a77a3f39d045fae5197a64f8fd37dab69684eaf",
           "bytes": 57344126,
           "architecture": "arm64",
           "provenance": {
-            "verified_utc": "2026-10-16T14:30:47.510236+00:00",
-            "artifact_sha256": "936d72e6deef2a6ae5532b75209477fc6131da1983eba05bc538a506cd9b01be",
+            "verified_utc": "2026-10-16T16:07:27.599298+00:00",
+            "artifact_sha256": "375b52c27eb6b5cf1aa9bf2f3a77a3f39d045fae5197a64f8fd37dab69684eaf",
             "architecture": "arm64",
-            "source_commit": "1f67c00d7b884bfe7a59ddbfb1216d290adc8599",
+            "source_commit": "0af636b44ce2fc433675abf89a8347738a9d27e8",
             "repository_id": 1421581663,
-            "bundle_sha256": "a095eba8a6bc30d6f915db3d7c5afb45565a1f5c11495347a4ee5aaffca75044",
+            "bundle_sha256": "3c2447054af200fe0cf922a4d57ffd13afc0231588aa9673b16d0657582d5fdf",
             "trusted_root_sha256": "65ca537f6ed8a47fd0e560c421baa1f6c1efb8b25fc200d8c5c02c0e92eb2b9c",
-            "policy_sha256": "a45568fbb03681b9596162db0f9c7600726ee61825467b8d7aaa5c19fae9a3b5",
-            "verification_result_sha256": "19b00e366be3775fc9697ed710d4be6848badbfeeaa88316cb16c21d8601fdfb",
+            "policy_sha256": "f6c476089f930a4d11a204cc8642c64761c77b0141f7fb69bbc1a757e0dc012d",
+            "verification_result_sha256": "94cd380d0dcf1b2458ec379384a576b130603c0bd5f6916cfab7b4904bb5cdfc",
             "cryptographic_verification": true,
             "binary_executed": false,
             "deployment_approved": false
           }
         },
         {
-          "path": ".work/release-rc2/mihomo-linux-amd64",
-          "sha256": "9f069d125c3b9a002da507d2ef8a285b9922d193c01d2f00887126f8275e5355",
+          "path": ".work/release-rc3/mihomo-linux-amd64",
+          "sha256": "229ac57751c73ac6837826497b88cc5be84e843050c5513313289fa4980350f6",
           "bytes": 61931646,
           "architecture": "amd64",
           "provenance": {
-            "verified_utc": "2026-10-16T14:30:47.697631+00:00",
-            "artifact_sha256": "9f069d125c3b9a002da507d2ef8a285b9922d193c01d2f00887126f8275e5355",
+            "verified_utc": "2026-10-16T16:07:29.837015+00:00",
+            "artifact_sha256": "229ac57751c73ac6837826497b88cc5be84e843050c5513313289fa4980350f6",
             "architecture": "amd64",
-            "source_commit": "1f67c00d7b884bfe7a59ddbfb1216d290adc8599",
+            "source_commit": "0af636b44ce2fc433675abf89a8347738a9d27e8",
             "repository_id": 1421581663,
-            "bundle_sha256": "cb5adc901df9e3ce3006ded9ba69bd5585256d3c037d825694ca144bce3a78ca",
+            "bundle_sha256": "c5c9772727a4906f2bc838b9bd6eda985a447fd18da5a3242bd1bc59543a2f62",
             "trusted_root_sha256": "65ca537f6ed8a47fd0e560c421baa1f6c1efb8b25fc200d8c5c02c0e92eb2b9c",
-            "policy_sha256": "692a5e70cbd3d5a7c99c91adc7926eff3501fb30e718bd3bd741722b3d6a29f7",
-            "verification_result_sha256": "eb8b926c9e39c9ada0b5991876e75a776eeb9cd6b8555f7d560c01ba8c0f7909",
+            "policy_sha256": "5a25d8b9b3da0e8621070d9c383798ed2cf928c6d66e80524a27180398bbc3db",
+            "verification_result_sha256": "3724979cf0b50386724b2cd8315a55fa4a1fa8f2efd65a9885c2e1e5db879ad7",
             "cryptographic_verification": true,
             "binary_executed": false,
             "deployment_approved": false
@@ -102,13 +102,13 @@
   ],
   "generations": [
     {
-      "id": "mt6000-20261016-v4-compose-separate",
+      "id": "mt6000-20261016-v5-compose-separate",
       "mode": "compose",
       "transport": "separate",
-      "directory": ".private/mt6000-production-candidates-20261016-v4/compose-separate",
+      "directory": ".private/mt6000-production-candidates-20261016-v5/compose-separate",
       "manifest": {
-        "path": ".private/mt6000-production-candidates-20261016-v4/compose-separate/generation/manifest.json",
-        "sha256": "ec87babd6cf0580a0aadbcfe1f293128a81290e2fed06ae4137bceb03bbb5d9f",
+        "path": ".private/mt6000-production-candidates-20261016-v5/compose-separate/generation/manifest.json",
+        "sha256": "d931915dbdcb71bb55f64f98ed1282aa56450e047dcf0e841c7657900bd33aaa",
         "bytes": 18334
       },
       "immutable_files": 59,
@@ -124,26 +124,26 @@
         }
       ],
       "bootstrap_archive": {
-        "path": ".private/mt6000-production-candidates-20261016-v4/compose-separate/bootstrap.tar.gz",
-        "sha256": "7d4ca68d2d0b6e141247738f8307104818605ecf6b73d1f19184bf34e3a5338b",
+        "path": ".private/mt6000-production-candidates-20261016-v5/compose-separate/bootstrap.tar.gz",
+        "sha256": "55ebfe025f7531837b21570532912938a21fe0d9955b52567c9c3482bf9b1261",
         "bytes": 1490080
       },
       "candidate_archive": {
-        "path": ".private/mt6000-production-candidates-20261016-v4/compose-separate.tar.gz",
-        "sha256": "b0d004cacbc89dba40dc636eddacb58de6acad9c72986b21caef6fdfc40fcd67",
-        "bytes": 70663328
+        "path": ".private/mt6000-production-candidates-20261016-v5/compose-separate.tar.gz",
+        "sha256": "409418c752bfb4758709a9c2679c4a7bb60c84356a535521721a877432b5db4b",
+        "bytes": 70664208
       },
       "production_signed": false,
       "review_key_present": false
     },
     {
-      "id": "mt6000-20261016-v4-compose-shared",
+      "id": "mt6000-20261016-v5-compose-shared",
       "mode": "compose",
       "transport": "shared",
-      "directory": ".private/mt6000-production-candidates-20261016-v4/compose-shared",
+      "directory": ".private/mt6000-production-candidates-20261016-v5/compose-shared",
       "manifest": {
-        "path": ".private/mt6000-production-candidates-20261016-v4/compose-shared/generation/manifest.json",
-        "sha256": "05524813bb17727dc6a307eacff8f50b02dead9b69cfd022bfb1a94ae2272492",
+        "path": ".private/mt6000-production-candidates-20261016-v5/compose-shared/generation/manifest.json",
+        "sha256": "f4bf4808e30ba1f73c07f1c76def568d2b703287efe98c0672917ada290519c5",
         "bytes": 18330
       },
       "immutable_files": 59,
@@ -159,26 +159,26 @@
         }
       ],
       "bootstrap_archive": {
-        "path": ".private/mt6000-production-candidates-20261016-v4/compose-shared/bootstrap.tar.gz",
-        "sha256": "52833c60c2e7af51884e569cdc7954fcb617d5a34eaa82360dba056cf76854b4",
+        "path": ".private/mt6000-production-candidates-20261016-v5/compose-shared/bootstrap.tar.gz",
+        "sha256": "4e5cee1853387bd5740e817e782856dd8af0a7c18825c8d4a0f88c331b5e8862",
         "bytes": 1490080
       },
       "candidate_archive": {
-        "path": ".private/mt6000-production-candidates-20261016-v4/compose-shared.tar.gz",
-        "sha256": "6fbae3daf478753a6275c2fb395aa39fdca4898dac8af5d54d3bd8f0b515c9a6",
-        "bytes": 70663218
+        "path": ".private/mt6000-production-candidates-20261016-v5/compose-shared.tar.gz",
+        "sha256": "84680f13576d7e6cab6dd398dd34a59dafe0db437ee1fcbed0e09c756afbcd0f",
+        "bytes": 70664234
       },
       "production_signed": false,
       "review_key_present": false
     },
     {
-      "id": "mt6000-20261016-v4-native-separate",
+      "id": "mt6000-20261016-v5-native-separate",
       "mode": "native",
       "transport": "separate",
-      "directory": ".private/mt6000-production-candidates-20261016-v4/native-separate",
+      "directory": ".private/mt6000-production-candidates-20261016-v5/native-separate",
       "manifest": {
-        "path": ".private/mt6000-production-candidates-20261016-v4/native-separate/generation/manifest.json",
-        "sha256": "333ae49f753746465f0f49cfcc3de68f7cb5d216327dfe50006b67790836bea8",
+        "path": ".private/mt6000-production-candidates-20261016-v5/native-separate/generation/manifest.json",
+        "sha256": "aed74d29cf7045f4c96ce6992801fd0e7ae36190cfe51e27553b0de7d57bd428",
         "bytes": 18332
       },
       "immutable_files": 59,
@@ -194,26 +194,26 @@
         }
       ],
       "bootstrap_archive": {
-        "path": ".private/mt6000-production-candidates-20261016-v4/native-separate/bootstrap.tar.gz",
-        "sha256": "72476f97c49a084d82338aa488e30ca85ea5ff507abc688682d298b28f08fca6",
+        "path": ".private/mt6000-production-candidates-20261016-v5/native-separate/bootstrap.tar.gz",
+        "sha256": "0f9c7e98fcc8d238de01397216e97386b940c85beb05190b74701d05aded6cfe",
         "bytes": 1489423
       },
       "candidate_archive": {
-        "path": ".private/mt6000-production-candidates-20261016-v4/native-separate.tar.gz",
-        "sha256": "70418582cae915fc698a2afe6bd905be761ac3cbd3c506ce9deb9d1deb3c9101",
-        "bytes": 70662464
+        "path": ".private/mt6000-production-candidates-20261016-v5/native-separate.tar.gz",
+        "sha256": "4b79b4ef04990344cbda757f158b9d3679bb38d2b9bf31db060da8ff2c2d3333",
+        "bytes": 70663562
       },
       "production_signed": false,
       "review_key_present": false
     },
     {
-      "id": "mt6000-20261016-v4-native-shared",
+      "id": "mt6000-20261016-v5-native-shared",
       "mode": "native",
       "transport": "shared",
-      "directory": ".private/mt6000-production-candidates-20261016-v4/native-shared",
+      "directory": ".private/mt6000-production-candidates-20261016-v5/native-shared",
       "manifest": {
-        "path": ".private/mt6000-production-candidates-20261016-v4/native-shared/generation/manifest.json",
-        "sha256": "8ecad50d9df5e11ae6d52ce3c376a76607ecb3e536a52d1f9a59b30ec41d7a8f",
+        "path": ".private/mt6000-production-candidates-20261016-v5/native-shared/generation/manifest.json",
+        "sha256": "145a94d834263d22e32b709a580e0901832747103126ea504602a6dea28e44c7",
         "bytes": 18328
       },
       "immutable_files": 59,
@@ -229,34 +229,34 @@
         }
       ],
       "bootstrap_archive": {
-        "path": ".private/mt6000-production-candidates-20261016-v4/native-shared/bootstrap.tar.gz",
-        "sha256": "6b780065c6900c96c0f27439316a208d1e265b74cdaad99c776cd5b418a39c0c",
+        "path": ".private/mt6000-production-candidates-20261016-v5/native-shared/bootstrap.tar.gz",
+        "sha256": "964c0c1c2ab51e5a3e01fb26346b842b5e0c12315298389d941238a973588a1d",
         "bytes": 1489423
       },
       "candidate_archive": {
-        "path": ".private/mt6000-production-candidates-20261016-v4/native-shared.tar.gz",
-        "sha256": "af22ea934435607b9a12bb1bb83969e6ccb537903e8ad9d1225d104a09aaa733",
-        "bytes": 70662424
+        "path": ".private/mt6000-production-candidates-20261016-v5/native-shared.tar.gz",
+        "sha256": "961e25b6489ad0dfd4e3bda8fa68f122e12844862e7dc9e99ce5d1b3cb68e696",
+        "bytes": 70663545
       },
       "production_signed": false,
       "review_key_present": false
     }
   ],
   "paired_shadow": {
-    "directory": ".private/mt6000-paired-lifecycle-20261016-v4",
+    "directory": ".private/mt6000-paired-lifecycle-20261016-v5",
     "archive": {
-      "path": ".private/mt6000-paired-lifecycle-20261016-v4.tar.gz",
-      "sha256": "f199e19e26b6c850d805845a05f3680b3cbcd0bb2c5644d58831de8cbe875032",
-      "bytes": 46948622
+      "path": ".private/mt6000-paired-lifecycle-20261016-v5.tar.gz",
+      "sha256": "b0274a1088edcdb407dd6ee502afaebf9f4d8b6dad2f578100253fcc867cd8e3",
+      "bytes": 46950014
     },
     "immutable_list": {
-      "path": ".private/mt6000-paired-lifecycle-20261016-v4/pilot.SHA256SUMS",
-      "sha256": "da0f922588073e4deb715a21a0c21ccaa7c527cbd73e0946d0e5c1948f55dd24",
+      "path": ".private/mt6000-paired-lifecycle-20261016-v5/pilot.SHA256SUMS",
+      "sha256": "4956662547f4d45e6459a5f67d2dfebc12d6b4459f7bd0b164f86315b45bdcd2",
       "bytes": 3130
     },
     "readiness_cases": 16,
     "controller": {
-      "path": ".private/mt6000-paired-lifecycle-20261016-v4/bin/dnsctl",
+      "path": ".private/mt6000-paired-lifecycle-20261016-v5/bin/dnsctl",
       "sha256": "8ce4ecef6e9d858ddfde08857e0e6bce01bbf5ccbf2c5051dfb0db34a29236b4",
       "bytes": 3735678
     },
@@ -265,24 +265,29 @@
   },
   "images": {
     "identities": {
-      "auxiliary": "sha256:cc288218eee735317ba95ece7109e03c9db08bb3fd838f85564b92e5c08f4630",
+      "auxiliary": "sha256:8ee55a989c0ac15ee8058695289e82834ac45d99b77ee94b54f114cb4cefeea3",
       "coredns": "sha256:5d3b3e589fcf57f626c7967bff5171924cf9c55068911247a1f7bd2458e726c3"
     },
     "auxiliary_evidence": {
-      "image_id": "sha256:cc288218eee735317ba95ece7109e03c9db08bb3fd838f85564b92e5c08f4630",
+      "image_id": "sha256:8ee55a989c0ac15ee8058695289e82834ac45d99b77ee94b54f114cb4cefeea3",
       "architecture": "arm64",
-      "archive_sha256": "e1ca47a3357bab0c66b138d66ca764c9843a474ea9692ad7f3309d1023cf694f",
+      "archive_sha256": "89a8926fbf9728622067d6e9bb66f4f51b9461523982d37e918400f7ceeeafc9",
       "archive_bytes": 68190720,
       "exact_payload_files": 20,
       "unexpected_files": 0,
       "entrypoint_and_loader_modes_verified": true,
-      "dockerfile_sha256": "a83968ffffa8d480d91de78e28defa28ed03c4ad6288711361e06cfecd07a36b",
+      "dockerfile_sha256": "54cec49d9cba4813edf7357eed26e54d5de732919438d0e2b0ef345c85e22831",
       "builder": "Existing workstation Docker 29.9.0 integrated BuildKit; COPY-only scratch build, linux/arm64, offline isolated namespaces",
       "image_built": true,
       "payload_verified": true,
       "workload_executed": false,
       "provenance_limit": "Local build/manifest evidence, not a published or independently attested release. License inventory and image advisory triage remain release gates.",
-      "initial_build_failure": "Deprecated legacy builder produced amd64 intermediate metadata during arm64 build; normal BuildKit path succeeded without source/binary changes"
+      "historical_builder_limit": "An earlier legacy-builder attempt produced amd64 intermediate metadata for arm64; current build uses the successful BuildKit path. Historical failure logs remain retained.",
+      "current_build_failures": {
+        "first_attempt": "Private namespace socket default group unmapped; retained .work/image-build-rc3.stderr",
+        "second_attempt": "Image layer GID50 unmapped; retained .work/paired-images-rc3-failed-map/coredns-load.log",
+        "correction": "Explicit private socket GID0 plus unshare --map-auto --map-root-user; .work/image-build-rc3c logs; successful COPY-only build"
+      }
     },
     "coredns_upstream_arm_manifest": "sha256:9a631b1e34491f93a35334bc02d8ae190f16224be41689c7f42cc1711a95fe3a"
   },

@@ -26,7 +26,7 @@
       "case": "First real private preflight environment",
       "record": "research/evidence/current-profile-parsing-2026-10-16.json",
       "record_present": true,
-      "record_sha256": "f0b919353b9aafa3f656a48091c21ec792cc57fe0bef64a8adc7f36811e1d7b6",
+      "record_sha256": "a095dca1b1cbde51f96d4c513ad1c1137d96f380f3ef5332cffd6b5e92fa1a19",
       "correction_or_limit": "SAFE_PATHS correction and documented isolated hosts:lan fixture adjustment; second attempt original raw logs were reused, not claimed retained"
     },
     {
@@ -70,6 +70,34 @@
       "record_present": true,
       "record_sha256": "66fe004a7990a19aaa76616466fd2d9968fcd362a7f2a29bb24ce967e9cb2548",
       "correction_or_limit": "HTTP409 retained and independent checker remains unhealthy"
+    },
+    {
+      "case": "Installed alpha compatibility backport fixture",
+      "record": "research/evidence/current-alpha-compatibility-2026-10-16.json",
+      "correction_or_limit": "Initial Go import-cycle fixed with minimal interface adapter; old-source negative controls retained; exact-source CI and both release architectures pass",
+      "record_present": true,
+      "record_sha256": "308110ee105b513c6fec8ede4b7fb5253dc20f07f15b0ca97662dde4805895ae"
+    },
+    {
+      "case": "Image rebuild socket GID mapping",
+      "record": ".work/image-build-rc3.stderr",
+      "correction_or_limit": "Private namespace daemon explicitly uses mapped group0; no resolver/router behavior tested by this failure",
+      "record_present": true,
+      "record_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "case": "Image rebuild layer ownership mapping",
+      "record": ".work/paired-images-rc3-failed-map/coredns-load.log",
+      "correction_or_limit": "Map subordinate IDs with unshare --map-auto --map-root-user; successful run .work/image-build-rc3c.stdout; current image whitelist and structure pass",
+      "record_present": true,
+      "record_sha256": "e336cada33dfcc9b153ce3e03c9effd5bf5178feb75e414823b0195f6aeb667f"
+    },
+    {
+      "case": "Explicit-input payload reproduction mode control",
+      "record": ".work/payload-reproduction-first-mode-diff.json",
+      "record_present": true,
+      "record_sha256": "3fe63c4565e76d8d13e57cc0487f03eba161aaa690f6a06f1f432da387bc4910",
+      "correction_or_limit": "Bytes were equal; normalize loader/shared-library modes. Repeated assembly reproduces the exact previously tested tar SHA256."
     }
   ],
   "additional_fixture_failure": {

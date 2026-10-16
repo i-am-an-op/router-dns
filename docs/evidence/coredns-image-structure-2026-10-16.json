@@ -1,0 +1,9 @@
+{
+  "archive_sha256": "0d2dacb31f793295a816f71442d470a60b6c2dbd6bf7d034b0e1f2f537783407",
+  "json_metadata_objects": 2,
+  "validated_descriptors": 0,
+  "verified_docker_layer_diff_ids": 13,
+  "subject_annotations_allowed": false,
+  "daemon_invoked": false,
+  "publisher_authentication": false
+}

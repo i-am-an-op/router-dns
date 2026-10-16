@@ -10,168 +10,168 @@
       "case": "valid-real-candidate",
       "passed": true,
       "accepted": true,
-      "manifest_sha256": "ec87babd6cf0580a0aadbcfe1f293128a81290e2fed06ae4137bceb03bbb5d9f"
+      "manifest_sha256": "d931915dbdcb71bb55f64f98ed1282aa56450e047dcf0e841c7657900bd33aaa"
     },
     {
       "candidate": "compose-separate",
       "case": "offline-refuses-runtime",
       "passed": true,
       "accepted": false,
-      "manifest_sha256": "ec87babd6cf0580a0aadbcfe1f293128a81290e2fed06ae4137bceb03bbb5d9f"
+      "manifest_sha256": "d931915dbdcb71bb55f64f98ed1282aa56450e047dcf0e841c7657900bd33aaa"
     },
     {
       "candidate": "compose-separate",
       "case": "wrong-target-architecture",
       "passed": true,
       "accepted": false,
-      "manifest_sha256": "ec87babd6cf0580a0aadbcfe1f293128a81290e2fed06ae4137bceb03bbb5d9f"
+      "manifest_sha256": "d931915dbdcb71bb55f64f98ed1282aa56450e047dcf0e841c7657900bd33aaa"
     },
     {
       "candidate": "compose-separate",
       "case": "wrong-package-baseline",
       "passed": true,
       "accepted": false,
-      "manifest_sha256": "ec87babd6cf0580a0aadbcfe1f293128a81290e2fed06ae4137bceb03bbb5d9f"
+      "manifest_sha256": "d931915dbdcb71bb55f64f98ed1282aa56450e047dcf0e841c7657900bd33aaa"
     },
     {
       "candidate": "compose-separate",
       "case": "corrupt-signed-payload",
       "passed": true,
       "accepted": false,
-      "manifest_sha256": "ec87babd6cf0580a0aadbcfe1f293128a81290e2fed06ae4137bceb03bbb5d9f"
+      "manifest_sha256": "d931915dbdcb71bb55f64f98ed1282aa56450e047dcf0e841c7657900bd33aaa"
     },
     {
       "candidate": "compose-separate",
       "case": "missing-core-payload",
       "passed": true,
       "accepted": false,
-      "manifest_sha256": "ec87babd6cf0580a0aadbcfe1f293128a81290e2fed06ae4137bceb03bbb5d9f"
+      "manifest_sha256": "d931915dbdcb71bb55f64f98ed1282aa56450e047dcf0e841c7657900bd33aaa"
     },
     {
       "candidate": "compose-shared",
       "case": "valid-real-candidate",
       "passed": true,
       "accepted": true,
-      "manifest_sha256": "05524813bb17727dc6a307eacff8f50b02dead9b69cfd022bfb1a94ae2272492"
+      "manifest_sha256": "f4bf4808e30ba1f73c07f1c76def568d2b703287efe98c0672917ada290519c5"
     },
     {
       "candidate": "compose-shared",
       "case": "offline-refuses-runtime",
       "passed": true,
       "accepted": false,
-      "manifest_sha256": "05524813bb17727dc6a307eacff8f50b02dead9b69cfd022bfb1a94ae2272492"
+      "manifest_sha256": "f4bf4808e30ba1f73c07f1c76def568d2b703287efe98c0672917ada290519c5"
     },
     {
       "candidate": "compose-shared",
       "case": "wrong-target-architecture",
       "passed": true,
       "accepted": false,
-      "manifest_sha256": "05524813bb17727dc6a307eacff8f50b02dead9b69cfd022bfb1a94ae2272492"
+      "manifest_sha256": "f4bf4808e30ba1f73c07f1c76def568d2b703287efe98c0672917ada290519c5"
     },
     {
       "candidate": "compose-shared",
       "case": "wrong-package-baseline",
       "passed": true,
       "accepted": false,
-      "manifest_sha256": "05524813bb17727dc6a307eacff8f50b02dead9b69cfd022bfb1a94ae2272492"
+      "manifest_sha256": "f4bf4808e30ba1f73c07f1c76def568d2b703287efe98c0672917ada290519c5"
     },
     {
       "candidate": "compose-shared",
       "case": "corrupt-signed-payload",
       "passed": true,
       "accepted": false,
-      "manifest_sha256": "05524813bb17727dc6a307eacff8f50b02dead9b69cfd022bfb1a94ae2272492"
+      "manifest_sha256": "f4bf4808e30ba1f73c07f1c76def568d2b703287efe98c0672917ada290519c5"
     },
     {
       "candidate": "compose-shared",
       "case": "missing-core-payload",
       "passed": true,
       "accepted": false,
-      "manifest_sha256": "05524813bb17727dc6a307eacff8f50b02dead9b69cfd022bfb1a94ae2272492"
+      "manifest_sha256": "f4bf4808e30ba1f73c07f1c76def568d2b703287efe98c0672917ada290519c5"
     },
     {
       "candidate": "native-separate",
       "case": "valid-real-candidate",
       "passed": true,
       "accepted": true,
-      "manifest_sha256": "333ae49f753746465f0f49cfcc3de68f7cb5d216327dfe50006b67790836bea8"
+      "manifest_sha256": "aed74d29cf7045f4c96ce6992801fd0e7ae36190cfe51e27553b0de7d57bd428"
     },
     {
       "candidate": "native-separate",
       "case": "offline-refuses-runtime",
       "passed": true,
       "accepted": false,
-      "manifest_sha256": "333ae49f753746465f0f49cfcc3de68f7cb5d216327dfe50006b67790836bea8"
+      "manifest_sha256": "aed74d29cf7045f4c96ce6992801fd0e7ae36190cfe51e27553b0de7d57bd428"
     },
     {
       "candidate": "native-separate",
       "case": "wrong-target-architecture",
       "passed": true,
       "accepted": false,
-      "manifest_sha256": "333ae49f753746465f0f49cfcc3de68f7cb5d216327dfe50006b67790836bea8"
+      "manifest_sha256": "aed74d29cf7045f4c96ce6992801fd0e7ae36190cfe51e27553b0de7d57bd428"
     },
     {
       "candidate": "native-separate",
       "case": "wrong-package-baseline",
       "passed": true,
       "accepted": false,
-      "manifest_sha256": "333ae49f753746465f0f49cfcc3de68f7cb5d216327dfe50006b67790836bea8"
+      "manifest_sha256": "aed74d29cf7045f4c96ce6992801fd0e7ae36190cfe51e27553b0de7d57bd428"
     },
     {
       "candidate": "native-separate",
       "case": "corrupt-signed-payload",
       "passed": true,
       "accepted": false,
-      "manifest_sha256": "333ae49f753746465f0f49cfcc3de68f7cb5d216327dfe50006b67790836bea8"
+      "manifest_sha256": "aed74d29cf7045f4c96ce6992801fd0e7ae36190cfe51e27553b0de7d57bd428"
     },
     {
       "candidate": "native-separate",
       "case": "missing-core-payload",
       "passed": true,
       "accepted": false,
-      "manifest_sha256": "333ae49f753746465f0f49cfcc3de68f7cb5d216327dfe50006b67790836bea8"
+      "manifest_sha256": "aed74d29cf7045f4c96ce6992801fd0e7ae36190cfe51e27553b0de7d57bd428"
     },
     {
       "candidate": "native-shared",
       "case": "valid-real-candidate",
       "passed": true,
       "accepted": true,
-      "manifest_sha256": "8ecad50d9df5e11ae6d52ce3c376a76607ecb3e536a52d1f9a59b30ec41d7a8f"
+      "manifest_sha256": "145a94d834263d22e32b709a580e0901832747103126ea504602a6dea28e44c7"
     },
     {
       "candidate": "native-shared",
       "case": "offline-refuses-runtime",
       "passed": true,
       "accepted": false,
-      "manifest_sha256": "8ecad50d9df5e11ae6d52ce3c376a76607ecb3e536a52d1f9a59b30ec41d7a8f"
+      "manifest_sha256": "145a94d834263d22e32b709a580e0901832747103126ea504602a6dea28e44c7"
     },
     {
       "candidate": "native-shared",
       "case": "wrong-target-architecture",
       "passed": true,
       "accepted": false,
-      "manifest_sha256": "8ecad50d9df5e11ae6d52ce3c376a76607ecb3e536a52d1f9a59b30ec41d7a8f"
+      "manifest_sha256": "145a94d834263d22e32b709a580e0901832747103126ea504602a6dea28e44c7"
     },
     {
       "candidate": "native-shared",
       "case": "wrong-package-baseline",
       "passed": true,
       "accepted": false,
-      "manifest_sha256": "8ecad50d9df5e11ae6d52ce3c376a76607ecb3e536a52d1f9a59b30ec41d7a8f"
+      "manifest_sha256": "145a94d834263d22e32b709a580e0901832747103126ea504602a6dea28e44c7"
     },
     {
       "candidate": "native-shared",
       "case": "corrupt-signed-payload",
       "passed": true,
       "accepted": false,
-      "manifest_sha256": "8ecad50d9df5e11ae6d52ce3c376a76607ecb3e536a52d1f9a59b30ec41d7a8f"
+      "manifest_sha256": "145a94d834263d22e32b709a580e0901832747103126ea504602a6dea28e44c7"
     },
     {
       "candidate": "native-shared",
       "case": "missing-core-payload",
       "passed": true,
       "accepted": false,
-      "manifest_sha256": "8ecad50d9df5e11ae6d52ce3c376a76607ecb3e536a52d1f9a59b30ec41d7a8f"
+      "manifest_sha256": "145a94d834263d22e32b709a580e0901832747103126ea504602a6dea28e44c7"
     }
   ]
 }
