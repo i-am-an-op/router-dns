@@ -139,3 +139,10 @@ are recorded for removal after backup; no package hook is assumed harmless. The
 rootful Engine still starts containerd and may exercise cgroups/storage helpers;
 actual router before/after firewall, sysctl, mount and resource observations are
 mandatory. This launcher is a proposal, not proof that host networking is compatible.
+
+The independent maintenance watcher also checks the integration repository's
+scheduled scanner, main-branch CI, excessive queue age and security-update setting.
+Both repositories have explicit daily scanners; GitHub schedules are not a reliable
+external heartbeat. Read-only checks and local fixture delivery tests do not appoint
+an operator or establish delivery to a real external channel. Run the watcher only
+with an independently reviewed operator record; its default writes local status.

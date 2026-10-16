@@ -1,0 +1,45 @@
+name: Daily reviewed-source security check
+on:
+  schedule:
+    - cron: '17 3 * * *'
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: daily-security
+  cancel-in-progress: false
+jobs:
+  scan:
+    if: github.repository == 'i-am-an-op/router-dns' && github.ref == 'refs/heads/main'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    strategy:
+      fail-fast: false
+      matrix:
+        architecture: [amd64, arm64]
+    env:
+      GOTOOLCHAIN: local
+      GOOS: linux
+      GOARCH: ${{ matrix.architecture }}
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
+        with:
+          persist-credentials: false
+      - uses: actions/setup-go@924ae3a1cded613372ab5595356fb5720e22ba16 # v6
+        with:
+          go-version: '1.26.9'
+          cache: false
+      - name: Verify pinned dependency content
+        run: go mod download && go mod verify
+      - name: Analyze both target architectures using reviewed scanner
+        # Run the scanner executable on amd64; analyze the selected GOARCH.
+        run: |
+          GOBIN=/tmp/dns-maintenance-tools GOARCH=amd64 go install golang.org/x/vuln/cmd/govulncheck@v1.9.0
+          /tmp/dns-maintenance-tools/govulncheck -json ./... > govulncheck.json
+          python3 scripts/vulnerability_gate.py govulncheck.json
+      - uses: actions/upload-artifact@b7c566a772e6b6bfb58ed0dc250532a479d7789f # v6
+        if: always()
+        with:
+          name: scheduled-security-${{ matrix.architecture }}
+          path: govulncheck.json
+          retention-days: 90
