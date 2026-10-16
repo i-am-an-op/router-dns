@@ -11,6 +11,7 @@ import (
 	"os"
 	"os/exec"
 	"path/filepath"
+	"runtime"
 	"strings"
 	"testing"
 	"time"
@@ -39,7 +40,7 @@ func setup(t *testing.T) (*Manager, ed25519.PrivateKey, *recorder) {
 	os.MkdirAll(host, 0700)
 	os.WriteFile(filepath.Join(host, "package-db"), []byte("installed 0.48.002"), 0600)
 	r := &recorder{}
-	m := &Manager{Store: filepath.Join(root, "store"), HostRoot: host, Key: pub, Architecture: "amd64", Runner: r}
+	m := &Manager{Store: filepath.Join(root, "store"), HostRoot: host, Key: pub, Architecture: runtime.GOARCH, Runner: r}
 	return m, key, r
 }
 func generation(t *testing.T, m *Manager, key ed25519.PrivateKey, id string) string {
@@ -48,8 +49,11 @@ func generation(t *testing.T, m *Manager, key ed25519.PrivateKey, id string) str
 	elf := make([]byte, 64)
 	copy(elf, "\x7fELF\x02\x01")
 	elf[18] = 62
+	if m.Architecture == "arm64" {
+		elf[18] = 183
+	}
 	files := map[string][]byte{"bin/core": elf, "config/profile.yaml": []byte("mode: rule\nrules: [MATCH,DIRECT]\nipv6: true\ndns: {enable: true, disable-cache: true}\n"), "runtime/adapter": []byte("fixture adapter, not a router script")}
-	v := Manifest{Schema: 1, ID: id, Architecture: "amd64", OpenClash: "0.48.002", Mode: "native", Transport: "separate", Core: "bin/core", Profile: "config/profile.yaml", Adapter: "runtime/adapter", ProbeSeconds: 1, HostPins: []Pin{{Path: "/package-db", SHA256: Hash([]byte("installed 0.48.002"))}}, Readiness: []Probe{{Address: "127.0.0.1:6053", Network: "tcp", Name: "example.org", Type: 1}}, Provenance: map[string]string{"core_bundle_sha256": strings.Repeat("a", 64), "verification_receipt_sha256": strings.Repeat("b", 64)}}
+	v := Manifest{Schema: 1, ID: id, Architecture: runtime.GOARCH, OpenClash: "0.48.002", Mode: "native", Transport: "separate", Core: "bin/core", Profile: "config/profile.yaml", Adapter: "runtime/adapter", ProbeSeconds: 1, HostPins: []Pin{{Path: "/package-db", SHA256: Hash([]byte("installed 0.48.002"))}}, Readiness: []Probe{{Address: "127.0.0.1:6053", Network: "tcp", Name: "example.org", Type: 1}}, Provenance: map[string]string{"core_bundle_sha256": strings.Repeat("a", 64), "verification_receipt_sha256": strings.Repeat("b", 64)}}
 	for p, b := range files {
 		if e := Atomic(filepath.Join(d, p), b, 0600); e != nil {
 			t.Fatal(e)
@@ -114,6 +118,9 @@ func TestRejectBeforeStopping(t *testing.T) {
 				os.WriteFile(filepath.Join(d, "bin/core"), []byte("broken"), 0600)
 			case "wrong-architecture":
 				v.Architecture = "arm64"
+				if m.Architecture == "arm64" {
+					v.Architecture = "amd64"
+				}
 				sign(t, d, v, k)
 			case "unknown-field":
 				b, _ := os.ReadFile(filepath.Join(d, "manifest.json"))
@@ -238,7 +245,7 @@ func TestCrashHelper(t *testing.T) {
 		t.Skip("subprocess only")
 	}
 	k, _ := base64.StdEncoding.DecodeString(os.Getenv("DNS_CRASH_KEY"))
-	m := &Manager{Store: s, HostRoot: os.Getenv("DNS_CRASH_HOST"), Key: k, Architecture: "amd64", Runner: &recorder{}, Fault: func(p string) error {
+	m := &Manager{Store: s, HostRoot: os.Getenv("DNS_CRASH_HOST"), Key: k, Architecture: runtime.GOARCH, Runner: &recorder{}, Fault: func(p string) error {
 		if p == "switched" {
 			os.Exit(91)
 		}
