@@ -1,0 +1,10 @@
+# nftables >=1.0.9 destroy is idempotent; complete file is one atomic transaction.
+# Install the same file as /usr/share/nftables.d/ruleset-post/90-dns-core.nft.
+destroy table inet dns_core_integrity
+table inet dns_core_integrity {
+  chain dns_guard {
+    type filter hook forward priority -10; policy accept;
+    iifname "br-lan" udp dport 53 reject
+    iifname "br-lan" tcp dport 53 reject with tcp reset
+  }
+}

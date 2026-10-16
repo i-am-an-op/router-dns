@@ -1,0 +1,49 @@
+name: Integration CI
+on:
+  pull_request:
+  push:
+    branches: [main]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  test:
+    strategy:
+      matrix:
+        include:
+          - {arch: amd64, runner: ubuntu-24.04}
+          - {arch: arm64, runner: ubuntu-24.04-arm}
+    runs-on: ${{ matrix.runner }}
+    timeout-minutes: 15
+    env:
+      GOTOOLCHAIN: local
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803
+        with:
+          persist-credentials: false
+      - uses: actions/setup-go@924ae3a1cded613372ab5595356fb5720e22ba16
+        with:
+          go-version: '1.26.9'
+          cache: false
+      - run: go mod download && go mod verify
+      - run: go vet ./...
+      - run: go test -race -count=1 -json ./... > test-results.json
+      - run: python3 -m compileall -q scripts
+      - run: for s in runtime/*.sh runtime/*.init runtime/dns-core-guard; do sh -n "$s"; done
+      - run: CGO_ENABLED=0 go build -trimpath -buildvcs=false -o dist/dnsctl-linux-${{ matrix.arch }} ./cmd/dnsctl
+      - uses: actions/upload-artifact@b7c566a772e6b6bfb58ed0dc250532a479d7789f
+        if: always()
+        with:
+          name: integration-${{ matrix.arch }}
+          path: |
+            test-results.json
+            dist/
+  security:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803
+      - uses: actions/setup-go@924ae3a1cded613372ab5595356fb5720e22ba16
+        with:
+          go-version: '1.26.9'
+      - run: go run golang.org/x/vuln/cmd/govulncheck@v1.9.0 ./...
