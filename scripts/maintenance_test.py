@@ -27,6 +27,15 @@ class TestMaintenance(unittest.TestCase):
    with patch.object(w.urllib.request,'build_opener',side_effect=OSError('fixture failure')):
     with self.assertRaises(OSError):w.deliver({'healthy':False,'utc':'fixture'}, {'accepted':True,'operator':'fixture only','webhook_url':'https://fixture.invalid'})
   finally:server.shutdown();server.server_close()
+class TimeoutStatus(unittest.TestCase):
+ def test_timeout_cannot_leave_old_green(self):
+  import tempfile,subprocess,sys,json
+  from pathlib import Path
+  with tempfile.TemporaryDirectory() as d:
+   out=Path(d)/'status.json';out.write_text('{"healthy":true}')
+   with patch.object(sys,'argv',['watch','--pin',str(Path(d)/'pin.json'),'--output',str(out)]), patch.object(w.subprocess,'run',side_effect=subprocess.TimeoutExpired('fixture',90)), patch('integration_status.collect',side_effect=OSError('offline fixture')):
+    with self.assertRaises(SystemExit) as ended:w.main()
+   self.assertEqual(ended.exception.code,1);self.assertFalse(json.loads(out.read_text())['healthy'])
 class IntegrationStatus(unittest.TestCase):
  def test_stale_and_inactive_workflow(self):
   import integration_status as i,datetime as dt
