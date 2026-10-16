@@ -1,6 +1,6 @@
 {
   "repository": "i-am-an-op/router-dns",
-  "version": "v0.1.0-rc.3",
+  "version": "v0.1.0-rc.4",
   "go": "1.26.9",
   "production": false
 }

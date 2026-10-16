@@ -22,7 +22,7 @@ class Pilot(unittest.TestCase):
   # mount --bind source target: shell positional arguments are $1/$2/$3.
   scripts['mount']=scripts['mount'].replace('"$4"','"$3"').replace('ln -s "$3" "$3"','ln -s "$2" "$3"')
   for n,body in scripts.items():p=self.stub/n;p.write_text(common+body+'\n');p.chmod(0o755)
-  for rel,body in [('bin/mihomo','exit 0'),('bin/dnsctl','[ "${FIXTURE_PROBE_FAIL:-0}" != 1 ]'),('root/lib/ld-musl-aarch64.so.1','case "$*" in *" -o interface "*) exit 0;; *) exit 78;; esac')]:p=self.base/rel;p.write_text(common+body+'\n');p.chmod(0o755)
+  for rel,body in [('bin/mihomo','exit 0'),('bin/dnsctl','case "$1" in wait-probe) [ "${FIXTURE_PROBE_FAIL:-0}" != 1 ];; *) exit 0;; esac'),('root/lib/ld-musl-aarch64.so.1','case "$*" in *" -o interface "*) exit 0;; *) exit 78;; esac')]:p=self.base/rel;p.write_text(common+body+'\n');p.chmod(0o755)
  def call(self,op,mode='native',ok=True,**env):
   r=subprocess.run([str(self.script),op,mode],env=dict(self.env,**env),capture_output=True,text=True,timeout=10)
   self.assertEqual(r.returncode==0,ok,r.stderr);return self.log.read_text() if self.log.exists() else ''
@@ -45,7 +45,7 @@ class Pilot(unittest.TestCase):
  def test_other_owner_is_not_stopped(self):
   self.mark('compose');log=self.call('stop',ok=False);self.assertNotIn('delete',log);self.assertTrue((self.run/'dns-evaluation-mode').exists())
  def test_watch_deadline_requests_stop(self):
-  self.mark('native');log=self.call('watch',FIXTURE_DEADLINE='1');self.assertIn('delete',log);self.assertFalse((self.run/'dns-evaluation-mode').exists())
+  self.mark('native');log=self.call('watch',FIXTURE_DEADLINE='1');self.assertIn('stop-service dns-evaluation',log);self.assertFalse((self.run/'dns-evaluation-mode').exists())
  def test_watch_three_unhealthy_checks_stops(self):
   self.mark('compose');log=self.call('watch','compose',FIXTURE_PROBE_FAIL='1');self.assertEqual(log.count('wait-probe readiness.json 5'),3);self.assertIn('down --timeout 10',log);self.assertFalse((self.run/'dns-evaluation-mode').exists())
 if __name__=='__main__':unittest.main()
